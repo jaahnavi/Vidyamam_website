@@ -9,6 +9,7 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { TestimonialCard } from "@/components/site/TestimonialCard";
 import { TrustSignal } from "@/components/site/TrustSignal";
 import { chakras, testimonials, whyChooseUs, trustSignals } from "@/components/site/site-data";
+import ChakraVisualization from '@/components/site/ChakraVisualization';
 
 const heroImage = "https://d2xsxph8kpxj0f.cloudfront.net/310519663585662648/ErWs2ocR65P7dstuQdjKqk/dr-vidya-hero-48qiHYvgTfdpqamVWLszJr.webp";
 
@@ -36,16 +37,16 @@ export default function Home() {
       <Seo
         title="Home"
         path="/"
-        description="Discover Dr Vidya's Holistic Healing Center in Pune for Pranic Healing, chakra balancing, and gentle support for stress and anxiety."
+        description="Discover Vidya's Holistic Healing Center in  for Pranic Healing, chakra balancing, and gentle support for stress and anxiety."
       />
 
       <section className="section-shell overflow-hidden pt-28 sm:pt-32">
         <div className="container grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
           <div className="fade-in-section relative space-y-8">
-            <span className="eyebrow">Pune Wellness Clinic</span>
+            <span className="eyebrow"> Wellness Clinic</span>
             <div className="space-y-5">
               <h1 className="max-w-3xl text-5xl font-semibold leading-[0.95] sm:text-6xl lg:text-7xl">
-                Dr Vidya&apos;s Holistic Healing Center
+                Vidya&apos;s Holistic Healing
               </h1>
               <p className="max-w-2xl text-lg text-muted-foreground sm:text-xl">
                 Guiding you toward balance, healing, and inner peace through Pranic Healing.
@@ -99,7 +100,7 @@ export default function Home() {
               <div className="grain-overlay absolute inset-0 opacity-20" />
               <img
                 src={heroImage}
-                alt="Calm consultation setting at Dr Vidya's Holistic Healing Center"
+                alt="Calm consultation setting at Vidya's Holistic Healing Center"
                 className="relative h-[520px] w-full rounded-[1.6rem] object-cover"
               />
               <div className="absolute inset-x-8 bottom-8 rounded-[1.5rem] border border-white/70 bg-white/78 p-5 shadow-lg backdrop-blur-md">
@@ -153,23 +154,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-shell bg-white/50">
-        <div className="container">
-          <SectionHeading
-            eyebrow="Energy Centers"
-            title="Chakra Overview"
-            description="These seven chakra cards offer a simple, non-technical introduction to the energetic centers often considered in holistic healing sessions."
-            align="center"
-          />
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            {chakras.map(chakra => (
-              <div key={chakra.name} className="fade-in-section">
-                <ChakraCard {...chakra} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
+      <ChakraVisualization />
 
       <section className="section-shell">
         <div className="container grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-12">
@@ -180,7 +166,7 @@ export default function Home() {
               description="The clinic is designed to feel welcoming and centered, with care that respects both emotional wellbeing and the need for practical clarity."
             />
             <Button asChild className="rounded-full bg-primary px-7 text-primary-foreground hover:bg-primary/90">
-              <Link href="/about">Meet Dr Vidya</Link>
+              <Link href="/about">Meet Vidya</Link>
             </Button>
           </div>
           <div className="grid gap-4">
@@ -199,7 +185,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="Client Words"
             title="Kind feedback from people we have supported"
-            description="A few reflections from clients who experienced Dr Vidya's healing guidance and presence."
+            description="A few reflections from clients who experienced Vidya's healing guidance and presence."
             align="center"
           />
           <div className="grid gap-5 lg:grid-cols-3">

@@ -10,13 +10,13 @@ export default function Testimonials() {
       <Seo
         title="Testimonials"
         path="/testimonials"
-        description="Read testimonials shared by clients of Dr Vidya's Holistic Healing Center in Pune."
+        description="Read testimonials shared by clients of Vidya's Holistic Healing."
       />
 
       <PageHero
         eyebrow="Testimonials"
         title="Words of trust and appreciation"
-        description="A few heartfelt reflections from clients who experienced Dr Vidya's healing guidance."
+        description="A few heartfelt reflections from clients who experienced Vidya's healing guidance."
       />
 
       <section className="section-shell pt-0">

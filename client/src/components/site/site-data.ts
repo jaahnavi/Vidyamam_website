@@ -95,14 +95,14 @@ export const testimonials: TestimonialItem[] = [
 ];
 
 export const clinicDetails = {
-  name: "Dr Vidya's Holistic Healing Center",
-  phone: "+91 84850 56757",
-  phoneHref: "tel:+918485056757",
-  whatsappHref: "https://wa.me/918485056757",
-  address: "H-4, Soba Savera Apartment, Bibwewadi, Pune, Maharashtra 411037, India",
-  hours: "Opens 11 AM, Reopens 6 PM",
+  name: "Vidya's Holistic Healing",
+  phone: "+1(469)468-5711",
+  phoneHref: "tel:+1(469)468-5711",
+  whatsappHref: "https://wa.me/14694685711",
+  address: "H-4, Soba Savera Apartment, Bibwewadi, , Maharashtra 411037, India",
+  hours: "Opens 11 AM - 5pm CST",
   mapEmbed:
-    "https://www.google.com/maps?q=H-4%2C%20Soba%20Savera%20Apartment%2C%20Bibwewadi%2C%20Pune%2C%20Maharashtra%20411037%2C%20India&z=15&output=embed",
+    "https://www.google.com/maps?q=H-4%2C%20Soba%20Savera%20Apartment%2C%20Bibwewadi%2C%20%2C%20Maharashtra%20411037%2C%20India&z=15&output=embed",
 };
 
 export const whyChooseUs = [

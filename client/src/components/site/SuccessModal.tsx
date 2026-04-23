@@ -46,7 +46,7 @@ export function SuccessModal({ isOpen, onClose }: SuccessModalProps) {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li className="flex items-start gap-2">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                <span>Dr Vidya will review your message and wellness goals</span>
+                <span>Vidya will review your message and wellness goals</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />

@@ -8,7 +8,7 @@ export function Footer() {
         <div className="space-y-4">
           <p className="font-display text-3xl font-semibold text-foreground">{clinicDetails.name}</p>
           <p className="max-w-md text-sm text-muted-foreground">
-            A calm, responsive wellness space in Pune offering compassionate support through Pranic Healing,
+            A calm, responsive wellness space in  offering compassionate support through Pranic Healing,
             chakra balancing, and gentle care for emotional wellbeing.
           </p>
         </div>

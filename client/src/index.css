@@ -263,25 +263,30 @@ background: linear-gradient(
   h4,
   h5,
   h6 {
-    font-family: 'Lora', serif;
-    letter-spacing: -0.5px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    letter-spacing: 0.02em;  /* changed from -0.5px — Cormorant needs a touch of space */
   }
 
   h1 {
-  /*font-size: 3rem;*/
-  font-weight: 600;
+    /* font-size: 3rem; */
+    font-weight: 300;  /* Cormorant looks best at 300, not 600 — it's naturally commanding at large sizes */
   }
 
   h2 {
-    /*font-size: 2rem;*/
-    font-weight: 500;
+    /* font-size: 2rem; */
+    font-weight: 300;
   }
 
   p {
-    @apply leading-7
-    /*font-size: 1rem;
-    line-height: 1.7;
-    color: var(--text-secondary);*/
+    @apply leading-7;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.04em;  /* Josefin benefits from slight tracking */
+    /* font-size: 1rem; */
+    /* line-height: 1.7; */
+    /* color: var(--text-secondary); */
   }
 
   button:not(:disabled),
@@ -345,7 +350,7 @@ background: linear-gradient(
   }
 
   .section-copy {
-    @apply max-w-2xl text-base text-muted-foreground sm:text-lg;
+    @apply max-w-2xl mx-auto text-base text-muted-foreground sm:text-lg;
   }
 
   .surface-card {

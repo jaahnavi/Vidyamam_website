@@ -13,26 +13,26 @@ cat <<'EOF' > client/index.html
     <meta name="theme-color" content="#f7f1e7" />
     <meta
       name="description"
-      content="Dr Vidya's Holistic Healing Center in Pune offers compassionate Pranic Healing, chakra balancing, and gentle support for stress and anxiety."
+      content="Vidya's Holistic Healing offers compassionate Pranic Healing, chakra balancing, and gentle support for stress and anxiety."
     />
     <meta
       name="keywords"
-      content="Pranic Healing Pune, holistic healing Pune, chakra balancing Pune, stress healing, anxiety healing, Dr Vidya"
+      content="Pranic Healing , holistic healing , chakra balancing , stress healing, anxiety healing, Dr Vidya"
     />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Dr Vidya's Holistic Healing Center" />
+    <meta property="og:title" content="Vidya's Holistic Healing" />
     <meta
       property="og:description"
-      content="Guiding you toward balance, healing, and inner peace through Pranic Healing in Pune, India."
+      content="Guiding you toward balance, healing, and inner peace through Pranic Healing in , India."
     />
-    <meta property="og:site_name" content="Dr Vidya's Holistic Healing Center" />
+    <meta property="og:site_name" content="Vidya's Holistic Healing" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <title>Dr Vidya's Holistic Healing Center</title>
+    <title>Vidya's Holistic Healing</title>
   </head>
   <body>
     <div id="root"></div>
@@ -438,14 +438,14 @@ export const testimonials: TestimonialItem[] = [
 ];
 
 export const clinicDetails = {
-  name: "Dr Vidya's Holistic Healing Center",
+  name: "Vidya's Holistic Healing",
   phone: "+91 84850 56757",
   phoneHref: "tel:+918485056757",
   whatsappHref: "https://wa.me/918485056757",
-  address: "H-4, Soba Savera Apartment, Bibwewadi, Pune, Maharashtra 411037, India",
+  address: "H-4, Soba Savera Apartment, Bibwewadi, , Maharashtra 411037, India",
   hours: "Opens 11 AM, Reopens 6 PM",
   mapEmbed:
-    "https://www.google.com/maps?q=H-4%2C%20Soba%20Savera%20Apartment%2C%20Bibwewadi%2C%20Pune%2C%20Maharashtra%20411037%2C%20India&z=15&output=embed",
+    "https://www.google.com/maps?q=H-4%2C%20Soba%20Savera%20Apartment%2C%20Bibwewadi%2C%20%2C%20Maharashtra%20411037%2C%20India&z=15&output=embed",
 };
 
 export const whyChooseUs = [
@@ -480,7 +480,7 @@ function upsertMeta(selector: string, attributes: Record<string, string>) {
 
 export function Seo({ title, description, path = "/" }: SeoProps) {
   useEffect(() => {
-    const pageTitle = `${title} | Dr Vidya's Holistic Healing Center`;
+    const pageTitle = `${title} |Vidya's Holistic Healing`;
     document.title = pageTitle;
 
     upsertMeta('meta[name="description"]', { name: "description", content: description });
@@ -723,7 +723,7 @@ export function Footer() {
         <div className="space-y-4">
           <p className="font-display text-3xl font-semibold text-foreground">{clinicDetails.name}</p>
           <p className="max-w-md text-sm text-muted-foreground">
-            A calm, responsive wellness space in Pune offering compassionate support through Pranic Healing,
+            A calm, responsive wellness space in  offering compassionate support through Pranic Healing,
             chakra balancing, and gentle care for emotional wellbeing.
           </p>
         </div>
@@ -947,16 +947,16 @@ export default function Home() {
       <Seo
         title="Home"
         path="/"
-        description="Discover Dr Vidya's Holistic Healing Center in Pune for Pranic Healing, chakra balancing, and gentle support for stress and anxiety."
+        description="Discover Dr Vidya's Holistic Healing Center in  for Pranic Healing, chakra balancing, and gentle support for stress and anxiety."
       />
 
       <section className="section-shell overflow-hidden pt-28 sm:pt-32">
         <div className="container grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
           <div className="fade-in-section relative space-y-8">
-            <span className="eyebrow">Pune Wellness Clinic</span>
+            <span className="eyebrow"> Wellness Clinic</span>
             <div className="space-y-5">
               <h1 className="max-w-3xl text-5xl font-semibold leading-[0.95] sm:text-6xl lg:text-7xl">
-                Dr Vidya&apos;s Holistic Healing Center
+                Vidya&apos;s Holistic Healing
               </h1>
               <p className="max-w-2xl text-lg text-muted-foreground sm:text-xl">
                 Guiding you toward balance, healing, and inner peace through Pranic Healing.
@@ -1130,7 +1130,7 @@ export default function About() {
       <Seo
         title="About"
         path="/about"
-        description="Learn about Dr Vidya, her healing philosophy, and the calm, professional approach at Dr Vidya's Holistic Healing Center in Pune."
+        description="Learn about Dr Vidya, her healing philosophy, and the calm, professional approach at Dr Vidya's Holistic Healing Center in ."
       />
 
       <PageHero
@@ -1249,7 +1249,7 @@ export default function Services() {
       <Seo
         title="Services"
         path="/services"
-        description="Explore Pranic Healing sessions, chakra balancing, and stress and anxiety healing at Dr Vidya's Holistic Healing Center in Pune."
+        description="Explore Pranic Healing sessions, chakra balancing, and stress and anxiety healing at Dr Vidya's Holistic Healing Center in ."
       />
 
       <PageHero
@@ -1322,7 +1322,7 @@ export default function Testimonials() {
       <Seo
         title="Testimonials"
         path="/testimonials"
-        description="Read testimonials shared by clients of Dr Vidya's Holistic Healing Center in Pune."
+        description="Read testimonials shared by clients of Dr Vidya's Holistic Healing Center in ."
       />
 
       <PageHero
@@ -1391,13 +1391,13 @@ export default function Contact() {
       <Seo
         title="Contact"
         path="/contact"
-        description="Contact Dr Vidya's Holistic Healing Center in Pune to book a consultation and view clinic location details."
+        description="Contact Dr Vidya's Holistic Healing Center in  to book a consultation and view clinic location details."
       />
 
       <PageHero
         eyebrow="Contact"
         title="Book a consultation or ask a question"
-        description="Reach out for a consultation, share what support you are looking for, or visit the clinic in Bibwewadi, Pune."
+        description="Reach out for a consultation, share what support you are looking for, or visit the clinic in Bibwewadi, ."
       />
 
       <section className="section-shell pt-0">

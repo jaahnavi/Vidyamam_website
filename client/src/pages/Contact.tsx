@@ -35,13 +35,13 @@ export default function Contact() {
       <Seo
         title="Contact"
         path="/contact"
-        description="Contact Dr Vidya's Holistic Healing Center in Pune to book a consultation and view clinic location details."
+        description="Contact Vidya's Holistic Healing Center to book a consultation"
       />
 
       <PageHero
         eyebrow="Contact"
         title="Book a consultation or ask a question"
-        description="Reach out for a consultation, share what support you are looking for, or visit the clinic in Bibwewadi, Pune."
+        description="Reach out for a consultation or share what support you are looking for"
       />
 
       <section className="section-shell pt-0">
@@ -75,7 +75,7 @@ export default function Contact() {
         <div className="container">
           <div className="surface-card overflow-hidden p-3 shadow-lg shadow-primary/5">
             <iframe
-              title="Map for Dr Vidya's Holistic Healing Center"
+              title="Map for Vidya's Holistic Healing"
               src={clinicDetails.mapEmbed}
               className="h-[420px] w-full rounded-[1.6rem] border-0"
               loading="lazy"

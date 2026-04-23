@@ -15,13 +15,13 @@ export default function About() {
       <Seo
         title="About"
         path="/about"
-        description="Learn about Dr Vidya, her healing philosophy, and the calm, professional approach at Dr Vidya's Holistic Healing Center in Pune."
+        description="Learn about Vidya Joshi, her healing philosophy, and the calm, professional approach at Vidya's Holistic Healing"
       />
 
       <PageHero
-        eyebrow="About Dr Vidya"
+        eyebrow="About Vidya"
         title="Healing with presence, clarity, and compassion"
-        description="Dr Vidya's approach is rooted in calm attention, holistic awareness, and the belief that emotional ease can grow through thoughtful healing support."
+        description="Vidya's approach is rooted in calm attention, holistic awareness, and the belief that emotional ease can grow through thoughtful healing support."
       />
 
       <section className="section-shell pt-0">
@@ -29,7 +29,7 @@ export default function About() {
           <div className="surface-card fade-in-section overflow-hidden p-3">
             <img
               src={aboutImage}
-              alt="Portrait of Dr Vidya in a calm healing environment"
+              alt="Portrait of Vidya in a calm healing environment"
               className="h-full min-h-[420px] w-full rounded-[1.5rem] object-cover"
             />
           </div>
@@ -37,7 +37,7 @@ export default function About() {
             <span className="eyebrow">Bio Placeholder</span>
             <h2 className="section-title">A grounded and reassuring presence for people seeking balance</h2>
             <p className="text-lg text-muted-foreground">
-              Dr Vidya offers a healing environment that feels both serene and professional. Her practice is centered on
+              Vidya offers a healing environment that feels both serene and professional. Her practice is centered on
               listening carefully, understanding emotional patterns with sensitivity, and guiding each person toward a more stable inner rhythm.
             </p>
             <p className="text-base text-muted-foreground">
@@ -95,7 +95,7 @@ export default function About() {
 
       <section className="section-shell bg-white/50">
         <div className="container">
-          <h2 className="mb-12 text-center text-4xl font-semibold">Why clients trust Dr Vidya</h2>
+          <h2 className="mb-12 text-center text-4xl font-semibold">Why clients trust Vidya</h2>
           <div className="grid gap-6 md:grid-cols-3">
             {trustSignals.map(signal => (
               <div key={signal.label} className="fade-in-section">

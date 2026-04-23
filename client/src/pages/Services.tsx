@@ -31,7 +31,7 @@ export default function Services() {
       <Seo
         title="Services"
         path="/services"
-        description="Explore Pranic Healing sessions, chakra balancing, and stress and anxiety healing at Dr Vidya's Holistic Healing Center in Pune."
+        description="Explore Pranic Healing sessions, chakra balancing, and stress and anxiety healing at Vidya's Holistic Healing."
       />
 
       <PageHero
@@ -80,7 +80,7 @@ export default function Services() {
                 <Link href="/contact">Book a Consultation</Link>
               </Button>
               <Button asChild variant="outline" className="rounded-full border-primary/20 bg-white/70 px-7 text-foreground hover:bg-white">
-                <Link href="/about">Learn About Dr Vidya</Link>
+                <Link href="/about">Learn About Vidya</Link>
               </Button>
             </div>
           </article>

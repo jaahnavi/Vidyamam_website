@@ -15,11 +15,11 @@ export function Navbar() {
         <nav className="flex items-center justify-between py-4" aria-label="Primary navigation">
           <Link href="/" className="flex items-center gap-3">
             <div className="flex h-11 w-11 items-center justify-center rounded-full border border-primary/15 bg-white/80 shadow-sm">
-              <span className="text-lg font-bold text-primary">DV</span>
+              <span className="text-lg font-bold text-primary">vhh</span>
             </div>
             <div>
-              <p className="font-display text-2xl font-semibold leading-none text-foreground">Dr Vidya's</p>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">Holistic Healing Center</p>
+              <p className="font-display text-2xl font-semibold leading-none text-foreground">Vidya's</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">Holistic Healing</p>
             </div>
           </Link>
 
