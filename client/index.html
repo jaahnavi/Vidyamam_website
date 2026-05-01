@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <meta name="theme-color" content="#f7f1e7" />
+    <meta name="theme-color" content="#407E8C" />
     <meta
       name="description"
       content="Vidya's Holistic Healing offers compassionate Pranic Healing, chakra balancing, and gentle support for stress and anxiety."
@@ -28,6 +28,19 @@
     <title>Vidya's Holistic Healing</title>
   </head>
   <body>
+
+    <!-- Splash screen — shows before CSS/React load. Drop logo.png into client/public/ to show the logo. -->
+    <div id="splash" style="position:fixed;inset:0;z-index:9999;background:radial-gradient(ellipse at center,#083A4F 0%,#216a83 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;transition:opacity 0.7s ease">
+      <img src="/logo.png" alt="Vidya's Holistic Healing" onerror="this.style.display='none'" style="width:220px;height:auto;object-fit:contain;filter:drop-shadow(0 4px 24px rgba(0,0,0,0.35))" />
+      <p style="color:rgba(229,225,221,0.7);font-family:serif;font-style:italic;font-weight:300;letter-spacing:0.18em;font-size:13px;margin:0">Vidya's Holistic Healing</p>
+    </div>
+    <script>
+      setTimeout(function(){
+        var s=document.getElementById('splash');
+        if(s){s.style.opacity='0';s.style.pointerEvents='none';setTimeout(function(){if(s.parentNode)s.remove();},700);}
+      },2000);
+    </script>
+
     <div class="chakra-bg">
       <div class="blob b1"></div>
       <div class="blob b2"></div>

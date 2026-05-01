@@ -11,17 +11,17 @@ const services = [
   {
     title: "Pranic Healing Sessions",
     copy: "A calm, guided healing session intended to help you feel more settled, balanced, and emotionally lighter. The process is explained in simple language so you always know what to expect.",
-    accent: "#7B2CBF",
+    accent: "#407E8C", // was: "#7B2CBF"
   },
   {
     title: "Chakra Balancing",
     copy: "Focused support for restoring harmony across the body's energy centers. This service is often chosen by people who feel mentally scattered, emotionally heavy, or out of rhythm in everyday life.",
-    accent: "#2D6A4F",
+    accent: "#A58D66", // was: "#2D6A4F"
   },
   {
     title: "Stress & Anxiety Healing",
     copy: "A gentle healing experience for people navigating tension, restlessness, worry, or emotional overload. Sessions aim to create a deeper sense of calm, steadiness, and inner quiet.",
-    accent: "#E76F51",
+    accent: "#C0D5D6", // was: "#E76F51"
   },
 ];
 

@@ -12,14 +12,18 @@ export function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/50 bg-[rgba(251,247,239,0.8)] backdrop-blur-xl">
       <div className="container">
-        <nav className="flex items-center justify-between py-4" aria-label="Primary navigation">
-          <Link href="/" className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-full border border-primary/15 bg-white/80 shadow-sm">
-              <span className="text-lg font-bold text-primary">vhh</span>
+        <nav className="flex items-center justify-between h-20" aria-label="Primary navigation">
+          <Link href="/" className="flex items-center gap-2">
+            <div className="h-full flex items-center">
+              <img
+                src="/logo1.png"
+                alt="Dr Vidya Logo"
+                className="h-16 w-auto object-contain"
+              />
             </div>
-            <div>
-              <p className="font-display text-2xl font-semibold leading-none text-foreground">Vidya's</p>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">Holistic Healing</p>
+            <div className="leading-tight -ml-1">
+              <p className="font-display text-2xl font-semibold leading-none text-foreground m-0">Vidya's</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Holistic Healing</p>
             </div>
           </Link>
 

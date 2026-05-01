@@ -94,8 +94,10 @@ export default function Home() {
           </div>
 
           <div className="fade-in-section relative [animation-delay:0.12s]">
-            <div className="soft-orb -left-8 top-16 h-28 w-28 bg-[rgba(58,12,163,0.12)]" />
-            <div className="soft-orb -right-4 bottom-12 h-36 w-36 bg-[rgba(244,162,97,0.14)] [animation-delay:1.1s]" />
+            {/* was: bg-[rgba(58,12,163,0.12)] */}
+            <div className="soft-orb -left-8 top-16 h-28 w-28 bg-[rgba(64,126,140,0.12)]" />
+            {/* was: bg-[rgba(244,162,97,0.14)] */}
+            <div className="soft-orb -right-4 bottom-12 h-36 w-36 bg-[rgba(165,141,102,0.14)] [animation-delay:1.1s]" />
             <div className="surface-card relative overflow-hidden rounded-[2rem] p-3">
               <div className="grain-overlay absolute inset-0 opacity-20" />
               <img

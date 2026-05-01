@@ -52,27 +52,31 @@
   --card-foreground: oklch(0.32 0.028 43.17);
   --popover: oklch(0.995 0.01 84.2);
   --popover-foreground: oklch(0.32 0.028 43.17);
-  --primary: oklch(0.46 0.21 292.5);
+  /* was: --primary: oklch(0.46 0.21 292.5); */
+  --primary: oklch(0.52 0.075 210);
   --primary-foreground: oklch(0.985 0.005 88);
   --secondary: oklch(0.94 0.022 84.6);
   --secondary-foreground: oklch(0.35 0.03 43);
   --muted: oklch(0.955 0.016 84.6);
   --muted-foreground: oklch(0.55 0.03 48.3);
-  --accent: oklch(0.92 0.042 168.8);
-  --accent-foreground: oklch(0.3 0.028 156.4);
+  /* was: --accent: oklch(0.92 0.042 168.8); --accent-foreground: oklch(0.3 0.028 156.4); */
+  --accent: oklch(0.88 0.04 78);
+  --accent-foreground: oklch(0.32 0.045 70);
   --destructive: oklch(0.58 0.22 27.8);
   --destructive-foreground: oklch(0.99 0.005 88);
   --border: oklch(0.87 0.023 78.7);
   --input: oklch(0.9 0.02 80.4);
-  --ring: oklch(0.46 0.21 292.5 / 35%);
+  /* was: --ring: oklch(0.46 0.21 292.5 / 35%); */
+  --ring: oklch(0.52 0.075 210 / 35%);
   --sidebar: oklch(0.985 0.01 84.2);
   --sidebar-foreground: oklch(0.32 0.028 43.17);
-  --sidebar-primary: oklch(0.46 0.21 292.5);
+  /* was: --sidebar-primary: oklch(0.46 0.21 292.5); --sidebar-accent: oklch(0.92 0.042 168.8); --sidebar-accent-foreground: oklch(0.3 0.028 156.4); --sidebar-ring: oklch(0.46 0.21 292.5 / 35%); */
+  --sidebar-primary: oklch(0.52 0.075 210);
   --sidebar-primary-foreground: oklch(0.985 0.005 88);
-  --sidebar-accent: oklch(0.92 0.042 168.8);
-  --sidebar-accent-foreground: oklch(0.3 0.028 156.4);
+  --sidebar-accent: oklch(0.88 0.04 78);
+  --sidebar-accent-foreground: oklch(0.32 0.045 70);
   --sidebar-border: oklch(0.87 0.023 78.7);
-  --sidebar-ring: oklch(0.46 0.21 292.5 / 35%);
+  --sidebar-ring: oklch(0.52 0.075 210 / 35%);
   --chart-1: #7B2CBF;
   --chart-2: #3A0CA3;
   --chart-3: #0077B6;
@@ -103,8 +107,9 @@
   --chakra-red: #C65A5A;
 
   /* UI */
-  --accent-main: #7C6A9A;    /* primary brand color */
-  --accent-soft: #EDE7F6;
+  /* was: --accent-main: #7C6A9A; --accent-soft: #EDE7F6; */
+  --accent-main: #407E8C;
+  --accent-soft: #C0D5D6;
   --border-soft: #E4DCD5;
 }
 
@@ -127,7 +132,8 @@
 }
 
 .section {
-  background: radial-gradient(circle at top, rgba(124,106,154,0.08), transparent 60%);
+  /* was: background: radial-gradient(circle at top, rgba(124,106,154,0.08), transparent 60%); */
+  background: radial-gradient(circle at top, rgba(64,126,140,0.08), transparent 60%);
 }
 
 html {
@@ -136,7 +142,7 @@ html {
 
 body {
   min-height: 100vh;
-  background: #faf6f0;
+  background: #f0ede8; /* was: #faf6f0 */
   overflow-x: hidden;
   font-family: 'Inter', sans-serif;
 }
@@ -145,7 +151,7 @@ body {
   inset: 0;
   z-index: -1;
   overflow: hidden;
-  background: #faf6f0;
+  background: #f0ede8; /* was: #faf6f0 */
 }
 
 .blob {
@@ -159,13 +165,14 @@ body {
 }
 
 /* One blob per chakra color — top to bottom */
-.b1 { width: 520px; height: 520px; background: #c4a8e0; top: -8%;  left: 20%; animation-duration: 18s; }
-.b2 { width: 420px; height: 420px; background: #8fa8d8; top:  8%;  left: 55%; animation-duration: 22s; animation-delay: -5s; }
-.b3 { width: 460px; height: 460px; background: #8ecfcc; top: 28%;  left: 30%; animation-duration: 20s; animation-delay: -8s; }
-.b4 { width: 400px; height: 400px; background: #f5c87a; top: 44%;  left: 15%; animation-duration: 24s; animation-delay: -3s; }
-.b5 { width: 440px; height: 440px; background: #e8a07a; top: 57%;  left: 45%; animation-duration: 19s; animation-delay: -11s; }
-.b6 { width: 420px; height: 420px; background: #cc7a9a; top: 70%;  left: 10%; animation-duration: 26s; animation-delay: -7s; }
-.b7 { width: 500px; height: 500px; background: #a8c4e0; top: 68%;  left: 52%; animation-duration: 21s; animation-delay: -14s; }
+/* was: #c4a8e0 #8fa8d8 #8ecfcc #f5c87a #e8a07a #cc7a9a #a8c4e0 */
+.b1 { width: 520px; height: 520px; background: #c8ac7a; top: -8%;  left: 20%; animation-duration: 18s; }
+.b2 { width: 420px; height: 420px; background: #6ab0bc; top:  8%;  left: 55%; animation-duration: 22s; animation-delay: -5s; }
+.b3 { width: 460px; height: 460px; background: #b0d4d8; top: 28%;  left: 30%; animation-duration: 20s; animation-delay: -8s; }
+.b4 { width: 400px; height: 400px; background: #d4b882; top: 44%;  left: 15%; animation-duration: 24s; animation-delay: -3s; }
+.b5 { width: 440px; height: 440px; background: #5a9aaa; top: 57%;  left: 45%; animation-duration: 19s; animation-delay: -11s; }
+.b6 { width: 420px; height: 420px; background: #4a8c9a; top: 70%;  left: 10%; animation-duration: 26s; animation-delay: -7s; }
+.b7 { width: 500px; height: 500px; background: #c0d4d8; top: 68%;  left: 52%; animation-duration: 21s; animation-delay: -14s; }
 
 /* Subtle wave SVGs — add as inline SVG or background-image */
 .wave-layer {
@@ -179,9 +186,10 @@ body {
   opacity: 0.18;
   mix-blend-mode: multiply;
 }
-.w1 { bottom: 0; left: -50%; fill: #8fa8d8; animation: wave-drift 30s ease-in-out infinite alternate; }
-.w2 { bottom: -30px; left: -50%; fill: #cc7a9a; animation: wave-drift 25s ease-in-out infinite alternate-reverse; animation-delay: -5s; }
-.w3 { bottom: -50px; left: -30%; fill: #8ecfcc; animation: wave-drift 35s ease-in-out infinite alternate; animation-delay: -10s; }
+/* was: .w1 fill: #8fa8d8; .w2 fill: #cc7a9a; .w3 fill: #8ecfcc */
+.w1 { bottom: 0; left: -50%; fill: #6ab0bc; animation: wave-drift 30s ease-in-out infinite alternate; }
+.w2 { bottom: -30px; left: -50%; fill: #c8ac7a; animation: wave-drift 25s ease-in-out infinite alternate-reverse; animation-delay: -5s; }
+.w3 { bottom: -50px; left: -30%; fill: #b0d4d8; animation: wave-drift 35s ease-in-out infinite alternate; animation-delay: -10s; }
 
 @keyframes blob-drift {
   0%   { transform: translate(0, 0) scale(1); }
@@ -302,7 +310,7 @@ background: linear-gradient(
   }
 
   .button-primary {
-  background: linear-gradient(135deg, #7C6A9A, #5DA9C6);
+  background: linear-gradient(135deg, #407E8C, #A58D66); /* was: linear-gradient(135deg, #7C6A9A, #5DA9C6) */
   color: white;
   border-radius: 999px;
   padding: 12px 24px;
@@ -318,7 +326,7 @@ background: linear-gradient(
   .button {
   border-radius: 999px;
   padding: 12px 24px;
-  background: linear-gradient(135deg, #7C6A9A, #5DA9C6);
+  background: linear-gradient(135deg, #407E8C, #A58D66); /* was: linear-gradient(135deg, #7C6A9A, #5DA9C6) */
   color: white;
 }
 }
