@@ -98,13 +98,11 @@ export default function Contact() {
         description="Book a session with Vidya Joshi — Certified Pranic Healer based in Frisco, Texas."
       />
 
-      <section style={{ background: '#E5E1DD', padding: '100px 80px' }}>
-        <div style={{
-          maxWidth: '1100px', margin: '0 auto',
-          display: 'grid', gridTemplateColumns: '1fr 1fr',
-          gap: '80px', alignItems: 'start',
-        }}>
-        
+      <section
+        className="px-4 sm:px-10 md:px-16 lg:px-20 py-16 md:py-24"
+        style={{ background: '#E5E1DD' }}
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-start max-w-5xl mx-auto">
 
           {/* Left — text */}
           <div className="fade-in-section flex flex-col gap-7" style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
@@ -115,7 +113,7 @@ export default function Contact() {
 
             <h2 style={{
               fontFamily: "'Cormorant Garamond', serif", fontWeight: 400,
-              fontSize: '48px', lineHeight: 1.1, color: '#083A4F', margin: 0,
+              fontSize: 'clamp(28px, 5vw, 48px)', lineHeight: 1.1, color: '#083A4F', margin: 0,
             }}>Book a Session</h2>
 
             <div style={{ width: '48px', height: '2px', background: '#A58D66', borderRadius: '1px' }} />
@@ -157,11 +155,12 @@ export default function Contact() {
               ))}
             </div>
 
+            {/* Mandala decorative image — hidden on mobile to prevent horizontal scroll */}
             <img
               src={mandala4}
               alt=""
               aria-hidden="true"
-              className="absolute pointer-events-none overflow-visible" 
+              className="hidden md:block absolute pointer-events-none overflow-visible"
               style={{
                 top: '50%',
                 left: '50%',
@@ -178,7 +177,8 @@ export default function Contact() {
           {/* Right — form */}
           <div className="fade-in-section flex flex-col gap-7" style={{
             background: '#083A4F', borderRadius: '16px',
-            padding: '40px 36px', boxShadow: '0 16px 64px rgba(8,58,79,0.2)',
+            padding: 'clamp(20px, 4vw, 40px) clamp(16px, 4vw, 36px)',
+            boxShadow: '0 16px 64px rgba(8,58,79,0.2)',
           }}>
             {submitted ? (
               <div style={{

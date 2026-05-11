@@ -320,9 +320,4 @@ body {
   50%       { transform: translateY(-8px); }
 }
 
-html,
-body {
-  overflow-x: hidden;
-  
-  
-}
+

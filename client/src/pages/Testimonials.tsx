@@ -83,11 +83,10 @@ export default function Testimonials() {
         .t-track::-webkit-scrollbar { display: none; }
       `}</style>
 
-      <section style={{
-        background: 'linear-gradient(180deg, #041F2B 0%, #083A4F 100%)',
-        padding: '100px 0',
-        position: 'relative', overflow: 'hidden',
-      }}>
+      <section
+        className="py-16 md:py-24 relative overflow-hidden"
+        style={{ background: 'linear-gradient(180deg, #041F2B 0%, #083A4F 100%)' }}
+      >
         {/* Mandala accent */}
         <img src={mandala1} alt="" aria-hidden="true"
           style={{
@@ -98,19 +97,25 @@ export default function Testimonials() {
           }} />
 
         {/* Header */}
-        <div className="fade-in-section flex flex-col gap-7" style={{ textAlign: 'center', marginBottom: '60px', padding: '0 80px' }}>
+        <div
+          className="fade-in-section flex flex-col gap-7 px-4 sm:px-16 md:px-20 mb-10 md:mb-16"
+          style={{ textAlign: 'center' }}
+        >
           <span style={{
             fontFamily: "'Cinzel', serif", fontSize: '11px', letterSpacing: '0.26em',
             textTransform: 'uppercase', color: '#A58D66', display: 'block', marginBottom: '16px',
           }}>Client Experiences</span>
           <h2 style={{
             fontFamily: "'Cormorant Garamond', serif", fontWeight: 400,
-            fontSize: '44px', color: 'white', margin: 0,
+            fontSize: 'clamp(28px, 5vw, 44px)', color: 'white', margin: 0,
           }}>Transformations</h2>
         </div>
 
         {/* Carousel */}
-        <div  className="fade-in-section flex flex-col gap-7" style={{ position: 'relative', maxWidth: '1280px', margin: '0 auto 40px' }}>
+        <div
+          className="fade-in-section flex flex-col gap-7 relative"
+          style={{ maxWidth: '1280px', margin: '0 auto 40px' }}
+        >
           {/* Prev arrow */}
           <button
             onClick={prev}
@@ -180,18 +185,20 @@ export default function Testimonials() {
               display: 'flex', gap: '28px',
               overflowX: 'auto', scrollSnapType: 'x mandatory',
               scrollbarWidth: 'none', msOverflowStyle: 'none',
-              padding: '12px 80px',
+              padding: 'clamp(12px, 4vw, 12px) clamp(32px, 8vw, 80px)',
             }}>
             {TESTIMONIALS.map((t, i) => (
               <article
                 key={i}
                 style={{
-                  flex: '0 0 640px', maxWidth: '640px',
+                  flex: '0 0 min(640px, calc(100vw - 96px))',
+                  maxWidth: 'min(640px, calc(100vw - 96px))',
                   scrollSnapAlign: 'center',
                   background: active === i ? 'rgba(255,255,255,0.06)' : 'rgba(255,255,255,0.03)',
                   border: active === i ? '1px solid rgba(165,141,102,0.45)' : '1px solid rgba(165,141,102,0.15)',
                   borderTop: active === i ? '2px solid #A58D66' : '2px solid rgba(165,141,102,0.25)',
-                  borderRadius: '8px', padding: '40px 36px',
+                  borderRadius: '8px',
+                  padding: 'clamp(24px, 4vw, 40px) clamp(20px, 4vw, 36px)',
                   transition: 'background 280ms ease-out, border 280ms ease-out',
                   display: 'flex', flexDirection: 'column', gap: '20px',
                   opacity: active === i ? 1 : 0.7,
@@ -271,7 +278,7 @@ export default function Testimonials() {
         </div>
 
         {/* All reviews link */}
-        <div style={{ textAlign: 'center', padding: '0 80px' }}>
+        <div className="px-4 sm:px-16 text-center">
           <a
             href={ALL_REVIEWS_LINK}
             target="_blank"

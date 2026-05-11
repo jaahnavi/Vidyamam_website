@@ -22,8 +22,8 @@ const chakras: Chakra[] = [
   { id: 'throat',    name: 'Throat Chakra',       sanskrit: 'Vishuddha • ',    location: 'Throat',           color: '#1E8FC7', y: 135, theme: 'Clear Expression • ',    description: 'As one would expect, this chakra is connected to our ability to communicate verbally. Voice and throat problems, as well as any issues with the surrounding areas, such as the teeth, gums, and mouth, can indicate a blockage.', benefits: 'When in alignment, you will speak and listen with compassion and feel confident when you speak because you know you are being true to yourself with your words.' },
   { id: 'heart',     name: 'Heart Chakra',        sanskrit: 'Anahata • ',      location: 'Center of Chest',  color: '#3E8E41', y: 220, theme: 'Compassion • ',          description: "Blocks in our heart chakra can manifest in our physical health through heart problems, asthma, and weight issues. But blocks are often seen even more clearly through people's actions.", benefits: 'When out of alignment, it can make us feel lonely, insecure, and isolated.' },
   { id: 'solar',     name: 'Solar Plexus Chakra', sanskrit: 'Manipura • ',     location: 'Upper Abdomen',    color: '#C9A227', y: 285, theme: 'Inner Strength • ',      description: "Blockages in the third chakra are often experienced through digestive issues like ulcers, heartburn, eating disorders, and indigestion. It's the chakra of our personal power.", benefits: 'When aligned, it gives a boost to personal power, confidence, and self-esteem.' },
-  { id: 'sacral',    name: 'Sacral Chakra',        sanskrit: 'Svadhisthana • ', location: 'Lower Abdomen',    color: '#E07A1F', y: 340, theme: 'Vital Sensation • ',     description: 'Issues with this chakra can be observed through problems with the associated organs, such as urinary tract infections, lower back pain, and impotence.', benefits: 'When aligned it can boost creativity, passion, and emotional flow.' },
-  { id: 'root',      name: 'Root Chakra',          sanskrit: 'Muladhara • ',    location: 'Base of Spine',    color: '#C0392B', y: 390, theme: 'Grounding • ',           description: 'A blocked root chakra can manifest as physical issues, such as arthritis, constipation, or bladder or colon problems, or emotionally through feelings of insecurity about finances or our basic needs and well-being.', benefits: "When it's in alignment and open, we will feel grounded and secure, both physically and emotionally." },
+  { id: 'sacral',    name: 'Sacral Chakra',       sanskrit: 'Svadhisthana • ', location: 'Lower Abdomen',    color: '#E07A1F', y: 340, theme: 'Vital Sensation • ',     description: 'Issues with this chakra can be observed through problems with the associated organs, such as urinary tract infections, lower back pain, and impotence.', benefits: 'When aligned it can boost creativity, passion, and emotional flow.' },
+  { id: 'root',      name: 'Root Chakra',         sanskrit: 'Muladhara • ',    location: 'Base of Spine',    color: '#C0392B', y: 390, theme: 'Grounding • ',           description: 'A blocked root chakra can manifest as physical issues, such as arthritis, constipation, or bladder or colon problems, or emotionally through feelings of insecurity about finances or our basic needs and well-being.', benefits: "When it's in alignment and open, we will feel grounded and secure, both physically and emotionally." },
 ];
 
 type TabId = 'prana' | 'chakras' | 'techniques';
@@ -49,7 +49,7 @@ export default function HowItWorks() {
   const activeChakra = chakras.find((c) => c.id === hoveredChakra) ?? null;
 
   return (
-    <div className="w-full relative overflow-hidden flex items-center justify-center py-8 px-12">
+    <div className="w-full relative overflow-hidden flex items-center justify-center py-8 px-4 md:px-12">
       {/* Background */}
       <div
         className="absolute inset-0"
@@ -68,7 +68,7 @@ export default function HowItWorks() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center mb-12"
+          className="text-center mb-8 md:mb-12"
         >
           <p
             className="text-[9px] tracking-[0.26em] uppercase mb-3"
@@ -77,13 +77,13 @@ export default function HowItWorks() {
             The Foundation
           </p>
           <h2
-            className="text-5xl md:text-6xl mb-4 tracking-wide"
+            className="text-3xl sm:text-5xl md:text-6xl mb-4 tracking-wide"
             style={{ fontFamily: 'var(--font-serif)', color: TEXT_PRIMARY }}
           >
             How It Works
           </h2>
           <p
-            className="text-lg max-w-2xl mx-auto font-light"
+            className="text-base md:text-lg max-w-2xl mx-auto font-light px-2"
             style={{ color: TEXT_BODY }}
           >
             A grounded introduction to the principles behind every session — the energy that animates us,
@@ -93,29 +93,29 @@ export default function HowItWorks() {
 
         {/* Soft container for tabs + content */}
         <div
+          className="p-4 md:p-8"
           style={{
             background: 'rgba(255,253,247,0.55)',
             border: '1px solid rgba(165,141,102,0.18)',
             borderRadius: '20px',
-            padding: '32px',
             backdropFilter: 'blur(8px)',
           }}
         >
-          <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-10 md:gap-14 items-start">
-            {/* LEFT — vertical tab menu */}
-            <nav className="flex md:flex-col gap-2 md:gap-3 overflow-x-auto md:overflow-visible">
+          <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] lg:grid-cols-[260px_1fr] gap-6 md:gap-10 lg:gap-14 items-start">
+            {/* LEFT — tab menu (horizontal scroll on mobile, vertical on desktop) */}
+            <nav className="flex md:flex-col gap-2 md:gap-3 overflow-x-auto md:overflow-visible pb-1 md:pb-0">
               {tabs.map((t) => {
                 const isActive = activeTab === t.id;
                 return (
                   <button
                     key={t.id}
                     onClick={() => setActiveTab(t.id)}
-                    className="group relative text-start flex-shrink-0 transition-all duration-300"
+                    className="group relative text-left flex-shrink-0 transition-all duration-300"
                     style={{
                       background: isActive ? SURFACE_ACTIVE : SURFACE,
                       border: isActive ? `1px solid ${GOLD}99` : `1px solid ${GOLD}33`,
                       borderRadius: '8px',
-                      padding: '18px 20px',
+                      padding: '14px 16px',
                       cursor: 'pointer',
                       boxShadow: isActive
                         ? '0 4px 20px rgba(42,37,32,0.06)'
@@ -128,13 +128,13 @@ export default function HowItWorks() {
                       style={{ background: GOLD, opacity: isActive ? 1 : 0 }}
                     />
                     <span
-                      className="block text-[10.5px] tracking-[0.24em] uppercase mb-1"
+                      className="block text-[10px] tracking-[0.22em] uppercase mb-1"
                       style={{ fontFamily: "'Cinzel', serif", color: isActive ? GOLD : `${GOLD}99` }}
                     >
                       {t.numeral}
                     </span>
                     <span
-                      className="block text-base md:text-lg leading-tight"
+                      className="block text-sm md:text-base leading-tight"
                       style={{
                         fontFamily: "'Cormorant Garamond', serif",
                         color: isActive ? TEXT_PRIMARY : TEXT_MUTED,
@@ -149,7 +149,7 @@ export default function HowItWorks() {
             </nav>
 
             {/* RIGHT — content area */}
-            <div className="min-h-[640px] relative">
+            <div className="relative">
               <AnimatePresence mode="wait">
                 {activeTab === 'prana' && (
                   <motion.div
@@ -226,23 +226,23 @@ function PranaPanel() {
   const active = pranaSections.find((s) => s.id === activeSection) ?? pranaSections[0];
 
   return (
-    <div className="w-full flex flex-col items-start gap-12">
+    <div className="w-full flex flex-col items-start gap-10 md:gap-12">
       {/* Understanding Prana */}
-      <div className="max-w-2xl">
+      <div className="w-full max-w-2xl">
         <h3
-          className="text-3xl mb-4 tracking-wide"
+          className="text-2xl md:text-3xl mb-3 md:mb-4 tracking-wide"
           style={{ fontFamily: 'var(--font-serif)', color: '#2A2520' }}
         >
           Understanding Prana
         </h3>
         <p
-          className="text-base md:text-lg font-light leading-relaxed mb-3"
+          className="text-sm md:text-base lg:text-lg font-light leading-relaxed mb-3"
           style={{ color: '#4A4138' }}
         >
           Prana is a Sanskrit word that literally translates to "life-force." It is the invisible bio-energy or vital energy that keeps the body alive and maintains a state of good health. In your body, Prana acts as the fuel that powers every heartbeat, every thought, and every cellular process.
         </p>
         <p
-          className="text-base md:text-lg font-light leading-relaxed"
+          className="text-sm md:text-base lg:text-lg font-light leading-relaxed"
           style={{ color: '#4A4138' }}
         >
           Without Prana, there is no life. When your Prana is high and flowing freely, you feel vibrant, focused, and resilient. When it is depleted or blocked, you may experience fatigue, stress, or physical illness.
@@ -250,83 +250,71 @@ function PranaPanel() {
       </div>
 
       {/* Where do we get Prana? */}
-      <div className="relative flex flex-col items-start">
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-1/3 left-0 w-[380px] h-[380px] rounded-full bg-[#A58D66]/10 blur-3xl" />
+      <div className="w-full flex flex-col items-start gap-8">
+        <div className="w-full max-w-2xl">
+          <h3
+            className="text-2xl md:text-3xl mb-3 md:mb-4 tracking-wide"
+            style={{ fontFamily: 'var(--font-serif)', color: '#2A2520' }}
+          >
+            Where do we get Prana?
+          </h3>
+          <p
+            className="text-sm md:text-base lg:text-lg font-light leading-relaxed"
+            style={{ color: '#4A4138' }}
+          >
+            We are constantly immersed in a sea of life-force. By understanding these sources, we can learn to recharge our internal battery more effectively. As a practitioner, I help you tap into the three primary natural sources of Prana:
+          </p>
         </div>
-        <div className="flex flex-col items-start">
-          <div className="max-w-2xl mb-12">
-            <h3
-              className="text-3xl mb-4 tracking-wide"
-              style={{ fontFamily: 'var(--font-serif)', color: '#2A2520' }}
+
+        {/* Nodes row */}
+        <div className="flex items-center gap-6 sm:gap-10 flex-wrap">
+          {[
+            { id: 'solar', color: '#D4AF37', title: 'Solar',  subtitle: 'Vitality'  },
+            { id: 'air',   color: '#5DA9B3', title: 'Air',    subtitle: 'Breath'    },
+            { id: 'earth', color: '#C08B5C', title: 'Earth',  subtitle: 'Grounding' },
+          ].map((node) => (
+            <motion.div
+              key={node.id}
+              onMouseEnter={() => setActiveSection(node.id)}
+              onClick={() => setActiveSection(node.id)}
+              className="cursor-pointer"
+              animate={{ scale: activeSection === node.id ? 1.08 : 1 }}
+              transition={{ duration: 0.3 }}
             >
-              Where do we get Prana?
-            </h3>
-            <p
-              className="text-base md:text-lg font-light leading-relaxed"
-              style={{ color: '#4A4138' }}
+              <PranaNode
+                active={activeSection === node.id}
+                color={node.color}
+                title={node.title}
+                subtitle={node.subtitle}
+              />
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Dynamic description */}
+        <div className="w-full max-w-2xl min-h-[80px]">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={active.id}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
             >
-              We are constantly immersed in a sea of life-force. By understanding these sources, we can learn to recharge our internal battery more effectively. As a practitioner, I help you tap into the three primary natural sources of Prana:
-            </p>
-          </div>
-
-          <div className="relative w-full h-[450px] flex items-center">
-            {/* Prana nodes */}
-            <div className="absolute top-[0px] left-0 flex items-center gap-30 z-20 pl-15 pr-15 ">
-              <motion.div
-                onMouseEnter={() => setActiveSection('solar')}
-                className="cursor-pointer"
-                animate={{ scale: activeSection === 'solar' ? 1.08 : 1 }}
-                transition={{ duration: 0.3 }}
+              <h4
+                className="text-lg md:text-xl mb-2"
+                style={{ color: active.glow, fontFamily: 'var(--font-serif)' }}
               >
-                <PranaNode active={activeSection === 'solar'} color="#D4AF37" title="Solar" subtitle="Vitality" />
-              </motion.div>
-
-              <motion.div
-                onMouseEnter={() => setActiveSection('air')}
-                className="cursor-pointer"
-                animate={{ scale: activeSection === 'air' ? 1.08 : 1 }}
-                transition={{ duration: 0.3 }}
+                {active.title}
+              </h4>
+              <p
+                className="text-sm md:text-base lg:text-lg leading-relaxed font-light"
+                style={{ color: '#4A4138' }}
               >
-                <PranaNode active={activeSection === 'air'} color="#5DA9B3" title="Air" subtitle="Breath" />
-              </motion.div>
-
-              <motion.div
-                onMouseEnter={() => setActiveSection('earth')}
-                className="cursor-pointer"
-                animate={{ scale: activeSection === 'earth' ? 1.08 : 1 }}
-                transition={{ duration: 0.3 }}
-              >
-                <PranaNode active={activeSection === 'earth'} color="#C08B5C" title="Earth" subtitle="Grounding" />
-              </motion.div>
-            </div>
-
-            {/* Dynamic info panel */}
-            <div className="mt-0 min-h-[220px] relative max-w-2xl w-full">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={active.id}
-                  initial={{ opacity: 0, y: 18 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -18 }}
-                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                >
-                  <h3
-                    className="text-xl mb-4"
-                    style={{ color: active.glow, fontFamily: 'var(--font-serif)' }}
-                  >
-                    {active.title}
-                  </h3>
-                  <p
-                    className="text-base md:text-lg leading-relaxed font-light"
-                    style={{ color: '#4A4138' }}
-                  >
-                    {active.description}
-                  </p>
-                </motion.div>
-              </AnimatePresence>
-            </div>
-          </div>
+                {active.description}
+              </p>
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </div>
@@ -347,33 +335,33 @@ function PranaNode({
 }) {
   return (
     <motion.div
-      className="relative flex flex-col items-start"
+      className="relative flex flex-col items-center"
       animate={{ y: active ? -4 : 0 }}
       transition={{ duration: 0.3 }}
     >
       <motion.div
         className="absolute rounded-full"
-        animate={{ width: active ? 120 : 90, height: active ? 120 : 90, opacity: active ? 0.35 : 0.16 }}
+        animate={{ width: active ? 100 : 76, height: active ? 100 : 76, opacity: active ? 0.35 : 0.16 }}
         transition={{ duration: 0.35 }}
-        style={{ background: color, filter: 'blur(30px)' }}
+        style={{ background: color, filter: 'blur(24px)' }}
       />
       <motion.div
-        className="relative w-20 h-20 rounded-full border flex items-center justify-center backdrop-blur-md"
+        className="relative w-16 h-16 md:w-20 md:h-20 rounded-full border flex items-center justify-center backdrop-blur-md"
         animate={{ borderColor: active ? `${color}` : `${color}77` }}
         transition={{ duration: 0.3 }}
         style={{
           background: `${color}10`,
-          boxShadow: active ? `0 0 30px ${color}55` : `0 0 10px ${color}22`,
+          boxShadow: active ? `0 0 28px ${color}55` : `0 0 10px ${color}22`,
         }}
       >
-        <div className="text-start">
+        <div className="text-center">
           <p
-            className="text-sm uppercase tracking-[0.18em]"
+            className="text-[10px] md:text-sm uppercase tracking-[0.18em]"
             style={{ color, fontFamily: "'Cinzel', serif" }}
           >
             {title}
           </p>
-          <p className="text-[11px] mt-1" style={{ color: '#7A6E5F' }}>
+          <p className="text-[10px] mt-0.5" style={{ color: '#7A6E5F' }}>
             {subtitle}
           </p>
         </div>
@@ -394,50 +382,50 @@ function TechniquesPanel() {
   ];
 
   return (
-    <article className="max-w-2xl w-full">
+    <article className="w-full max-w-2xl">
       <p className="text-[11px] tracking-[0.24em] uppercase mb-3" style={{ fontFamily: "'Cinzel', serif", color: GOLD }}>
         Energy Medicine
       </p>
-      <h3 className="text-3xl md:text-4xl mb-6 leading-tight tracking-wide" style={{ fontFamily: 'var(--font-serif)', color: TEXT_PRIMARY }}>
+      <h3 className="text-2xl md:text-3xl lg:text-4xl mb-5 md:mb-6 leading-tight tracking-wide" style={{ fontFamily: 'var(--font-serif)', color: TEXT_PRIMARY }}>
         Pranic Healing Techniques
       </h3>
 
-      <p className="text-base md:text-lg leading-relaxed mb-4 font-light" style={{ color: TEXT_BODY }}>
+      <p className="text-sm md:text-base lg:text-lg leading-relaxed mb-4 font-light" style={{ color: TEXT_BODY }}>
         Pranic Healing is a highly developed and tested system of energy treatment that uses <em>prana</em> to heal the whole physical body. It is a synthesis of ancient esoteric healing methods that have been rediscovered, researched and tested over decades.
       </p>
-      <p className="text-base leading-relaxed mb-8 font-light" style={{ color: TEXT_BODY }}>
+      <p className="text-sm md:text-base leading-relaxed mb-8 font-light" style={{ color: TEXT_BODY }}>
         Unlike other healing methods, Pranic Healing does not require drugs, gadgets, nor is there any physical contact with the subject. Physical contact is not required because the practitioner is working on the bioplasmic or energy body, and not directly on the physical body.
       </p>
 
-      <div className="h-px mb-8" style={{ background: 'linear-gradient(to right, rgba(165,141,102,0.5), transparent)' }} />
+      <div className="h-px mb-6 md:mb-8" style={{ background: 'linear-gradient(to right, rgba(165,141,102,0.5), transparent)' }} />
 
       <p className="text-[11px] tracking-[0.2em] uppercase mb-4" style={{ fontFamily: "'Cinzel', serif", color: GOLD }}>
         How does it work?
       </p>
-      <div className="space-y-3 mb-8">
+      <div className="space-y-3 mb-6 md:mb-8">
         {laws.map((law) => (
-          <div key={law.numeral} className="flex gap-4 items-start p-4 rounded-lg" style={{ background: 'rgba(165,141,102,0.06)', border: '1px solid rgba(165,141,102,0.15)' }}>
+          <div key={law.numeral} className="flex gap-3 md:gap-4 items-start p-3 md:p-4 rounded-lg" style={{ background: 'rgba(165,141,102,0.06)', border: '1px solid rgba(165,141,102,0.15)' }}>
             <span className="shrink-0 text-xs tracking-[0.22em] pt-0.5" style={{ fontFamily: "'Cinzel', serif", color: GOLD }}>{law.numeral}</span>
             <div>
-              <p className="text-base mb-1" style={{ fontFamily: 'var(--font-serif)', color: TEXT_PRIMARY, fontWeight: 500 }}>{law.name}</p>
-              <p className="text-sm leading-relaxed font-light" style={{ color: TEXT_BODY }}>{law.desc}</p>
+              <p className="text-sm md:text-base mb-1" style={{ fontFamily: 'var(--font-serif)', color: TEXT_PRIMARY, fontWeight: 500 }}>{law.name}</p>
+              <p className="text-xs md:text-sm leading-relaxed font-light" style={{ color: TEXT_BODY }}>{law.desc}</p>
             </div>
           </div>
         ))}
       </div>
 
-      <div className="h-px mb-8" style={{ background: 'linear-gradient(to right, rgba(165,141,102,0.5), transparent)' }} />
+      <div className="h-px mb-6 md:mb-8" style={{ background: 'linear-gradient(to right, rgba(165,141,102,0.5), transparent)' }} />
 
-      <p className="text-[11px] tracking-[0.2em] uppercase mb-5" style={{ fontFamily: "'Cinzel', serif", color: GOLD }}>
+      <p className="text-[11px] tracking-[0.2em] uppercase mb-4 md:mb-5" style={{ fontFamily: "'Cinzel', serif", color: GOLD }}>
         The session, in two steps
       </p>
-      <div className="space-y-6">
+      <div className="space-y-5 md:space-y-6">
         {steps.map((step) => (
-          <div key={step.num} className="flex gap-5 items-start">
-            <span className="shrink-0 text-4xl leading-none" style={{ fontFamily: 'var(--font-serif)', color: 'rgba(165,141,102,0.35)', fontWeight: 300 }}>{step.num}</span>
+          <div key={step.num} className="flex gap-4 md:gap-5 items-start">
+            <span className="shrink-0 text-3xl md:text-4xl leading-none" style={{ fontFamily: 'var(--font-serif)', color: 'rgba(165,141,102,0.35)', fontWeight: 300 }}>{step.num}</span>
             <div className="pt-1">
-              <p className="text-base md:text-lg mb-2" style={{ fontFamily: 'var(--font-serif)', color: TEXT_PRIMARY, fontWeight: 500 }}>{step.name}</p>
-              <p className="text-sm md:text-base leading-relaxed font-light" style={{ color: TEXT_BODY }}>{step.desc}</p>
+              <p className="text-base md:text-lg mb-1 md:mb-2" style={{ fontFamily: 'var(--font-serif)', color: TEXT_PRIMARY, fontWeight: 500 }}>{step.name}</p>
+              <p className="text-xs md:text-sm lg:text-base leading-relaxed font-light" style={{ color: TEXT_BODY }}>{step.desc}</p>
             </div>
           </div>
         ))}
@@ -457,9 +445,12 @@ function ChakrasPanel({
   active: Chakra | null;
 }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-[420px_1fr] gap-10 md:gap-14 items-center">
-      {/* Silhouette + chakra dots */}
-      <div className="mx-auto md:mx-0" style={{ width: '420px', height: '500px' }}>
+    <div className="flex flex-col md:grid md:grid-cols-[minmax(0,420px)_1fr] gap-6 md:gap-10 lg:gap-14 items-start">
+      {/* Silhouette + chakra dots — responsive width */}
+      <div
+        className="w-full max-w-[320px] sm:max-w-[380px] md:max-w-[420px] mx-auto md:mx-0"
+        style={{ aspectRatio: '420 / 500' }}
+      >
         <svg viewBox={VIEWBOX} preserveAspectRatio="xMidYMid meet" className="w-full h-full">
           <defs>
             <filter id="chakra-glow" x="-100%" y="-100%" width="300%" height="300%">
@@ -506,6 +497,7 @@ function ChakrasPanel({
                 style={{ cursor: 'pointer' }}
                 onMouseEnter={() => setHoveredChakra(c.id)}
                 onMouseLeave={() => setHoveredChakra(null)}
+                onClick={() => setHoveredChakra(isActive ? null : c.id)}
               >
                 <circle cx={SPINE_X} cy={c.y} r={36} fill="transparent" />
                 <motion.circle
@@ -542,42 +534,39 @@ function ChakrasPanel({
       </div>
 
       {/* Info panel */}
-      <div className="min-h-[420px] flex items-start pt-0">
+      <div className="w-full min-h-[200px] md:min-h-[420px] flex items-start">
         <AnimatePresence mode="wait">
           {active ? (
             <motion.div
               key={active.id}
-              initial={{ opacity: 0, x: 24 }}
+              initial={{ opacity: 0, x: 16 }}
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -12 }}
+              exit={{ opacity: 0, x: -10 }}
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              className="w-full"
             >
               <div className="relative">
-                <div className="flex items-start gap-4 mb-5">
-                  <div>
-                    <div
-                      className="inline-flex px-2 py-1 mb-4 rounded-full text-sm font-medium whitespace-nowrap"
-                      style={{
-                        background: `${active.color}15`,
-                        color: active.color,
-                        border: `1px solid ${active.color}55`,
-                      }}
-                    >
-                      {active.sanskrit} {active.theme} {active.location}
-                    </div>
-                    <h3
-                      className="text-xl md:text-2xl font-semibold leading-tight"
-                      style={{ color: active.color, fontFamily: 'var(--font-serif)' }}
-                    >
-                      {active.name}
-                    </h3>
-                  </div>
+                <div
+                  className="inline-flex flex-wrap gap-1 px-2 py-1 mb-4 rounded-full text-xs font-medium"
+                  style={{
+                    background: `${active.color}15`,
+                    color: active.color,
+                    border: `1px solid ${active.color}55`,
+                  }}
+                >
+                  {active.sanskrit} {active.theme} {active.location}
                 </div>
+                <h3
+                  className="text-xl md:text-2xl font-semibold leading-tight mb-5"
+                  style={{ color: active.color, fontFamily: 'var(--font-serif)' }}
+                >
+                  {active.name}
+                </h3>
                 <div
                   className="h-px w-full mb-5"
                   style={{ background: `linear-gradient(to right, ${active.color}55, transparent)` }}
                 />
-                <p className="text-base leading-relaxed mb-5 font-light" style={{ color: TEXT_BODY }}>
+                <p className="text-sm md:text-base leading-relaxed mb-5 font-light" style={{ color: TEXT_BODY }}>
                   {active.description}
                 </p>
                 <div>
@@ -600,7 +589,7 @@ function ChakrasPanel({
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="w-full text-start px-2"
+              className="w-full"
             >
               <p
                 className="text-[11px] font-semibold uppercase tracking-[0.24em] mb-3"
@@ -609,17 +598,17 @@ function ChakrasPanel({
                 Seven Centers · One System
               </p>
               <h3
-                className="text-3xl md:text-4xl mb-4 leading-tight"
+                className="text-2xl md:text-3xl lg:text-4xl mb-4 leading-tight"
                 style={{ fontFamily: 'var(--font-serif)', color: TEXT_PRIMARY }}
               >
-                Hover a chakra to begin
+                Select a chakra to begin
               </h3>
               <p
-                className="text-base leading-relaxed font-light max-w-md"
+                className="text-sm md:text-base leading-relaxed font-light max-w-md"
                 style={{ color: TEXT_MUTED }}
               >
                 Each energy center governs a distinct quality of body, mind, and spirit.
-                Move along the spine to explore how each one shapes the work we do together.
+                Tap or hover along the spine to explore how each one shapes the work we do together.
               </p>
             </motion.div>
           )}

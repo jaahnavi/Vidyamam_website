@@ -55,7 +55,10 @@ export default function Services() {
         description="Explore Pranic Healing, chakra balancing, energy servicing, and spiritual coaching with Vidya Joshi."
       />
 
-      <section style={{ background: '#083A4F', padding: '100px 80px', position: 'relative', overflow: 'hidden' }}>
+      <section
+        className="px-4 sm:px-12 md:px-20 py-16 md:py-24 relative overflow-hidden"
+        style={{ background: '#083A4F' }}
+      >
         {/* 5.svg — top-left, ~15% visible */}
         <img src="/5.svg" alt="" aria-hidden="true"
           style={{
@@ -79,14 +82,14 @@ export default function Services() {
         }} />
 
         {/* Header */}
-        <div className="fade-in-section flex flex-col gap-7" style={{ textAlign: 'center', marginBottom: '64px' }}>
+        <div className="fade-in-section flex flex-col gap-7 mb-10 md:mb-16" style={{ textAlign: 'center' }}>
           <span style={{
             fontFamily: "'Cinzel', serif", fontSize: '11px', letterSpacing: '0.26em',
             textTransform: 'uppercase', color: '#A58D66', display: 'block', marginBottom: '16px',
           }}>What We Offer</span>
           <h2 style={{
             fontFamily: "'Cormorant Garamond', serif", fontWeight: 400,
-            fontSize: '48px', lineHeight: 1.15, color: 'white', margin: '0 0 20px',
+            fontSize: 'clamp(28px, 5vw, 48px)', lineHeight: 1.15, color: 'white', margin: '0 0 20px',
           }}>Healing Services</h2>
           <p style={{
             fontFamily: "'Jost', sans-serif", fontWeight: 300,
@@ -98,10 +101,7 @@ export default function Services() {
         </div>
 
         {/* Grid */}
-        <div className="fade-in-section flex flex-col gap-7" style={{
-          display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)',
-          gap: '20px', maxWidth: '1100px', margin: '0 auto 56px',
-        }}>
+        <div className="fade-in-section grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 max-w-5xl mx-auto mb-10 md:mb-14">
           {SERVICES.map((svc, i) => (
             <div
               key={i}
@@ -137,7 +137,7 @@ export default function Services() {
         </div>
 
         {/* CTA */}
-        <div  className="fade-in-section flex flex-col gap-7" style={{ textAlign: 'center' }}>
+        <div className="fade-in-section flex flex-col gap-7" style={{ textAlign: 'center' }}>
           <Link href="/contact">
             <button
               style={{

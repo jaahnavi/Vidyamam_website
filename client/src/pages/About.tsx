@@ -61,11 +61,10 @@ export default function About() {
         {/* ════════════════════════════════════════════════════════════
              1 · INTRO  — Photo left · text right
            ════════════════════════════════════════════════════════════ */}
-        <section style={{
-          background: '#F4F1EE',
-          padding: '120px 80px 100px',
-          position: 'relative', overflow: 'hidden',
-        }}>
+        <section
+          className="px-4 sm:px-10 md:px-16 lg:px-20 pt-16 md:pt-28 pb-16 md:pb-24 relative overflow-hidden"
+          style={{ background: '#F4F1EE' }}
+        >
           <img src={lotus} alt="" aria-hidden="true"
             style={{
               position: 'absolute', top: '20%', left: '90%',
@@ -78,7 +77,7 @@ export default function About() {
           {/* Top eyebrow centered */}
           <div className="fade-in-section flex flex-col gap-7" style={{ textAlign: 'center', marginBottom: '72px' }}>
             <span style={eyebrow('#A58D66')}>The Visionary Behind the Healing</span>
-            <h1 style={{ ...display('64px', '#083A4F'), marginTop: '20px', fontWeight: 300 }}>
+            <h1 style={{ ...display('clamp(32px, 6vw, 64px)', '#083A4F'), marginTop: '20px', fontWeight: 300 }}>
               About <em style={{ fontStyle: 'italic', color: '#A58D66' }}>Vidya Joshi</em>
             </h1>
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '12px', marginTop: '20px', opacity: 0.6 }}>
@@ -88,11 +87,7 @@ export default function About() {
             </div>
           </div>
 
-          <div style={{
-            maxWidth: '1180px', margin: '0 auto',
-            display: 'grid', gridTemplateColumns: '0.95fr 1fr',
-            gap: '80px', alignItems: 'center',
-          }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center max-w-5xl mx-auto">
             {/* Photo left */}
               <div className="fade-in-section flex flex-col gap-7" style={{ position: 'relative' }}>
                 <div style={{
@@ -109,13 +104,13 @@ export default function About() {
                   <img src={about1} alt="Vidya Joshi"
                     style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 </div>
-                {/* Gold seal badge */}
-                <div className="fade-in-section flex flex-col gap-7" style={{
+                {/* Gold seal badge — hidden on very small screens to prevent clipping */}
+                <div className="hidden sm:flex fade-in-section flex-col gap-7" style={{
                   position: 'absolute', bottom: '-28px', right: '-20px',
                   width: '120px', height: '120px', borderRadius: '50%',
                   background: 'linear-gradient(135deg, #083A4F 0%, #0D4D68 100%)',
                   border: '1px solid rgba(165,141,102,0.5)',
-                  display: 'flex', flexDirection: 'column',
+                  flexDirection: 'column',
                   alignItems: 'center', justifyContent: 'center',
                   boxShadow: '0 12px 32px rgba(8,58,79,0.35)',
                   gap: '2px',
@@ -156,9 +151,9 @@ export default function About() {
                 Her mission is simple yet profound — <em style={{ color: '#A58D66' }}>to heal the need.</em>
               </blockquote>
 
-              {/* Stat strip */}
+              {/* Stat strip — 2 columns always (works for both mobile and desktop in this narrow column) */}
               <div style={{
-                display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)',
+                display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)',
                 gap: '0', marginTop: '20px',
                 borderTop: '1px solid rgba(165,141,102,0.3)',
                 borderBottom: '1px solid rgba(165,141,102,0.3)',
@@ -166,7 +161,7 @@ export default function About() {
                 {STAT_DATA.map((s, i) => (
                   <div key={i} style={{
                     padding: '18px 12px',
-                    borderRight: i < STAT_DATA.length - 1 ? '1px solid rgba(165,141,102,0.2)' : 'none',
+                    borderRight: i % 2 === 0 ? '1px solid rgba(165,141,102,0.2)' : 'none',
                   }}>
                     <div style={{
                       fontFamily: "'Cormorant Garamond', serif", fontWeight: 400,
@@ -187,11 +182,10 @@ export default function About() {
         {/* ════════════════════════════════════════════════════════════
              2 · NOTE FROM SOUL — Lotus mandala behind, dark navy
            ════════════════════════════════════════════════════════════ */}
-        <section style={{
-          background: 'linear-gradient(180deg, #041F2B 0%, #083A4F 60%, #041F2B 100%)',
-          padding: '72px 80px',
-          position: 'relative', overflow: 'hidden',
-        }}>
+        <section
+          className="px-4 sm:px-12 md:px-20 py-12 md:py-20 relative overflow-hidden"
+          style={{ background: 'linear-gradient(180deg, #041F2B 0%, #083A4F 60%, #041F2B 100%)' }}
+        >
           <img src={mandala2} alt="" aria-hidden="true"
             style={{
               position: 'absolute', top: '60%', left: '5%',
@@ -211,7 +205,7 @@ export default function About() {
               filter: 'invert(78%) sepia(28%) saturate(389%) hue-rotate(2deg) brightness(92%) contrast(85%)',
               pointerEvents: 'none',
             }} />
-          
+
 
           <div style={{
             position: 'relative', zIndex: 2,
@@ -220,7 +214,7 @@ export default function About() {
           }}>
             <span style={eyebrow('#C4A96E')}>A Note from My Soul to Yours</span>
 
-            <h2 style={{ ...display('48px', 'white'), fontWeight: 300 }}>
+            <h2 style={{ ...display('clamp(26px, 5vw, 48px)', 'white'), fontWeight: 300 }}>
               You don't have to carry your burdens<br />
               <em style={{ fontStyle: 'italic', color: '#C4A96E' }}>alone.</em>
             </h2>
@@ -229,7 +223,7 @@ export default function About() {
 
             <p style={{
               fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic',
-              fontWeight: 300, fontSize: '20px', lineHeight: 1.75,
+              fontWeight: 300, fontSize: 'clamp(16px, 3vw, 22px)', lineHeight: 1.75,
               color: 'rgba(255,255,255,0.88)', margin: 0,
             }}>
               I often see how easily we care for everything around us — yet neglect our own energy.
@@ -251,7 +245,7 @@ export default function About() {
 
             <p style={{
               fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic',
-              fontWeight: 400, fontSize: '22px', lineHeight: 1.5,
+              fontWeight: 400, fontSize: 'clamp(16px, 3vw, 22px)', lineHeight: 1.5,
               color: '#C4A96E', margin: '8px 0 0',
             }}>
               Your light is already there. I am here to help you let it shine.
@@ -271,24 +265,19 @@ export default function About() {
         {/* ════════════════════════════════════════════════════════════
              3 · CREDENTIALS — credentials left · photo right
            ════════════════════════════════════════════════════════════ */}
-        <section style={{
-          background: '#F4F1EE',
-          padding: '72px 80px',
-          position: 'relative',
-        }}>
-          <div style={{
-            maxWidth: '1180px', margin: '0 auto',
-            display: 'grid', gridTemplateColumns: '1fr 0.85fr',
-            gap: '90px', alignItems: 'center',
-          }}>
+        <section
+          className="px-4 sm:px-10 md:px-16 lg:px-20 py-12 md:py-20 relative"
+          style={{ background: '#F4F1EE' }}
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center max-w-5xl mx-auto">
             {/* Credentials text left */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
               <span style={eyebrow('#407E8C')}>Credentials & Certifications</span>
-              <h2 style={display('40px', '#083A4F')}>
+              <h2 style={display('clamp(24px, 4vw, 40px)', '#083A4F')}>
                 Grounded in <em style={{ fontStyle: 'italic', color: '#A58D66' }}>experience</em><br />
                 and formal training.
               </h2>
-              
+
               <p style={{ ...body('#2D4A56'), maxWidth: '520px' }}>
                 Vidya's work combines traditional naturopathic principles with advanced energy
                 healing protocols — a safe, structured, and professional approach to sustained
@@ -336,7 +325,8 @@ export default function About() {
 
             {/* Photo right */}
             <div style={{ position: 'relative' }}>
-              <div style={{
+              {/* Decorative frame border — hidden on mobile to prevent off-screen overflow */}
+              <div className="hidden sm:block" style={{
                 position: 'absolute', inset: '14px -14px -14px 14px',
                 border: '1px solid rgba(165,141,102,0.45)',
                 borderRadius: '4px', pointerEvents: 'none',
@@ -350,7 +340,8 @@ export default function About() {
                 <img src={about2} alt="Vidya Joshi"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
               </div>
-              <div style={{
+              {/* Floating label — hidden on mobile where left: -32px goes off-screen */}
+              <div className="hidden sm:block" style={{
                 position: 'absolute', top: '32px', left: '-32px',
                 background: '#083A4F', color: '#C4A96E',
                 padding: '10px 18px',
@@ -368,11 +359,10 @@ export default function About() {
         {/* ════════════════════════════════════════════════════════════
              4 · SERVICES — what she does
            ════════════════════════════════════════════════════════════ */}
-        <section style={{
-          background: 'linear-gradient(180deg, #083A4F 0%, #041F2B 100%)',
-          padding: '60px 80px',
-          position: 'relative', overflow: 'visible',
-        }}>
+        <section
+          className="px-4 sm:px-10 md:px-16 lg:px-20 py-10 md:py-16 relative overflow-visible"
+          style={{ background: 'linear-gradient(180deg, #083A4F 0%, #041F2B 100%)' }}
+        >
           <img src={lotus} alt="" aria-hidden="true"
             style={{
               position: 'absolute', top: '90%', left: '10%',
@@ -382,7 +372,7 @@ export default function About() {
               filter: 'invert(22%) sepia(28%) saturate(389%) hue-rotate(182deg) brightness(92%) contrast(85%)',
               pointerEvents: 'none',
             }} />
-            
+
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0px' }}>
                 <span style={eyebrow('#C4A96E')}>Approach to Healing</span>
                 <p style={{
@@ -402,7 +392,7 @@ export default function About() {
                       fontFamily: "'Cinzel', serif", fontSize: '10px', letterSpacing: '0.2em',
                       textTransform: 'uppercase', background: '#A58D66', color: '#041F2B',
                       border: 'none', borderRadius: '4px', padding: '16px 36px',
-                      cursor: 'pointer', transition: 'background 250ms', whiteSpace: 'nowrap',
+                      cursor: 'pointer', transition: 'background 250ms',
                     }}
                     onMouseEnter={e => (e.currentTarget.style.background = '#C4A96E')}
                     onMouseLeave={e => (e.currentTarget.style.background = '#A58D66')}>
@@ -415,7 +405,7 @@ export default function About() {
                       fontFamily: "'Cinzel', serif", fontSize: '10px', letterSpacing: '0.2em',
                       textTransform: 'uppercase', background: 'transparent', color: '#C4A96E',
                       border: '1px solid rgba(196,169,110,0.5)', borderRadius: '4px', padding: '16px 36px',
-                      cursor: 'pointer', transition: 'all 250ms', whiteSpace: 'nowrap',
+                      cursor: 'pointer', transition: 'all 250ms',
                     }}
                     onMouseEnter={e => { e.currentTarget.style.background = 'rgba(196,169,110,0.1)'; e.currentTarget.style.borderColor = '#C4A96E'; }}
                     onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'rgba(196,169,110,0.5)'; }}>
@@ -428,7 +418,7 @@ export default function About() {
                       fontFamily: "'Cinzel', serif", fontSize: '10px', letterSpacing: '0.2em',
                       textTransform: 'uppercase', background: 'transparent', color: '#C4A96E',
                       border: '1px solid rgba(196,169,110,0.5)', borderRadius: '4px', padding: '16px 36px',
-                      cursor: 'pointer', transition: 'all 250ms', whiteSpace: 'nowrap',
+                      cursor: 'pointer', transition: 'all 250ms',
                     }}
                     onMouseEnter={e => { e.currentTarget.style.background = 'rgba(196,169,110,0.1)'; e.currentTarget.style.borderColor = '#C4A96E'; }}
                     onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'rgba(196,169,110,0.5)'; }}>
@@ -436,8 +426,8 @@ export default function About() {
                   </button>
                 </Link>
               </div>
-            
-          
+
+
         </section>
 
       </div>
