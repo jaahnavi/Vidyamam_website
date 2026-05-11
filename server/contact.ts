@@ -126,13 +126,6 @@ async function sendEmail(input: ContactSubmission): Promise<void> {
 export async function submitContactMessage(rawInput: unknown) {
   const input = contactSubmissionSchema.parse(rawInput);
 
-  console.log("[Contact Submission]", {
-    name: input.name,
-    email: input.email,
-    phone: input.phone,
-    receivedAt: new Date().toISOString(),
-  });
-
   try {
     await sendEmail(input);
   } catch (err) {

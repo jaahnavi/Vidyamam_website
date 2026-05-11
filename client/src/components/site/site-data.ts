@@ -98,11 +98,9 @@ export const clinicDetails = {
   name: "Vidya's Holistic Healing",
   phone: "+1(469)468-5711",
   phoneHref: "tel:+1(469)468-5711",
-  whatsappHref: "https://wa.me/14694685711",
+  whatsappHref: "9401 Meadow Grounds PL, Frisco, Tx, 75035",
   address: "H-4, Soba Savera Apartment, Bibwewadi, , Maharashtra 411037, India",
   hours: "Opens 11 AM - 5pm CST",
-  mapEmbed:
-    "https://www.google.com/maps?q=H-4%2C%20Soba%20Savera%20Apartment%2C%20Bibwewadi%2C%20%2C%20Maharashtra%20411037%2C%20India&z=15&output=embed",
 };
 
 export const whyChooseUs = [
@@ -115,17 +113,17 @@ export const whyChooseUs = [
 export const trustSignals: TrustSignal[] = [
   {
     label: "Years of Experience",
-    value: "12+",
+    value: "15+",
     description: "Dedicated to holistic healing and Pranic Healing practice",
   },
   {
     label: "Clients Supported",
-    value: "500+",
+    value: "2000+",
     description: "People who have experienced healing and transformation",
   },
   {
     label: "Session Success Rate",
-    value: "94%",
+    value: "95%",
     description: "Clients report improved calm and emotional clarity",
   },
 ];

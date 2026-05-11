@@ -1,34 +1,105 @@
 import { Link } from "wouter";
 import { clinicDetails, navLinks } from "./site-data";
 
+const cinzel = { fontFamily: "'Cinzel', serif" } as const;
+const cormorant = { fontFamily: "'Cormorant Garamond', serif" } as const;
+const jost = { fontFamily: "'Jost', sans-serif" } as const;
+
 export function Footer() {
   return (
-    <footer className="border-t border-primary/10 bg-white/60 backdrop-blur-sm">
-      <div className="container grid gap-10 py-12 lg:grid-cols-[1.2fr_0.8fr_1fr]">
-        <div className="space-y-4">
-          <p className="font-display text-3xl font-semibold text-foreground">{clinicDetails.name}</p>
-          <p className="max-w-md text-sm text-muted-foreground">
-            A calm, responsive wellness space in  offering compassionate support through Pranic Healing,
-            chakra balancing, and gentle care for emotional wellbeing.
+    <footer
+      style={{ background: "#041F2B", borderTop: "1px solid rgba(165,141,102,0.2)" }}
+    >
+      <div className="container grid gap-16 py-16 lg:grid-cols-[2fr_1fr_1fr]">
+
+        {/* Brand column */}
+        <div className="flex flex-col gap-5">
+          <div className="flex items-center gap-3">
+            <img src="/logo1.png" alt="VHH" className="h-12 w-12 object-contain" />
+            <div className="flex flex-col leading-none">
+              <span style={{ ...cinzel, fontSize: "12px", letterSpacing: "0.16em" }}
+                className="uppercase text-[#C4A96E]">
+                Vidya's
+              </span>
+              <span style={{ ...jost, fontSize: "11px", letterSpacing: "0.07em" }}
+                className="font-light text-[rgba(192,213,214,0.5)] mt-0.5">
+                Holistic Healing
+              </span>
+            </div>
+          </div>
+          <p style={{ ...jost, fontWeight: 300, fontSize: "0.82rem", lineHeight: 1.85, letterSpacing: "0.03em" }}
+            className="max-w-xs text-[rgba(192,213,214,0.55)]">
+            Certified Pranic Healer dedicated to recalibrating your life force to its highest possible
+            frequency. Serving a global community since 2025.
           </p>
-        </div>
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-muted-foreground">Navigate</p>
-          <div className="mt-4 grid gap-3 text-sm">
-            {navLinks.map(link => (
-              <Link key={link.href} href={link.href} className="text-foreground transition-colors hover:text-primary">
-                {link.label}
-              </Link>
-            ))}
+          <div className="flex flex-col gap-1.5">
+            <span style={{ ...cinzel, fontSize: "8px", letterSpacing: "0.18em" }}
+              className="uppercase text-[rgba(165,141,102,0.45)]">
+              Frisco, Texas · Global Practice
+            </span>
+            <a href={clinicDetails.phoneHref}
+              style={{ ...jost, fontSize: "0.82rem", letterSpacing: "0.04em" }}
+              className="font-light text-[rgba(192,213,214,0.55)] transition-colors hover:text-[#C4A96E]">
+              {clinicDetails.phone}
+            </a>
           </div>
         </div>
-        <div className="space-y-3 text-sm text-muted-foreground">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em]">Visit & Connect</p>
-          <p>{clinicDetails.address}</p>
-          <a href={clinicDetails.phoneHref} className="block text-foreground hover:text-primary">
-            {clinicDetails.phone}
-          </a>
-          <p>{clinicDetails.hours}</p>
+
+        {/* Navigate */}
+        <div className="flex flex-col gap-4">
+          <span style={{ ...cinzel, fontSize: "9px", letterSpacing: "0.22em" }}
+            className="uppercase text-[#A58D66]">
+            Navigate
+          </span>
+          <div className="h-px w-6 bg-[rgba(165,141,102,0.3)]" />
+          {navLinks.map(link => (
+            <Link
+              key={link.href}
+              href={link.href}
+              style={{ ...jost, fontSize: "0.82rem", letterSpacing: "0.03em" }}
+              className="font-light text-[rgba(192,213,214,0.55)] transition-colors hover:text-[#C0D5D6]"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
+
+        {/* Connect */}
+        <div className="flex flex-col gap-4">
+          <span style={{ ...cinzel, fontSize: "9px", letterSpacing: "0.22em" }}
+            className="uppercase text-[#A58D66]">
+            Connect
+          </span>
+          <div className="h-px w-6 bg-[rgba(165,141,102,0.3)]" />
+          <div className="flex flex-col gap-2"
+            style={{ ...jost, fontWeight: 300, fontSize: "0.82rem", lineHeight: 1.75, letterSpacing: "0.03em" }}>
+            <p className="text-[rgba(192,213,214,0.55)]">{clinicDetails.hours}</p>
+            <a href={clinicDetails.whatsappHref}
+              className="text-[rgba(192,213,214,0.55)] transition-colors hover:text-[#C4A96E]">
+              WhatsApp
+            </a>
+            <button
+              onClick={() => window.location.href = "/contact"}
+              style={{ ...cinzel, fontSize: "8.5px", letterSpacing: "0.16em" }}
+              className="mt-2 w-fit rounded-[4px] bg-[#A58D66] px-5 py-2.5 uppercase text-[#041F2B] transition-all hover:bg-[#C4A96E]"
+            >
+              Book a Session
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom bar */}
+      <div style={{ borderTop: "1px solid rgba(165,141,102,0.12)" }}>
+        <div className="container flex items-center justify-between py-5">
+          <span style={{ ...jost, fontSize: "0.7rem", letterSpacing: "0.03em" }}
+            className="font-light text-[rgba(192,213,214,0.3)]">
+            © 2025 Vidya's Holistic Healing. All rights reserved.
+          </span>
+          <span style={{ ...cinzel, fontSize: "7.5px", letterSpacing: "0.18em" }}
+            className="uppercase text-[rgba(165,141,102,0.35)]">
+            Heal the Need
+          </span>
         </div>
       </div>
     </footer>

@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
@@ -10,99 +9,122 @@ export function Navbar() {
   const [location] = useLocation();
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/50 bg-[rgba(251,247,239,0.8)] backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-[rgba(165,141,102,0.2)] bg-[rgba(4,31,43,0.92)] backdrop-blur-xl transition-all duration-300">
       <div className="container">
-        <nav className="flex items-center justify-between h-20" aria-label="Primary navigation">
+        <nav className="flex h-[72px] items-center justify-between" aria-label="Primary navigation">
+
+          {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="h-full flex items-center">
-              <img
-                src="/logo1.png"
-                alt="Dr Vidya Logo"
-                className="h-16 w-auto object-contain"
-              />
-            </div>
-            <div className="leading-tight -ml-1">
-              <p className="font-display text-2xl font-semibold leading-none text-foreground m-0">Vidya's</p>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Holistic Healing</p>
+            <img
+              src="/logo1.png"
+              alt="Vidya's Holistic Healing"
+              className="h-18 w-10 object-contain"
+            />
+            <div className="flex flex-col leading-none">
+              <span
+                style={{ fontFamily: "'Cinzel', serif", fontSize: "16px", letterSpacing: "0.16em" }}
+                className="uppercase text-[#C4A96E]"
+              >
+                Vidya's
+              </span>
+              <span
+                style={{ fontFamily: "'Jost', sans-serif", fontSize: "14px", letterSpacing: "0.08em" }}
+                className="text-[rgba(192,213,214,0.6)] font-light"
+              >
+                Holistic Healing
+              </span>
             </div>
           </Link>
 
+          {/* Desktop nav links */}
           <div className="hidden items-center gap-8 lg:flex">
             {navLinks.map(link => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "text-sm font-semibold tracking-[0.14em] uppercase text-muted-foreground transition-colors duration-200 hover:text-primary",
-                  location === link.href && "text-primary",
+                  "pb-0.5 text-[11.5px] font-medium uppercase tracking-[0.18em] transition-colors duration-200",
+                  "border-b border-transparent",
+                  location === link.href
+                    ? "border-[rgba(165,141,102,0.6)] text-[#C4A96E]"
+                    : "text-white/85 hover:text-[#C4A96E]"
                 )}
+                style={{ fontFamily: "'Cinzel', serif" }}
               >
                 {link.label}
               </Link>
             ))}
           </div>
 
-          <div className="hidden items-center gap-3 lg:flex">
-            <a href={clinicDetails.phoneHref} className="text-sm font-medium text-muted-foreground hover:text-primary">
+          {/* Desktop CTA */}
+          <div className="hidden items-center gap-4 lg:flex">
+            <a
+              href={clinicDetails.phoneHref}
+              className="text-xs font-light tracking-wide text-[rgba(192,213,214,0.55)] hover:text-[#C4A96E] transition-colors"
+              style={{ fontFamily: "'Jost', sans-serif" }}
+            >
               {clinicDetails.phone}
             </a>
-            <Button
+            <button
               onClick={() => {
-                const contactForm = document.getElementById("contact-form");
-                if (contactForm) {
-                  contactForm.scrollIntoView({ behavior: "smooth" });
-                } else {
-                  window.location.href = "/contact";
-                }
+                const el = document.getElementById("contact-form");
+                if (el) el.scrollIntoView({ behavior: "smooth" });
+                else window.location.href = "/contact";
               }}
-              className="rounded-full bg-primary px-6 text-primary-foreground hover:bg-primary/90"
+              className="rounded-[5px] bg-[#A58D66] px-5 py-2.5 text-[11.5px] font-bold  uppercase tracking-[0.16em] text-[#041F2B] transition-all duration-200 hover:bg-[#C4A96E] hover:shadow-[0_0_20px_rgba(165,141,102,0.3)]"
+              style={{ fontFamily: "'Cinzel', serif" }}
             >
-              Book a Consultation
-            </Button>
+              Book a Session
+            </button>
           </div>
 
+          {/* Mobile menu toggle */}
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-primary/15 bg-white/80 text-primary lg:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-[rgba(165,141,102,0.3)] text-[#A58D66] lg:hidden"
             aria-expanded={menuOpen}
             aria-label="Toggle navigation"
             onClick={() => setMenuOpen(open => !open)}
           >
-            {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {menuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
           </button>
         </nav>
       </div>
 
+      {/* Mobile menu */}
       {menuOpen && (
-        <div className="border-t border-primary/10 bg-[rgba(251,247,239,0.96)] lg:hidden">
-          <div className="container space-y-2 py-4">
+        <div className="border-t border-[rgba(165,141,102,0.15)] bg-[rgba(4,31,43,0.97)] lg:hidden">
+          <div className="container space-y-1 py-4">
             {navLinks.map(link => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "block rounded-2xl px-4 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-muted-foreground transition hover:bg-white/80 hover:text-primary",
-                  location === link.href && "bg-white/90 text-primary",
+                  "block rounded-md px-4 py-3 text-[10px] uppercase tracking-[0.18em] transition-colors",
+                  location === link.href
+                    ? "bg-[rgba(165,141,102,0.1)] text-[#C4A96E]"
+                    : "text-[rgba(192,213,214,0.65)] hover:text-[#C4A96E]"
                 )}
+                style={{ fontFamily: "'Cinzel', serif" }}
                 onClick={() => setMenuOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
-            <Button
-              onClick={() => {
-                setMenuOpen(false);
-                const contactForm = document.getElementById("contact-form");
-                if (contactForm) {
-                  contactForm.scrollIntoView({ behavior: "smooth" });
-                } else {
-                  window.location.href = "/contact";
-                }
-              }}
-              className="mt-2 w-full rounded-full bg-primary text-primary-foreground hover:bg-primary/90"
-            >
-              Book a Consultation
-            </Button>
+            <div className="pt-2">
+              <button
+                onClick={() => {
+                  setMenuOpen(false);
+                  const el = document.getElementById("contact-form");
+                  if (el) el.scrollIntoView({ behavior: "smooth" });
+                  else window.location.href = "/contact";
+                }}
+                className="w-full rounded-[5px] bg-[#A58D66] py-3 text-[9px] font-medium uppercase tracking-[0.18em] text-[#041F2B] hover:bg-[#C4A96E]"
+                style={{ fontFamily: "'Cinzel', serif" }}
+              >
+                Book a Session
+              </button>
+            </div>
           </div>
         </div>
       )}

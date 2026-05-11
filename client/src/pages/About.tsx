@@ -1,110 +1,446 @@
-import { BadgeCheck, Flower2, ScrollText } from "lucide-react";
-import { PageHero } from "@/components/site/PageHero";
-import { SacredDivider } from "@/components/site/SacredDivider";
-import { Seo } from "@/components/site/Seo";
-import { SiteLayout } from "@/components/site/SiteLayout";
-import { CertificationBadge } from "@/components/site/CertificationBadge";
-import { TrustSignal } from "@/components/site/TrustSignal";
-import { certifications, trustSignals } from "@/components/site/site-data";
+import React from 'react';
+import { Link } from 'wouter';
+import { SacredDivider } from '@/components/site/SacredDivider';
+import { Seo } from '@/components/site/Seo';
+import { SiteLayout } from '@/components/site/SiteLayout';
+import ScrollToTop  from '@/components/site/scrolltotop';
 
-const aboutImage = "https://d2xsxph8kpxj0f.cloudfront.net/310519663585662648/ErWs2ocR65P7dstuQdjKqk/dr-vidya-about-iaGYw3775JGArbT7yMbqBc.webp";
+const about1  = '/vidya-about-1.jpeg';
+const about2  = '/vidya-about-2.jpeg';
+const lotus   = '/lotus1.svg';
+const mandala2 = '/2.svg' as const;
+const mandala3 = '/3.svg' as const;
+
+const STAT_DATA = [
+  { value: '15+',    label: 'Years of Practice' },
+  { value: '2,000+', label: 'Clients Globally' },
+  { value: 'Frisco', label: 'Dallas, Texas' },
+  { value: 'Global', label: 'In-Person · Distant' },
+];
+
+const CRED_DATA = [
+  { title: 'Associate Certified Pranic Healer',
+    desc: 'A professional designation in energy medicine.' },
+  { title: 'Advanced & Basic Pranic Healing',
+    desc: 'Expertise in color pranas and energy restoration techniques.' },
+  { title: 'Pranic Psychotherapy',
+    desc: 'Specialization in emotional and mental healing — trauma, anxiety, stress patterns.' },
+  { title: 'Crystal Healing',
+    desc: 'Vibrational use of crystals to amplify and direct healing energy.' },
+  { title: 'Diploma in Naturopathy & Yoga',
+    desc: 'Training in natural health systems, body chemistry, and energetic alignment.' },
+];
+
+// ── Shared text styles ─────────────────────────────────────
+const eyebrow = (color = '#A58D66'): React.CSSProperties => ({
+  fontFamily: "'Cinzel', serif", fontSize: '11px', letterSpacing: '0.26em',
+  textTransform: 'uppercase', color, display: 'inline-block',
+});
+const display = (size: string, color: string): React.CSSProperties => ({
+  fontFamily: "'Cormorant Garamond', serif", fontWeight: 400,
+  fontSize: size, lineHeight: 1.15, color, margin: 0,
+  letterSpacing: '-0.01em',
+});
+const body = (color: string): React.CSSProperties => ({
+  fontFamily: "'Jost', sans-serif", fontWeight: 300,
+  fontSize: '15px', lineHeight: 1.85, color, margin: 0,
+});
 
 export default function About() {
   return (
     <SiteLayout>
+      <ScrollToTop />
       <Seo
         title="About"
         path="/about"
-        description="Learn about Vidya Joshi, her healing philosophy, and the calm, professional approach at Vidya's Holistic Healing"
+        description="Learn about Vidya Joshi, her healing philosophy, and holistic healing approach."
       />
 
-      <PageHero
-        eyebrow="About Vidya"
-        title="Healing with presence, clarity, and compassion"
-        description="Vidya's approach is rooted in calm attention, holistic awareness, and the belief that emotional ease can grow through thoughtful healing support."
-      />
+      <div style={{ background: '#F4F1EE' }}>
 
-      <section className="section-shell pt-0">
-        <div className="container grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-14">
-          <div className="surface-card fade-in-section overflow-hidden p-3">
-            <img
-              src={aboutImage}
-              alt="Portrait of Vidya in a calm healing environment"
-              className="h-full min-h-[420px] w-full rounded-[1.5rem] object-cover"
-            />
-          </div>
-          <div className="fade-in-section space-y-6 [animation-delay:0.1s]">
-            <span className="eyebrow">Bio Placeholder</span>
-            <h2 className="section-title">A grounded and reassuring presence for people seeking balance</h2>
-            <p className="text-lg text-muted-foreground">
-              Vidya offers a healing environment that feels both serene and professional. Her practice is centered on
-              listening carefully, understanding emotional patterns with sensitivity, and guiding each person toward a more stable inner rhythm.
-            </p>
-            <p className="text-base text-muted-foreground">
-              This biography section is intentionally kept flexible so her full professional story, healing journey, and client-centered values can be added later without changing the design structure.
-            </p>
-            <div className="grid gap-4 sm:grid-cols-3">
-              <article className="surface-card p-5 transition-all duration-300 hover:shadow-md hover:border-primary/10">
-                <Flower2 className="h-6 w-6 text-primary" />
-                <h3 className="mt-4 text-2xl font-semibold">Calm Presence</h3>
-                <p className="mt-2 text-sm text-muted-foreground">A soothing environment that supports ease and openness.</p>
-              </article>
-              <article className="surface-card p-5 transition-all duration-300 hover:shadow-md hover:border-primary/10">
-                <BadgeCheck className="h-6 w-6 text-[var(--chakra-green)]" />
-                <h3 className="mt-4 text-2xl font-semibold">Professional Care</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Support delivered with clarity, respect, and integrity.</p>
-              </article>
-              <article className="surface-card p-5 transition-all duration-300 hover:shadow-md hover:border-primary/10">
-                <ScrollText className="h-6 w-6 text-[var(--chakra-yellow)]" />
-                <h3 className="mt-4 text-2xl font-semibold">Holistic Guidance</h3>
-                <p className="mt-2 text-sm text-muted-foreground">A steady approach that sees emotional wellbeing as interconnected.</p>
-              </article>
+        {/* ════════════════════════════════════════════════════════════
+             1 · INTRO  — Photo left · text right
+           ════════════════════════════════════════════════════════════ */}
+        <section style={{
+          background: '#F4F1EE',
+          padding: '120px 80px 100px',
+          position: 'relative', overflow: 'hidden',
+        }}>
+          <img src={lotus} alt="" aria-hidden="true"
+            style={{
+              position: 'absolute', top: '20%', left: '90%',
+              transform: 'translate(-50%, -50%)',
+              width: '900px', height: '900px',
+              opacity: 0.12,
+              pointerEvents: 'none',
+            }} />
+
+          {/* Top eyebrow centered */}
+          <div className="fade-in-section flex flex-col gap-7" style={{ textAlign: 'center', marginBottom: '72px' }}>
+            <span style={eyebrow('#A58D66')}>The Visionary Behind the Healing</span>
+            <h1 style={{ ...display('64px', '#083A4F'), marginTop: '20px', fontWeight: 300 }}>
+              About <em style={{ fontStyle: 'italic', color: '#A58D66' }}>Vidya Joshi</em>
+            </h1>
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '12px', marginTop: '20px', opacity: 0.6 }}>
+              <div style={{ width: '40px', height: '1px', background: '#A58D66' }} />
+              <div style={{ width: '5px', height: '5px', background: '#A58D66', borderRadius: '50%', transform: 'rotate(45deg)' }} />
+              <div style={{ width: '40px', height: '1px', background: '#A58D66' }} />
             </div>
           </div>
-        </div>
-      </section>
 
-      <SacredDivider />
-
-      <section className="section-shell pt-0">
-        <div className="container grid gap-8 lg:grid-cols-2">
-          <article className="surface-card fade-in-section p-8 sm:p-10">
-            <span className="eyebrow">Certifications</span>
-            <h2 className="mt-5 text-4xl font-semibold">Training and credentials</h2>
-            <div className="mt-6 space-y-3">
-              {certifications.map(item => (
-                <CertificationBadge key={item.title} {...item} />
-              ))}
-            </div>
-          </article>
-
-          <article className="surface-card fade-in-section p-8 sm:p-10 [animation-delay:0.08s]">
-            <span className="eyebrow">Healing Philosophy</span>
-            <h2 className="mt-5 text-4xl font-semibold">A philosophy rooted in balance rather than pressure</h2>
-            <p className="mt-6 text-muted-foreground">
-              Healing is approached as a process of restoring steadiness, not forcing change. The clinic's philosophy is to create enough calm,
-              trust, and supportive attention for the body and mind to reconnect with a more balanced state.
-            </p>
-            <p className="mt-4 text-muted-foreground">
-              This approach values compassion, patience, and clarity. It avoids dramatic language and instead focuses on what is practical,
-              reassuring, and helpful for people who simply want to feel more settled within themselves.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section className="section-shell bg-white/50">
-        <div className="container">
-          <h2 className="mb-12 text-center text-4xl font-semibold">Why clients trust Vidya</h2>
-          <div className="grid gap-6 md:grid-cols-3">
-            {trustSignals.map(signal => (
-              <div key={signal.label} className="fade-in-section">
-                <TrustSignal {...signal} />
+          <div style={{
+            maxWidth: '1180px', margin: '0 auto',
+            display: 'grid', gridTemplateColumns: '0.95fr 1fr',
+            gap: '80px', alignItems: 'center',
+          }}>
+            {/* Photo left */}
+              <div className="fade-in-section flex flex-col gap-7" style={{ position: 'relative' }}>
+                <div style={{
+                  position: 'absolute', inset: '-14px -14px 14px 14px',
+                  border: '1px solid rgba(165,141,102,0.45)',
+                  borderRadius: '4px', pointerEvents: 'none',
+                }} />
+                <div style={{
+                  position: 'relative',
+                  borderRadius: '4px', overflow: 'hidden',
+                  boxShadow: '0 24px 60px rgba(8,58,79,0.25)',
+                  aspectRatio: '4 / 5',
+                }}>
+                  <img src={about1} alt="Vidya Joshi"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                </div>
+                {/* Gold seal badge */}
+                <div className="fade-in-section flex flex-col gap-7" style={{
+                  position: 'absolute', bottom: '-28px', right: '-20px',
+                  width: '120px', height: '120px', borderRadius: '50%',
+                  background: 'linear-gradient(135deg, #083A4F 0%, #0D4D68 100%)',
+                  border: '1px solid rgba(165,141,102,0.5)',
+                  display: 'flex', flexDirection: 'column',
+                  alignItems: 'center', justifyContent: 'center',
+                  boxShadow: '0 12px 32px rgba(8,58,79,0.35)',
+                  gap: '2px',
+                }}>
+                  <span style={{ ...display('30px', '#C4A96E'), fontWeight: 300 }}>15+</span>
+                  <span style={{ fontFamily: "'Cinzel', serif", fontSize: '7px',
+                    letterSpacing: '0.22em', textTransform: 'uppercase',
+                    color: 'rgba(192,213,214,0.75)' }}>Years</span>
+                </div>
               </div>
-            ))}
+
+            {/* Text right */}
+            <div className="fade-in-section flex flex-col gap-7" style={{ display: 'flex', flexDirection: 'column', gap: '22px' }}>
+              <span style={eyebrow('#407E8C')}>Certified Pranic Healer</span>
+              <h2 style={display('40px', '#083A4F')}>
+                Healing with presence,<br />
+                <em style={{ fontStyle: 'italic', color: '#A58D66' }}>clarity & compassion.</em>
+              </h2>
+              <SacredDivider variant="light" />
+              <p style={body('#2D4A56')}>
+                Vidya Joshi is a Certified Pranic Healer and wellness practitioner with over fifteen years
+                in energy medicine — and a proven track record of transforming lives. Working with more than
+                two thousand clients globally, she brings practical wisdom and clinical experience to every
+                session.
+              </p>
+              <p style={body('#2D4A56')}>
+                Based in the Dallas–Frisco area, she leads <em>Vidya's Holistic Healing</em>, offering both
+                in-person and distant sessions to a global community. Her approach is rooted in a simple
+                belief — that physical vitality is a direct reflection of energetic health, and that prana
+                is the fuel for life.
+              </p>
+              <blockquote style={{
+                fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic',
+                fontWeight: 400, fontSize: '20px', lineHeight: 1.5,
+                color: '#083A4F', borderLeft: '2px solid #A58D66',
+                paddingLeft: '22px', margin: '8px 0 0', maxWidth: '440px',
+              }}>
+                Her mission is simple yet profound — <em style={{ color: '#A58D66' }}>to heal the need.</em>
+              </blockquote>
+
+              {/* Stat strip */}
+              <div style={{
+                display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)',
+                gap: '0', marginTop: '20px',
+                borderTop: '1px solid rgba(165,141,102,0.3)',
+                borderBottom: '1px solid rgba(165,141,102,0.3)',
+              }}>
+                {STAT_DATA.map((s, i) => (
+                  <div key={i} style={{
+                    padding: '18px 12px',
+                    borderRight: i < STAT_DATA.length - 1 ? '1px solid rgba(165,141,102,0.2)' : 'none',
+                  }}>
+                    <div style={{
+                      fontFamily: "'Cormorant Garamond', serif", fontWeight: 400,
+                      fontSize: '24px', color: '#083A4F', lineHeight: 1,
+                    }}>{s.value}</div>
+                    <div style={{
+                      fontFamily: "'Cinzel', serif", fontSize: '7.5px',
+                      letterSpacing: '0.18em', textTransform: 'uppercase',
+                      color: '#407E8C', marginTop: '8px',
+                    }}>{s.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* ════════════════════════════════════════════════════════════
+             2 · NOTE FROM SOUL — Lotus mandala behind, dark navy
+           ════════════════════════════════════════════════════════════ */}
+        <section style={{
+          background: 'linear-gradient(180deg, #041F2B 0%, #083A4F 60%, #041F2B 100%)',
+          padding: '72px 80px',
+          position: 'relative', overflow: 'hidden',
+        }}>
+          <img src={mandala2} alt="" aria-hidden="true"
+            style={{
+              position: 'absolute', top: '60%', left: '5%',
+              transform: 'translate(-50%, -50%)',
+              width: '1100px', height: '1100px',
+              opacity: 0.07,
+              filter: 'invert(78%) sepia(28%) saturate(389%) hue-rotate(2deg) brightness(92%) contrast(85%)',
+              pointerEvents: 'none',
+            }} />
+
+          <img src={mandala3} alt="" aria-hidden="true"
+            style={{
+              position: 'absolute', top: '20%', left: '90%',
+              transform: 'translate(-50%, -50%)',
+              width: '500px', height: '500px',
+              opacity: 0.07,
+              filter: 'invert(78%) sepia(28%) saturate(389%) hue-rotate(2deg) brightness(92%) contrast(85%)',
+              pointerEvents: 'none',
+            }} />
+          
+
+          <div style={{
+            position: 'relative', zIndex: 2,
+            maxWidth: '760px', margin: '0 auto', textAlign: 'center',
+            display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px',
+          }}>
+            <span style={eyebrow('#C4A96E')}>A Note from My Soul to Yours</span>
+
+            <h2 style={{ ...display('48px', 'white'), fontWeight: 300 }}>
+              You don't have to carry your burdens<br />
+              <em style={{ fontStyle: 'italic', color: '#C4A96E' }}>alone.</em>
+            </h2>
+
+            <div style={{ width: '60px', height: '1px', background: 'rgba(196,169,110,0.5)' }} />
+
+            <p style={{
+              fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic',
+              fontWeight: 300, fontSize: '20px', lineHeight: 1.75,
+              color: 'rgba(255,255,255,0.88)', margin: 0,
+            }}>
+              I often see how easily we care for everything around us — yet neglect our own energy.
+              Just as we wouldn't expect a car to function without regular servicing, our energy
+              system also needs attention, care, and alignment.
+            </p>
+
+            <p style={{
+              fontFamily: "'Jost', sans-serif", fontWeight: 300, fontSize: '15px',
+              lineHeight: 1.95, color: 'rgba(192,213,214,0.78)', margin: 0,
+              maxWidth: '620px',
+            }}>
+              Your light is already within you. Sometimes, it simply needs to be uncovered.
+              If you are feeling tired, stuck, or out of balance, my work is to support your body
+              and mind in remembering how to heal themselves. In every session — whether in person
+              or distant — I hold a space of presence, care, and{' '}
+              <em style={{ color: '#C4A96E', fontFamily: "'Cormorant Garamond', serif", fontSize: '17px' }}>Tathastu</em> for you.
+            </p>
+
+            <p style={{
+              fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic',
+              fontWeight: 400, fontSize: '22px', lineHeight: 1.5,
+              color: '#C4A96E', margin: '8px 0 0',
+            }}>
+              Your light is already there. I am here to help you let it shine.
+            </p>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginTop: '12px' }}>
+              <div style={{ width: '48px', height: '1px', background: 'rgba(165,141,102,0.4)' }} />
+              <span style={{
+                fontFamily: "'Cinzel', serif", fontSize: '11px', letterSpacing: '0.32em',
+                textTransform: 'uppercase', color: '#A58D66',
+              }}>Om Shanti · Tathastu</span>
+              <div style={{ width: '48px', height: '1px', background: 'rgba(165,141,102,0.4)' }} />
+            </div>
+          </div>
+        </section>
+
+        {/* ════════════════════════════════════════════════════════════
+             3 · CREDENTIALS — credentials left · photo right
+           ════════════════════════════════════════════════════════════ */}
+        <section style={{
+          background: '#F4F1EE',
+          padding: '72px 80px',
+          position: 'relative',
+        }}>
+          <div style={{
+            maxWidth: '1180px', margin: '0 auto',
+            display: 'grid', gridTemplateColumns: '1fr 0.85fr',
+            gap: '90px', alignItems: 'center',
+          }}>
+            {/* Credentials text left */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+              <span style={eyebrow('#407E8C')}>Credentials & Certifications</span>
+              <h2 style={display('40px', '#083A4F')}>
+                Grounded in <em style={{ fontStyle: 'italic', color: '#A58D66' }}>experience</em><br />
+                and formal training.
+              </h2>
+              
+              <p style={{ ...body('#2D4A56'), maxWidth: '520px' }}>
+                Vidya's work combines traditional naturopathic principles with advanced energy
+                healing protocols — a safe, structured, and professional approach to sustained
+                wellness. Below are her qualifications.
+              </p>
+
+              <ul style={{ listStyle: 'none', padding: 0, margin: '0px 0 0',
+                  display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                {CRED_DATA.map((c, i) => (
+                  <li key={i} style={{
+                    display: 'grid', gridTemplateColumns: '30px 1fr',
+                    gap: '12px', padding: '5px 0',
+                    borderTop: '1px solid rgba(165,141,102,0.22)',
+                    borderBottom: i === CRED_DATA.length - 1 ? '1px solid rgba(165,141,102,0.22)' : 'none',
+                    alignItems: 'baseline',
+                  }}>
+                    <span style={{
+                      fontFamily: "'Cormorant Garamond', serif", fontWeight: 300,
+                      fontSize: '24px', color: '#A58D66', lineHeight: 1,
+                    }}>{String(i + 1).padStart(2, '0')}</span>
+                    <div>
+                      <div style={{
+                        fontFamily: "'Cinzel', serif", fontSize: '15px',
+                        letterSpacing: '0.16em', textTransform: 'uppercase',
+                        color: '#083A4F', fontWeight: 500, marginBottom: '2px',
+                      }}>{c.title}</div>
+                      <div style={{
+                        fontFamily: "'Jost', sans-serif", fontWeight: 300,
+                        fontSize: '13.5px', lineHeight: 1.75, color: '#2D4A56',
+                      }}>{c.desc}</div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+
+              <p style={{
+                fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic',
+                fontWeight: 400, fontSize: '17px', lineHeight: 1.6,
+                color: '#407E8C', margin: '12px 0 0', maxWidth: '480px',
+              }}>
+                Fifteen years of practice. Two thousand stories. An approach rooted in
+                authenticity and measurable results.
+              </p>
+            </div>
+
+            {/* Photo right */}
+            <div style={{ position: 'relative' }}>
+              <div style={{
+                position: 'absolute', inset: '14px -14px -14px 14px',
+                border: '1px solid rgba(165,141,102,0.45)',
+                borderRadius: '4px', pointerEvents: 'none',
+              }} />
+              <div style={{
+                position: 'relative',
+                borderRadius: '4px', overflow: 'hidden',
+                boxShadow: '0 24px 60px rgba(8,58,79,0.25)',
+                aspectRatio: '4 / 5',
+              }}>
+                <img src={about2} alt="Vidya Joshi"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+              </div>
+              <div style={{
+                position: 'absolute', top: '32px', left: '-32px',
+                background: '#083A4F', color: '#C4A96E',
+                padding: '10px 18px',
+                fontFamily: "'Cinzel', serif", fontSize: '9px',
+                letterSpacing: '0.24em', textTransform: 'uppercase',
+                border: '1px solid rgba(165,141,102,0.4)',
+                boxShadow: '0 8px 24px rgba(8,58,79,0.3)',
+              }}>
+                2,000+ Success Stories
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ════════════════════════════════════════════════════════════
+             4 · SERVICES — what she does
+           ════════════════════════════════════════════════════════════ */}
+        <section style={{
+          background: 'linear-gradient(180deg, #083A4F 0%, #041F2B 100%)',
+          padding: '60px 80px',
+          position: 'relative', overflow: 'visible',
+        }}>
+          <img src={lotus} alt="" aria-hidden="true"
+            style={{
+              position: 'absolute', top: '90%', left: '10%',
+              transform: 'translate(-50%, -50%)',
+              width: '600px', height: '600px',
+              opacity: 0.07,
+              filter: 'invert(22%) sepia(28%) saturate(389%) hue-rotate(182deg) brightness(92%) contrast(85%)',
+              pointerEvents: 'none',
+            }} />
+            
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0px' }}>
+                <span style={eyebrow('#C4A96E')}>Approach to Healing</span>
+                <p style={{
+                  fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic',
+                  fontWeight: 300, fontSize: '20px', lineHeight: 1.55,
+                  color: 'white', margin: 0, maxWidth: '640px', gap:'20px',
+                }}>
+                  This work is not about temporary relaxation. It is about
+                  recalibrating your life force so you can function at your
+                  <em style={{ color: '#C4A96E' }}> highest possible state.</em>
+                </p>
+              </div>
+              <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', margin: 12 }}>
+                <Link href="/contact">
+                  <button
+                    style={{
+                      fontFamily: "'Cinzel', serif", fontSize: '10px', letterSpacing: '0.2em',
+                      textTransform: 'uppercase', background: '#A58D66', color: '#041F2B',
+                      border: 'none', borderRadius: '4px', padding: '16px 36px',
+                      cursor: 'pointer', transition: 'background 250ms', whiteSpace: 'nowrap',
+                    }}
+                    onMouseEnter={e => (e.currentTarget.style.background = '#C4A96E')}
+                    onMouseLeave={e => (e.currentTarget.style.background = '#A58D66')}>
+                    Begin Your Session
+                  </button>
+                </Link>
+                <Link href="/services">
+                  <button
+                    style={{
+                      fontFamily: "'Cinzel', serif", fontSize: '10px', letterSpacing: '0.2em',
+                      textTransform: 'uppercase', background: 'transparent', color: '#C4A96E',
+                      border: '1px solid rgba(196,169,110,0.5)', borderRadius: '4px', padding: '16px 36px',
+                      cursor: 'pointer', transition: 'all 250ms', whiteSpace: 'nowrap',
+                    }}
+                    onMouseEnter={e => { e.currentTarget.style.background = 'rgba(196,169,110,0.1)'; e.currentTarget.style.borderColor = '#C4A96E'; }}
+                    onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'rgba(196,169,110,0.5)'; }}>
+                    Explore Services
+                  </button>
+                </Link>
+                <Link href="/testimonials">
+                  <button
+                    style={{
+                      fontFamily: "'Cinzel', serif", fontSize: '10px', letterSpacing: '0.2em',
+                      textTransform: 'uppercase', background: 'transparent', color: '#C4A96E',
+                      border: '1px solid rgba(196,169,110,0.5)', borderRadius: '4px', padding: '16px 36px',
+                      cursor: 'pointer', transition: 'all 250ms', whiteSpace: 'nowrap',
+                    }}
+                    onMouseEnter={e => { e.currentTarget.style.background = 'rgba(196,169,110,0.1)'; e.currentTarget.style.borderColor = '#C4A96E'; }}
+                    onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'rgba(196,169,110,0.5)'; }}>
+                    Explore Verified Testimonials
+                  </button>
+                </Link>
+              </div>
+            
+          
+        </section>
+
+      </div>
     </SiteLayout>
   );
 }

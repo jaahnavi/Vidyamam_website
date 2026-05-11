@@ -1,89 +1,164 @@
-import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
-import { PageHero } from "@/components/site/PageHero";
-import { SacredDivider } from "@/components/site/SacredDivider";
-import { Seo } from "@/components/site/Seo";
-import { SiteLayout } from "@/components/site/SiteLayout";
+import { useState } from 'react';
+import { Link } from 'wouter';
+import { Seo } from '@/components/site/Seo';
+import { SiteLayout } from '@/components/site/SiteLayout';
+import ScrollToTop  from '@/components/site/scrolltotop';
 
-const servicesImage = "https://d2xsxph8kpxj0f.cloudfront.net/310519663585662648/ErWs2ocR65P7dstuQdjKqk/dr-vidya-services-HrEm9sV3fpnR2pj76YzsBC.webp";
-
-const services = [
+const SERVICES = [
   {
-    title: "Pranic Healing Sessions",
-    copy: "A calm, guided healing session intended to help you feel more settled, balanced, and emotionally lighter. The process is explained in simple language so you always know what to expect.",
-    accent: "#407E8C", // was: "#7B2CBF"
+    tag: 'Core Specialty',
+    title: 'Chakra Alignment & Clearing',
+    desc: 'Precision balancing of the 11-chakra system — with special focus on the Basic (Root) and Crown chakras to keep you grounded and inspired simultaneously.',
+    highlight: true,
   },
   {
-    title: "Chakra Balancing",
-    copy: "Focused support for restoring harmony across the body's energy centers. This service is often chosen by people who feel mentally scattered, emotionally heavy, or out of rhythm in everyday life.",
-    accent: "#A58D66", // was: "#2D6A4F"
+    tag: 'Energy Work',
+    title: 'Pranic Energy Servicing',
+    desc: 'Deep cleansing of congested and diseased energy from the bioplasmic body, boosting immunity, accelerating physical recovery, and restoring vitality.',
+    highlight: false,
   },
   {
-    title: "Stress & Anxiety Healing",
-    copy: "A gentle healing experience for people navigating tension, restlessness, worry, or emotional overload. Sessions aim to create a deeper sense of calm, steadiness, and inner quiet.",
-    accent: "#C0D5D6", // was: "#E76F51"
+    tag: 'Distant Healing',
+    title: 'Advanced Remote Healing',
+    desc: 'Powerful Pranic Healing sessions conducted across any distance. Location is no barrier to your healing — our global clients confirm this.',
+    highlight: false,
+  },
+  {
+    tag: 'Coaching',
+    title: 'Spiritual Coaching',
+    desc: 'Personalized guidance to manifest your Golden Life using the sacred principles of Om and Tathastu. Align intention with universal energy.',
+    highlight: false,
+  },
+  {
+    tag: 'Holistic Health',
+    title: 'Naturopathy & Yoga',
+    desc: 'Rooted in a Diploma in Naturopathy and Yoga, Vidya weaves natural healing principles into every session for whole-body restoration.',
+    highlight: false,
+  },
+  {
+    tag: 'Assessment',
+    title: 'Energy Body Diagnosis',
+    desc: 'Scanning and mapping the aura and chakras to identify energetic deficiencies and congestion — the foundation of every personalized healing plan.',
+    highlight: false,
   },
 ];
 
 export default function Services() {
+  const [hovered, setHovered] = useState<number | null>(null);
+
   return (
     <SiteLayout>
+      <ScrollToTop />
       <Seo
         title="Services"
         path="/services"
-        description="Explore Pranic Healing sessions, chakra balancing, and stress and anxiety healing at Vidya's Holistic Healing."
+        description="Explore Pranic Healing, chakra balancing, energy servicing, and spiritual coaching with Vidya Joshi."
       />
 
-      <PageHero
-        eyebrow="Services"
-        title="Simple, supportive healing services"
-        description="Each service is designed to feel clear, calming, and accessible, especially for people who want gentle support without technical language or complicated processes."
-      />
+      <section style={{ background: '#083A4F', padding: '100px 80px', position: 'relative', overflow: 'hidden' }}>
+        {/* 5.svg — top-left, ~15% visible */}
+        <img src="/5.svg" alt="" aria-hidden="true"
+          style={{
+            position: 'absolute', top: '0', left: '0',
+            transform: 'translate(-30%, -30%)',
+            width: '900px', height: '900px',
+            opacity: 0.1,
+            filter: 'invert(78%) sepia(28%) saturate(389%) hue-rotate(2deg) brightness(92%) contrast(85%)',
+            pointerEvents: 'none',
+          }} />
 
-      <section className="section-shell pt-0">
-        <div className="container grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-          <div className="fade-in-section grid gap-5">
-            {services.map(service => (
-              <article key={service.title} className="surface-card overflow-hidden p-7 sm:p-8">
-                <div className="mb-5 h-1.5 w-20 rounded-full" style={{ backgroundColor: service.accent }} />
-                <h2 className="text-3xl font-semibold">{service.title}</h2>
-                <p className="mt-4 text-muted-foreground">{service.copy}</p>
-              </article>
-            ))}
-          </div>
-          <div className="fade-in-section [animation-delay:0.08s]">
-            <div className="surface-card overflow-hidden p-4">
-              <img
-                src={servicesImage}
-                alt="Abstract geometric wellness artwork representing chakra-inspired healing services"
-                className="h-[520px] w-full rounded-[1.6rem] object-cover"
-              />
-            </div>
-          </div>
+        {/* Gold rings — bottom-right */}
+        <div style={{
+          position: 'absolute', bottom: '0', right: '0',
+          transform: 'translate(40%, 40%)',
+          width: '880px', height: '880px',
+          borderRadius: '50%',
+          border: '1px solid rgba(165,141,102,0.45)',
+          boxShadow: '0 0 0 36px rgba(165,141,102,0.07), 0 0 0 72px rgba(165,141,102,0.05), 0 0 0 108px rgba(165,141,102,0.03)',
+          pointerEvents: 'none',
+        }} />
+
+        {/* Header */}
+        <div className="fade-in-section flex flex-col gap-7" style={{ textAlign: 'center', marginBottom: '64px' }}>
+          <span style={{
+            fontFamily: "'Cinzel', serif", fontSize: '11px', letterSpacing: '0.26em',
+            textTransform: 'uppercase', color: '#A58D66', display: 'block', marginBottom: '16px',
+          }}>What We Offer</span>
+          <h2 style={{
+            fontFamily: "'Cormorant Garamond', serif", fontWeight: 400,
+            fontSize: '48px', lineHeight: 1.15, color: 'white', margin: '0 0 20px',
+          }}>Healing Services</h2>
+          <p style={{
+            fontFamily: "'Jost', sans-serif", fontWeight: 300,
+            fontSize: '16px', lineHeight: 1.8, color: 'rgba(192,213,214,0.7)',
+            maxWidth: '520px', margin: '0 auto',
+          }}>
+            Each service is tailored to your unique energetic blueprint — because no two souls carry the same need.
+          </p>
         </div>
-      </section>
 
-      <SacredDivider />
+        {/* Grid */}
+        <div className="fade-in-section flex flex-col gap-7" style={{
+          display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)',
+          gap: '20px', maxWidth: '1100px', margin: '0 auto 56px',
+        }}>
+          {SERVICES.map((svc, i) => (
+            <div
+              key={i}
+              onMouseEnter={() => setHovered(i)}
+              onMouseLeave={() => setHovered(null)}
+              style={{
+                background: hovered === i ? 'rgba(13,77,104,0.9)' : 'rgba(4,31,43,0.75)',
+                border: hovered === i ? '1px solid rgba(165,141,102,0.55)' : '1px solid rgba(165,141,102,0.2)',
+                borderRadius: '12px', padding: '32px 28px',
+                cursor: 'pointer', transition: 'all 280ms ease-out',
+                transform: hovered === i ? 'translateY(-4px)' : 'translateY(0)',
+                boxShadow: hovered === i ? '0 12px 40px rgba(4,31,43,0.45)' : '0 4px 20px rgba(4,31,43,0.2)',
+                display: 'flex', flexDirection: 'column', gap: '12px',
+              }}>
+              <span style={{
+                fontFamily: "'Cinzel', serif", fontSize: '10.5px', letterSpacing: '0.2em',
+                textTransform: 'uppercase', color: '#407E8C',
+              }}>{svc.tag}</span>
+              {svc.highlight && (
+                <div style={{ width: '28px', height: '2px', background: '#A58D66', borderRadius: '1px' }} />
+              )}
+              <h3 style={{
+                fontFamily: "'Cormorant Garamond', serif", fontWeight: 500,
+                fontSize: '20px', color: 'white', lineHeight: 1.3, margin: 0,
+              }}>{svc.title}</h3>
+              <p style={{
+                fontFamily: "'Jost', sans-serif", fontWeight: 300,
+                fontSize: '14px', lineHeight: 1.75, color: 'rgba(192,213,214,0.78)',
+                margin: 0,
+              }}>{svc.desc}</p>
+            </div>
+          ))}
+        </div>
 
-      <section className="section-shell pt-0">
-        <div className="container">
-          <article className="surface-card fade-in-section grid gap-8 p-8 sm:p-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-            <div>
-              <span className="eyebrow">Next Step</span>
-              <h2 className="mt-5 text-4xl font-semibold">Not sure which service is right for you?</h2>
-              <p className="mt-4 max-w-2xl text-muted-foreground">
-                A consultation can help you understand which healing approach may feel most supportive for your current concerns, whether that is emotional stress, anxiety, or a general need for balance.
-              </p>
-            </div>
-            <div className="flex flex-col gap-4 sm:flex-row lg:justify-end">
-              <Button asChild className="rounded-full bg-primary px-7 text-primary-foreground hover:bg-primary/90">
-                <Link href="/contact">Book a Consultation</Link>
-              </Button>
-              <Button asChild variant="outline" className="rounded-full border-primary/20 bg-white/70 px-7 text-foreground hover:bg-white">
-                <Link href="/about">Learn About Vidya</Link>
-              </Button>
-            </div>
-          </article>
+        {/* CTA */}
+        <div  className="fade-in-section flex flex-col gap-7" style={{ textAlign: 'center' }}>
+          <Link href="/contact">
+            <button
+              style={{
+                fontFamily: "'Cinzel', serif", fontSize: '11.5px', letterSpacing: '0.18em',
+                textTransform: 'uppercase', background: 'transparent', color: '#A58D66',
+                border: '1px solid rgba(165,141,102,0.5)', borderRadius: '5px',
+                padding: '14px 40px', cursor: 'pointer', transition: 'all 250ms',
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.background = 'rgba(165,141,102,0.1)';
+                e.currentTarget.style.color = '#C4A96E';
+                e.currentTarget.style.borderColor = '#C4A96E';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.background = 'transparent';
+                e.currentTarget.style.color = '#A58D66';
+                e.currentTarget.style.borderColor = 'rgba(165,141,102,0.5)';
+              }}>
+              Book Your Session
+            </button>
+          </Link>
         </div>
       </section>
     </SiteLayout>

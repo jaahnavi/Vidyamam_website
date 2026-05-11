@@ -22,7 +22,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Josefin+Sans:wght@100;300;400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@200;300;400;500;600;700&family=Cinzel:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <title>Vidya's Holistic Healing</title>
@@ -30,8 +30,8 @@
   <body>
 
     <!-- Splash screen — shows before CSS/React load. Drop logo.png into client/public/ to show the logo. -->
-    <div id="splash" style="position:fixed;inset:0;z-index:9999;background:radial-gradient(ellipse at center,#083A4F 0%,#216a83 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;transition:opacity 0.7s ease">
-      <img src="/logo.png" alt="Vidya's Holistic Healing" onerror="this.style.display='none'" style="width:220px;height:auto;object-fit:contain;filter:drop-shadow(0 4px 24px rgba(0,0,0,0.35))" />
+    <div id="splash" style="position:fixed;inset:0;z-index:9999;background:radial-gradient(ellipse at center,#041F2B 0%, #083A4F 55%, #0D4D68 100% );display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;transition:opacity 0.7s ease">
+      <img src="/logo.png" alt="Vidya's Holistic Healing" onerror="this.style.display='none'" style="width:220px;height:auto;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 4px 24px rgba(0,0,0,0.35))" />
       <p style="color:rgba(229,225,221,0.7);font-family:serif;font-style:italic;font-weight:300;letter-spacing:0.18em;font-size:13px;margin:0">Vidya's Holistic Healing</p>
     </div>
     <script>
@@ -41,29 +41,8 @@
       },2000);
     </script>
 
-    <div class="chakra-bg">
-      <div class="blob b1"></div>
-      <div class="blob b2"></div>
-      <div class="blob b3"></div>
-      <div class="blob b4"></div>
-      <div class="blob b5"></div>
-      <div class="blob b6"></div>
-      <div class="blob b7"></div>
-
-      <div class="wave-layer">
-        <svg class="wave-svg w1" viewBox="0 0 1440 320" preserveAspectRatio="none">
-          <path d="M0,160 C360,260 720,60 1080,160 C1260,210 1380,130 1440,160 L1440,320 L0,320 Z"/>
-        </svg>
-        <svg class="wave-svg w2" viewBox="0 0 1440 320" preserveAspectRatio="none">
-          <path d="M0,200 C240,100 480,280 720,200 C960,120 1200,260 1440,200 L1440,320 L0,320 Z"/>
-        </svg>
-        <svg class="wave-svg w3" viewBox="0 0 1440 320" preserveAspectRatio="none">
-          <path d="M0,240 C300,160 600,300 900,240 C1100,200 1300,270 1440,240 L1440,320 L0,320 Z"/>
-        </svg>
-      </div>
-    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script defer src="%VITE_ANALYTICS_ENDPOINT%/umami" data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
+   
   </body>
 </html>

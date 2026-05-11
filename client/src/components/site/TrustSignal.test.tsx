@@ -4,7 +4,7 @@ import { TrustSignal } from "./TrustSignal";
 describe("TrustSignal", () => {
   const mockTrustSignal = {
     label: "Years of Experience",
-    value: "12+",
+    value: "15+",
     description: "Dedicated to holistic healing",
   };
 
@@ -17,7 +17,7 @@ describe("TrustSignal", () => {
   it("should accept required props", () => {
     const component = <TrustSignal {...mockTrustSignal} />;
     expect(component.props.label).toBe("Years of Experience");
-    expect(component.props.value).toBe("12+");
+    expect(component.props.value).toBe("15+");
     expect(component.props.description).toBe("Dedicated to holistic healing");
   });
 
@@ -25,15 +25,15 @@ describe("TrustSignal", () => {
     const component = <TrustSignal {...mockTrustSignal} />;
     expect(component.props).toMatchObject({
       label: "Years of Experience",
-      value: "12+",
+      value: "15+",
       description: "Dedicated to holistic healing",
     });
   });
 
   it("should handle different trust signal types", () => {
     const signals = [
-      { label: "Years of Experience", value: "12+", description: "Dedicated to holistic healing" },
-      { label: "Clients Supported", value: "500+", description: "Transformed lives" },
+      { label: "Years of Experience", value: "15+", description: "Dedicated to holistic healing" },
+      { label: "Clients Supported", value: "2000+", description: "Transformed lives" },
       { label: "Session Success Rate", value: "95%", description: "Positive outcomes" },
     ];
 

@@ -1,209 +1,401 @@
-import { Button } from "@/components/ui/button";
-import { HeartHandshake, Leaf, Sparkles, ShieldCheck } from "lucide-react";
 import { Link } from "wouter";
-import { ChakraCard } from "@/components/site/ChakraCard";
 import { SacredDivider } from "@/components/site/SacredDivider";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { Seo } from "@/components/site/Seo";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { TestimonialCard } from "@/components/site/TestimonialCard";
 import { TrustSignal } from "@/components/site/TrustSignal";
-import { chakras, testimonials, whyChooseUs, trustSignals } from "@/components/site/site-data";
-import ChakraVisualization from '@/components/site/ChakraVisualization';
+import { testimonials, whyChooseUs, trustSignals } from "@/components/site/site-data";
+import HowItWorks from "@/components/site/HowItWorks";
+import ScrollToTop  from '@/components/site/scrolltotop';
 
-const heroImage = "https://d2xsxph8kpxj0f.cloudfront.net/310519663585662648/ErWs2ocR65P7dstuQdjKqk/dr-vidya-hero-48qiHYvgTfdpqamVWLszJr.webp";
+const vidyaHero   = "/vidya-hero.jpeg";
 
-const introPoints = [
+const services = [
   {
-    icon: HeartHandshake,
-    title: "Supportive care",
-    copy: "Every session is approached with empathy, patience, and personal attention.",
+    tag: "Core Specialty",
+    title: "Chakra Alignment & Clearing",
+    desc: "Precision balancing of the 11-chakra system — with special focus on the Basic and Crown chakras.",
+    accent: true,
   },
   {
-    icon: Leaf,
-    title: "Calm environment",
-    copy: "Our space is designed to feel grounding, quiet, and easy to settle into.",
+    tag: "Energy Work",
+    title: "Pranic Energy Servicing",
+    desc: "Deep cleansing of congested energy from the bioplasmic body, boosting immunity and restoring vitality.",
   },
   {
-    icon: ShieldCheck,
-    title: "Professional guidance",
-    copy: "You receive clear, gentle explanations without overwhelming terminology.",
+    tag: "Distant Healing",
+    title: "Advanced Remote Healing",
+    desc: "Powerful healing sessions conducted across any distance. Location is no barrier to your healing.",
   },
 ];
+
+// ── Cinzel label style ──────────────────────────────────────
+const cinzel = { fontFamily: "'Cinzel', serif" } as const;
+const cormorant = { fontFamily: "'Cormorant Garamond', serif" } as const;
+const jost = { fontFamily: "'Jost', sans-serif" } as const;
+const mandala1 = '/1.svg' as const;
+const mandala2 = '/2.svg' as const;
+const mandala3 = '/3.svg' as const;
 
 export default function Home() {
   return (
     <SiteLayout>
+      <ScrollToTop />
       <Seo
         title="Home"
         path="/"
-        description="Discover Vidya's Holistic Healing Center in  for Pranic Healing, chakra balancing, and gentle support for stress and anxiety."
+        description="Vidya's Holistic Healing — Certified Pranic Healer in Frisco, Texas. Chakra alignment, energy servicing and distant healing for a global community."
       />
 
-      <section className="section-shell overflow-hidden pt-28 sm:pt-32">
-        <div className="container grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
-          <div className="fade-in-section relative space-y-8">
-            <span className="eyebrow"> Wellness Clinic</span>
-            <div className="space-y-5">
-              <h1 className="max-w-3xl text-5xl font-semibold leading-[0.95] sm:text-6xl lg:text-7xl">
-                Vidya&apos;s Holistic Healing
-              </h1>
-              <p className="max-w-2xl text-lg text-muted-foreground sm:text-xl">
-                Guiding you toward balance, healing, and inner peace through Pranic Healing.
-              </p>
-            </div>
-            <p className="max-w-2xl text-base text-muted-foreground sm:text-lg">
-              Holistic healing can offer a quiet, supportive path for people navigating emotional strain,
-              anxious thoughts, fatigue, and the need to feel more centered in daily life.
-            </p>
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <Button
-                size="lg"
-                onClick={() => {
-                  const contactForm = document.getElementById("contact-form");
-                  if (contactForm) {
-                    contactForm.scrollIntoView({ behavior: "smooth" });
-                  } else {
-                    window.location.href = "/contact";
-                  }
-                }}
-                className="rounded-full bg-primary px-8 py-6 text-base font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all duration-300 hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/30"
+      {/* ═══════════════════════════════════════════════════════
+          HERO — full-bleed dark navy
+      ════════════════════════════════════════════════════════ */}
+      <section
+        className="relative overflow-hidden"
+        style={{ background: "linear-gradient(155deg, #041F2B 0%, #083A4F 55%, #0D4D68 100%)", minHeight: "100vh" }}
+      >
+        {/* Ambient rings */}
+        {[420, 640, 860].map((s, i) => (
+          <div
+            key={i}
+            className="pointer-events-none absolute rounded-full"
+            style={{
+              width: s, height: s,
+              border: "2px solid rgba(165,141,102,0.07)",
+              top: "50%", left: "50%",
+              transform: "translate(-50%, -50%)",
+            }}
+          />
+        ))}
+        {/* Radial gold glow */}
+        <div
+          className="pointer-events-none absolute"
+          style={{
+            top: "38%", left: "50%", transform: "translate(-50%, -50%)",
+            width: 700, height: 700,
+            background: "radial-gradient(ellipse, rgba(165,141,102,0.07) 0%, transparent 70%)",
+          }}
+        />
+        <img
+          src={mandala1}
+          alt=""
+          aria-hidden="true"
+          className="absolute pointer-events-none overflow-visible" 
+          style={{
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-0%, -90%)',
+            width: '900px',
+            height: '900px',
+            opacity: 0.06,
+            filter:
+              'invert(78%) sepia(28%) saturate(389%) hue-rotate(2deg) brightness(92%) contrast(85%)',
+          }}
+        />
+        
+
+        <div className="container relative z-10 grid items-center gap-16 pt-28 pb-20 lg:grid-cols-2 lg:pt-32 lg:pb-24">
+
+          {/* ── Left: copy ─────────────────────────────────── */}
+          <div className="fade-in-section flex flex-col gap-7">
+            {/* Eyebrow */}
+            <span style={cinzel} className="gold-badge w-fit">
+              Certified Pranic Healer · Frisco, Texas
+            </span>
+
+            {/* Logo mark */}
+            <img
+              src="/logo1.png"
+              alt="VHH"
+              className="w-20 h-20 object-contain"
+              style={{ filter: "drop-shadow(0 0 24px rgba(165,141,102,0.35))" }}
+            />
+
+            {/* Headline */}
+            <div>
+              <h1
+                style={{ ...cormorant, fontSize: "clamp(3rem, 6vw, 5rem)", fontWeight: 300, lineHeight: 1.08, letterSpacing: "-0.01em", fontStyle: "italic" }}
+                className="text-white"
               >
-                Book a Consultation
-              </Button>
-              <Button asChild size="lg" variant="outline" className="rounded-full border-primary/20 bg-white/70 px-8 py-6 text-base font-semibold text-foreground transition-all duration-300 hover:border-primary/40 hover:bg-white hover:shadow-md">
-                <Link href="/services">Explore Services</Link>
-              </Button>
+                Heal the Need.<br />
+                <em style={{ color: "#C4A96E" }}>Recalibrate Your Life.</em>
+              </h1>
             </div>
-            <div className="grid gap-4 sm:grid-cols-3 pt-4">
+
+            {/* Sub */}
+            <p style={{ ...jost, fontWeight: 300, fontSize: "1.05rem", lineHeight: 1.85, letterSpacing: "0.03em" }}
+              className="max-w-lg text-[rgba(192,213,214,0.8)]">
+              With 15 years of practice and 2,000+ success stories — helping you clear energetic blockages
+              and welcome a life of vibrant vital force.
+            </p>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap gap-4 pt-1">
+              <button
+                onClick={() => {
+                  const el = document.getElementById("contact-form");
+                  if (el) el.scrollIntoView({ behavior: "smooth" });
+                  else window.location.href = "/contact";
+                }}
+                style={{ ...cinzel, fontSize: "10px", letterSpacing: "0.18em" }}
+                className="rounded-[5px] bg-[#A58D66] px-8 py-4 uppercase text-[#041F2B] shadow-[0_0_24px_rgba(165,141,102,0.28)] transition-all duration-250 hover:bg-[#C4A96E] hover:shadow-[0_0_36px_rgba(165,141,102,0.45)]"
+              >
+                Book a Session
+              </button>
+              <Link href="/services">
+                <button
+                  style={{ ...cinzel, fontSize: "10px", letterSpacing: "0.18em" }}
+                  className="rounded-[5px] border border-[rgba(165,141,102,0.45)] bg-transparent px-8 py-4 uppercase text-[#A58D66] transition-all duration-250 hover:border-[rgba(165,141,102,0.8)] hover:bg-[rgba(165,141,102,0.08)]"
+                >
+                  Explore Services
+                </button>
+              </Link>
+            </div>
+
+            {/* Ornament */}
+            <div className="flex items-center gap-3 pt-2 opacity-50">
+              <div className="h-px w-14 bg-[rgba(165,141,102,0.5)]" />
+              <div className="h-1.5 w-1.5 rotate-45 bg-[#A58D66]" />
+              <div className="h-px w-14 bg-[rgba(165,141,102,0.5)]" />
+            </div>
+
+            {/* Trust signals */}
+            <div className="grid grid-cols-3 gap-4 pt-1">
               {trustSignals.map(signal => (
-                <div key={signal.label} className="fade-in-section">
-                  <TrustSignal {...signal} />
-                </div>
-              ))}
-            </div>
-            <div className="grid gap-4 sm:grid-cols-3 pt-8">
-              {introPoints.map(point => (
-                <article key={point.title} className="surface-card p-5 transition-all duration-300 hover:shadow-md hover:border-primary/10">
-                  <point.icon className="h-6 w-6 text-primary" />
-                  <h2 className="mt-4 text-2xl font-semibold">{point.title}</h2>
-                  <p className="mt-2 text-sm text-muted-foreground">{point.copy}</p>
-                </article>
+                <TrustSignal key={signal.label} {...signal} />
               ))}
             </div>
           </div>
 
-          <div className="fade-in-section relative [animation-delay:0.12s]">
-            {/* was: bg-[rgba(58,12,163,0.12)] */}
-            <div className="soft-orb -left-8 top-16 h-28 w-28 bg-[rgba(64,126,140,0.12)]" />
-            {/* was: bg-[rgba(244,162,97,0.14)] */}
-            <div className="soft-orb -right-4 bottom-12 h-36 w-36 bg-[rgba(165,141,102,0.14)] [animation-delay:1.1s]" />
-            <div className="surface-card relative overflow-hidden rounded-[2rem] p-3">
-              <div className="grain-overlay absolute inset-0 opacity-20" />
+          {/* ── Right: hero image ──────────────────────────── */}
+          <div className="fade-in-section relative [animation-delay:0.15s]">
+            {/* Soft glow orbs */}
+            <div className="soft-orb -left-8 top-10 h-32 w-32 bg-[rgba(64,126,140,0.14)]" />
+            <div className="soft-orb -right-4 bottom-10 h-40 w-40 bg-[rgba(165,141,102,0.12)] [animation-delay:1.2s]" />
+
+            {/* Image card */}
+            <div
+              className="relative overflow-hidden rounded-[1.75rem] p-3"
+              style={{ border: "1px solid rgba(165,141,102,0.2)", background: "rgba(4,31,43,0.6)" }}
+            >
+              <div className="grain-overlay absolute inset-0 opacity-20 rounded-[1.75rem]" />
+              <Link href="/about">
               <img
-                src={heroImage}
-                alt="Calm consultation setting at Vidya's Holistic Healing Center"
-                className="relative h-[520px] w-full rounded-[1.6rem] object-cover"
+                src={vidyaHero}
+                alt="Vidya Joshi at her healing practice"
+                className="relative h-[520px] w-full rounded-[1.4rem] object-cover"
               />
-              <div className="absolute inset-x-8 bottom-8 rounded-[1.5rem] border border-white/70 bg-white/78 p-5 shadow-lg backdrop-blur-md">
-                <div className="flex items-center gap-3">
-                  <div className="chakra-ring flex h-12 w-12 items-center justify-center rounded-full border border-primary/15">
-                    <Sparkles className="h-5 w-5 text-primary" />
+              {/* Floating badge */}
+              <div
+                className="absolute inset-x-6 bottom-6 rounded-2xl border border-[rgba(165,141,102,0.3)] bg-[rgba(4,31,43,0.82)] p-5 backdrop-blur-md"
+              >
+                <div className="flex items-center gap-4">
+                  <div
+                    className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full"
+                    style={{ border: "1px solid rgba(165,141,102,0.35)", background: "rgba(165,141,102,0.1)" }}
+                  >
+                    <img src="/logo1.png" alt="" className="h-7 w-7 object-contain" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold uppercase tracking-[0.24em] text-muted-foreground">Personal Healing Support</p>
-                    <p className="text-lg font-semibold text-foreground">A calm and professional space for balance</p>
+                    <p style={{ ...cinzel, fontSize: "10px", letterSpacing: "0.2em" }} className="uppercase text-[#A58D66] mb-1">
+                      Vidya Joshi
+                    </p>
+                    <p style={{ ...cormorant, fontSize: "16px", fontStyle: "italic", fontWeight: 300 }}
+                      className="text-white leading-snug">
+                      Certified Pranic Healer &amp; Wellness Practitioner
+                    </p>
                   </div>
                 </div>
               </div>
+            </Link>
+
             </div>
           </div>
         </div>
       </section>
 
-      <SacredDivider />
+      {/* ═══════════════════════════════════════════════════════
+          SACRED DIVIDER
+      ════════════════════════════════════════════════════════ */}
+      <div style={{ background: "#083A4F" }}>
+        <SacredDivider variant="dark" />
+      </div>
+       <HowItWorks/>
 
-      <section className="section-shell pt-0">
-        <div className="container grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
-          <div className="fade-in-section">
-            <SectionHeading
-              eyebrow="Gentle Introduction"
-              title="What is Pranic Healing?"
-              description="Pranic Healing is a gentle, energy-based healing approach that aims to support the body's natural ability to regain balance and calm. It is often experienced as a quiet complement to emotional wellness practices, especially when stress and anxiety feel overwhelming."
-            />
+      {/* ═══════════════════════════════════════════════════════
+          SERVICES TEASER — dark navy
+      ════════════════════════════════════════════════════════ */}
+      <section className="section-shell" style={{ background: "#083A4F" }}>
+        <div className="container">
+          {/* Header */}
+          <div className="mb-14 flex flex-col items-center text-center gap-4">
+            <span style={cinzel} className="eyebrow text-[#A58D66]">What We Offer</span>
+            <h2 style={{ ...cormorant, fontSize: "clamp(2.4rem, 4vw, 3.5rem)", fontWeight: 300, fontStyle: "italic" }}
+              className="text-white">
+              Healing Services
+            </h2>
+            <p style={{ ...jost, fontWeight: 300, fontSize: "1rem", lineHeight: 1.8, letterSpacing: "0.03em" }}
+              className="max-w-lg text-[rgba(192,213,214,0.65)]">
+              Each service is tailored to your unique energetic blueprint — because no two souls carry the same need.
+            </p>
           </div>
-          <div className="fade-in-section grid gap-5 sm:grid-cols-2 [animation-delay:0.1s]">
-            <article className="surface-card p-6">
-              <h3 className="text-2xl font-semibold">Non-invasive support</h3>
-              <p className="mt-3 text-muted-foreground">
-                Sessions are designed to feel gentle and supportive, without physical strain or complicated processes.
-              </p>
-            </article>
-            <article className="surface-card p-6">
-              <h3 className="text-2xl font-semibold">Clarity for the mind</h3>
-              <p className="mt-3 text-muted-foreground">
-                Many people seek Pranic Healing when they want emotional steadiness, calm thinking, and inner quiet.
-              </p>
-            </article>
-            <article className="surface-card p-6 sm:col-span-2">
-              <h3 className="text-2xl font-semibold">A holistic approach to anxiety support</h3>
-              <p className="mt-3 text-muted-foreground">
-                The focus is not only on symptoms, but also on helping you feel grounded, emotionally supported,
-                and more connected to your natural sense of balance.
-              </p>
-            </article>
+
+          {/* 3-col service cards */}
+          <div className="grid gap-5 lg:grid-cols-3 mb-12">
+            {services.map((svc, i) => (
+              <div key={i} className="dark-card flex flex-col gap-4 p-7">
+                <span style={{ ...cinzel, fontSize: "10px", letterSpacing: "0.2em" }}
+                  className="uppercase text-[#407E8C]">
+                  {svc.tag}
+                </span>
+                {svc.accent && <div className="h-0.5 w-7 rounded bg-[#A58D66]" />}
+                <h3 style={{ ...cormorant, fontSize: "1.3rem", fontWeight: 500, fontStyle: "italic" }}
+                  className="text-white leading-snug">
+                  {svc.title}
+                </h3>
+                <p style={{ ...jost, fontWeight: 300, fontSize: "0.85rem", lineHeight: 1.8, letterSpacing: "0.02em" }}
+                  className="text-[rgba(192,213,214,0.6)]">
+                  {svc.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className="flex justify-center">
+            <Link href="/services">
+              <button
+                style={{ ...cinzel, fontSize: "11px", letterSpacing: "0.18em" }}
+                className="rounded-[5px] border border-[rgba(165,141,102,0.45)] bg-transparent px-10 py-3.5 uppercase text-[#A58D66] transition-all hover:border-[rgba(165,141,102,0.8)] hover:bg-[rgba(165,141,102,0.08)]"
+              >
+                View All Services
+              </button>
+            </Link>
           </div>
         </div>
       </section>
 
+      <div style={{ background: "#083A4F" }}>
+        <SacredDivider variant="dark" />
+      </div>
 
-      <ChakraVisualization />
+      {/* ═══════════════════════════════════════════════════════
+          WHY CHOOSE US — aqua tint
+      ════════════════════════════════════════════════════════ */}
+      <section className="relative overflow-visible section-shell"  style={{ background: "#F4F1EE" }}>
+        <div className="container grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
+          <div className="fade-in-section flex flex-col gap-6">
+            <div
+              className="pointer-events-none absolute overflow-visible"
+              style={{
+                top: "38%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                width: 700,
+                height: 700,
+              }}
+            >
+              
+              {/* RADIAL GLOW */}
+              <div
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "radial-gradient(ellipse, rgba(165,141,102,0.07) 0%, transparent 70%)",
+                }}
+              />
 
-      <section className="section-shell">
-        <div className="container grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-12">
-          <div className="fade-in-section">
-            <SectionHeading
-              eyebrow="Why Patients Choose Us"
-              title="A space that feels calm, credible, and supportive"
-              description="The clinic is designed to feel welcoming and centered, with care that respects both emotional wellbeing and the need for practical clarity."
-            />
-            <Button asChild className="rounded-full bg-primary px-7 text-primary-foreground hover:bg-primary/90">
-              <Link href="/about">Meet Vidya</Link>
-            </Button>
+              {/* GOLD RING 1 */}
+              <div
+                className="absolute rounded-full"
+                style={{
+                  width: 320,
+                  height: 320,
+                  border: "2px solid rgba(165,141,102,0.18)",
+                  top: -140,
+                  left: -180,
+                }}
+              />
+
+              {/* GOLD RING 2 */}
+              <div
+                className="absolute rounded-full"
+                style={{
+                  width: 520,
+                  height: 520,
+                  border: "3px solid rgba(165,141,102,0.10)",
+                  top: -240,
+                  left: -260,
+                }}
+              />
+
+              {/* GOLD RING 3 */}
+              <div
+                className="absolute rounded-full"
+                style={{
+                  width: 760,
+                  height: 760,
+                  border: "4px solid rgba(165,141,102,0.06)",
+                  top: -360,
+                  left: -360,
+                }}
+              />
+            </div>
+            <span style={cinzel} className="eyebrow text-[#407E8C]">Why Choose Us</span>
+            <h2 style={{ ...cormorant, fontSize: "clamp(2.2rem, 3.5vw, 3rem)", fontWeight: 300, fontStyle: "italic" }}
+              className="text-[#083A4F] leading-tight">
+              A space that feels calm, credible, and supportive
+            </h2>
+            <div className=" flex flex-wrap gap-4 pt-1 gold-line" />
+            <p style={{ ...jost, fontWeight: 300, fontSize: "0.95rem", lineHeight: 1.85, letterSpacing: "0.03em" }}
+              className="text-[#2D4A56]">
+              The practice is designed to feel welcoming and centered, with care that respects both
+              emotional wellbeing and the need for practical clarity.
+            </p>
+            
+            <div className="flex flex-wrap gap-4 pt-2">
+            <Link href="/about">
+              <button
+                style={{ ...cinzel, fontSize: "11px", letterSpacing: "0.16em" }}
+                className="mt-2 w-fit rounded-[5px] bg-[#A58D66] px-7 py-3 uppercase text-[#041F2B] transition-all hover:bg-[#C4A96E]"
+              >
+                Meet Vidya
+              </button>
+            </Link>
+
+            <Link href="/testimonials">
+            <button
+              className="mt-2 w-fit rounded-[5px] bg-[#A58D66] px-7 py-3 uppercase text-[#041F2B] transition-all hover:bg-[#C4A96E]"
+              style={{
+                 ...cinzel, fontSize: "11px", letterSpacing: "0.16em" 
+              }}>
+              Explore Verified Testimonials
+            </button>
+          </Link>
           </div>
-          <div className="grid gap-4">
-            {whyChooseUs.map(reason => (
-              <article key={reason} className="surface-card fade-in-section flex items-start gap-4 p-5 transition-all duration-300 hover:shadow-md hover:border-primary/10">
-                <div className="mt-1 h-3 w-3 rounded-full bg-primary flex-shrink-0" />
-                <p className="text-base text-muted-foreground">{reason}</p>
+          </div>
+          
+          
+
+          <div className="grid gap-3">
+            {whyChooseUs.map((reason, i) => (
+              <article
+                key={i}
+                className="fade-in-section surface-card flex items-start gap-4 p-5"
+                style={{ animationDelay: `${i * 0.07}s` }}
+              >
+                <div className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[#A58D66]" />
+                <p style={{ ...jost, fontWeight: 300, fontSize: "0.92rem", lineHeight: 1.75, letterSpacing: "0.02em" }}
+                  className="text-[#2D4A56]">
+                  {reason}
+                </p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section-shell bg-white/55">
-        <div className="container">
-          <SectionHeading
-            eyebrow="Client Words"
-            title="Kind feedback from people we have supported"
-            description="A few reflections from clients who experienced Vidya's healing guidance and presence."
-            align="center"
-          />
-          <div className="grid gap-5 lg:grid-cols-3">
-            {testimonials.map(item => (
-              <div key={item.author} className="fade-in-section">
-                <TestimonialCard {...item} />
-              </div>
-            ))}
-          </div>
-          <div className="mt-12 flex justify-center">
-            <Button asChild size="lg" className="rounded-full bg-primary px-8 py-6 text-base font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all duration-300 hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/30">
-              <Link href="/contact">Ready to Begin Your Healing Journey?</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
     </SiteLayout>
   );
 }
