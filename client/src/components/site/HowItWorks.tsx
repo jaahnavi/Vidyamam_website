@@ -26,12 +26,12 @@ const chakras: Chakra[] = [
   { id: 'root',      name: 'Root Chakra',         sanskrit: 'Muladhara • ',    location: 'Base of Spine',    color: '#C0392B', y: 390, theme: 'Grounding • ',           description: 'A blocked root chakra can manifest as physical issues, such as arthritis, constipation, or bladder or colon problems, or emotionally through feelings of insecurity about finances or our basic needs and well-being.', benefits: "When it's in alignment and open, we will feel grounded and secure, both physically and emotionally." },
 ];
 
-type TabId = 'prana' | 'chakras' | 'techniques';
+type TabId = 'chakras' | 'prana' | 'techniques';
 
 const tabs: { id: TabId; label: string; numeral: string }[] = [
-  { id: 'chakras',    label: 'About Chakras',            numeral: 'I'   },
-  { id: 'prana',      label: 'About Prana',              numeral: 'II'  },
-  { id: 'techniques', label: 'Pranic Healing Techniques', numeral: 'III' },
+  { id: 'chakras',    label: 'About Chakras',            numeral: '1'   },
+  { id: 'prana',      label: 'About Prana',              numeral: '2'  },
+  { id: 'techniques', label: 'Pranic Healing Techniques', numeral: '3' },
 ];
 
 const PAGE_BG_FROM   = '#F6F1E8';
@@ -44,7 +44,7 @@ const SURFACE_ACTIVE = 'rgba(255,253,247,1)';
 const GOLD           = '#A58D66';
 
 export default function HowItWorks() {
-  const [activeTab, setActiveTab] = useState<TabId>('prana');
+  const [activeTab, setActiveTab] = useState<TabId>('chakras');
   const [hoveredChakra, setHoveredChakra] = useState<string | null>(null);
   const activeChakra = chakras.find((c) => c.id === hoveredChakra) ?? null;
 
@@ -71,7 +71,7 @@ export default function HowItWorks() {
           className="text-center mb-8 md:mb-12"
         >
           <p
-            className="text-[9px] tracking-[0.26em] uppercase mb-3"
+            className="text-[13px] tracking-[0.26em] uppercase mb-3"
             style={{ fontFamily: "'Cinzel', serif", color: '#407E8C' }}
           >
             The Foundation
@@ -113,7 +113,7 @@ export default function HowItWorks() {
                     className="group relative text-left flex-shrink-0 transition-all duration-300"
                     style={{
                       background: isActive ? SURFACE_ACTIVE : SURFACE,
-                      border: isActive ? `1px solid ${GOLD}99` : `1px solid ${GOLD}33`,
+                      border: isActive ? `2px solid ${GOLD}99` : `2px solid ${GOLD}33`,
                       borderRadius: '8px',
                       padding: '14px 16px',
                       cursor: 'pointer',
@@ -128,13 +128,13 @@ export default function HowItWorks() {
                       style={{ background: GOLD, opacity: isActive ? 1 : 0 }}
                     />
                     <span
-                      className="block text-[10px] tracking-[0.22em] uppercase mb-1"
+                      className="block text-[20px] tracking-[0.22em] uppercase mb-1"
                       style={{ fontFamily: "'Cinzel', serif", color: isActive ? GOLD : `${GOLD}99` }}
                     >
                       {t.numeral}
                     </span>
                     <span
-                      className="block text-sm md:text-base leading-tight"
+                      className="block text-med md:text-base leading-tight"
                       style={{
                         fontFamily: "'Cormorant Garamond', serif",
                         color: isActive ? TEXT_PRIMARY : TEXT_MUTED,
@@ -151,18 +151,6 @@ export default function HowItWorks() {
             {/* RIGHT — content area */}
             <div className="relative">
               <AnimatePresence mode="wait">
-                {activeTab === 'prana' && (
-                  <motion.div
-                    key="prana"
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -8 }}
-                    transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                  >
-                    <PranaPanel />
-                  </motion.div>
-                )}
-
                 {activeTab === 'chakras' && (
                   <motion.div
                     key="chakras"
@@ -178,6 +166,19 @@ export default function HowItWorks() {
                     />
                   </motion.div>
                 )}
+
+                {activeTab === 'prana' && (
+                  <motion.div
+                    key="prana"
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    <PranaPanel />
+                  </motion.div>
+                )}
+
 
                 {activeTab === 'techniques' && (
                   <motion.div
@@ -226,7 +227,7 @@ function PranaPanel() {
   const active = pranaSections.find((s) => s.id === activeSection) ?? pranaSections[0];
 
   return (
-    <div className="w-full flex flex-col items-start gap-10 md:gap-12">
+    <div className="w-full flex flex-col items-center gap-10 md:gap-12 text-center">
       {/* Understanding Prana */}
       <div className="w-full max-w-2xl">
         <h3
@@ -250,7 +251,7 @@ function PranaPanel() {
       </div>
 
       {/* Where do we get Prana? */}
-      <div className="w-full flex flex-col items-start gap-8">
+      <div className="w-full flex flex-col items-center gap-8">
         <div className="w-full max-w-2xl">
           <h3
             className="text-2xl md:text-3xl mb-3 md:mb-4 tracking-wide"
@@ -267,7 +268,7 @@ function PranaPanel() {
         </div>
 
         {/* Nodes row */}
-        <div className="flex items-center gap-6 sm:gap-10 flex-wrap">
+        <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
           {[
             { id: 'solar', color: '#D4AF37', title: 'Solar',  subtitle: 'Vitality'  },
             { id: 'air',   color: '#5DA9B3', title: 'Air',    subtitle: 'Breath'    },
@@ -356,12 +357,12 @@ function PranaNode({
       >
         <div className="text-center">
           <p
-            className="text-[10px] md:text-sm uppercase tracking-[0.18em]"
+            className="text-[12px] md:text-sm uppercase tracking-[0.18em]"
             style={{ color, fontFamily: "'Cinzel', serif" }}
           >
             {title}
           </p>
-          <p className="text-[10px] mt-0.5" style={{ color: '#7A6E5F' }}>
+          <p className="text-[12px] mt-0.5" style={{ color: '#7A6E5F' }}>
             {subtitle}
           </p>
         </div>
@@ -382,33 +383,33 @@ function TechniquesPanel() {
   ];
 
   return (
-    <article className="w-full max-w-2xl">
-      <p className="text-[11px] tracking-[0.24em] uppercase mb-3" style={{ fontFamily: "'Cinzel', serif", color: GOLD }}>
+    <article className="w-full max-w-2xl ">
+      <p className="text-[13px] text-center tracking-[0.24em] uppercase mb-3" style={{ fontFamily: "'Cinzel', serif", color: GOLD }}>
         Energy Medicine
       </p>
-      <h3 className="text-2xl md:text-3xl lg:text-4xl mb-5 md:mb-6 leading-tight tracking-wide" style={{ fontFamily: 'var(--font-serif)', color: TEXT_PRIMARY }}>
+      <h3 className="text-2xl text-center md:text-3xl lg:text-4xl mb-5 md:mb-6 leading-tight tracking-wide" style={{ fontFamily: 'var(--font-serif)', color: TEXT_PRIMARY }}>
         Pranic Healing Techniques
       </h3>
 
-      <p className="text-sm md:text-base lg:text-lg leading-relaxed mb-4 font-light" style={{ color: TEXT_BODY }}>
+      <p className="text-sm text-center md:text-base lg:text-lg leading-relaxed mb-4 font-light" style={{ color: TEXT_BODY }}>
         Pranic Healing is a highly developed and tested system of energy treatment that uses <em>prana</em> to heal the whole physical body. It is a synthesis of ancient esoteric healing methods that have been rediscovered, researched and tested over decades.
       </p>
-      <p className="text-sm md:text-base leading-relaxed mb-8 font-light" style={{ color: TEXT_BODY }}>
+      <p className="text-sm text-center md:text-base leading-relaxed mb-8 font-light" style={{ color: TEXT_BODY }}>
         Unlike other healing methods, Pranic Healing does not require drugs, gadgets, nor is there any physical contact with the subject. Physical contact is not required because the practitioner is working on the bioplasmic or energy body, and not directly on the physical body.
       </p>
 
       <div className="h-px mb-6 md:mb-8" style={{ background: 'linear-gradient(to right, rgba(165,141,102,0.5), transparent)' }} />
 
-      <p className="text-[11px] tracking-[0.2em] uppercase mb-4" style={{ fontFamily: "'Cinzel', serif", color: GOLD }}>
+      <p className="text-[13px] tracking-[0.2em] uppercase mb-4" style={{ fontFamily: "'Cinzel', serif", color: GOLD }}>
         How does it work?
       </p>
       <div className="space-y-3 mb-6 md:mb-8">
         {laws.map((law) => (
           <div key={law.numeral} className="flex gap-3 md:gap-4 items-start p-3 md:p-4 rounded-lg" style={{ background: 'rgba(165,141,102,0.06)', border: '1px solid rgba(165,141,102,0.15)' }}>
-            <span className="shrink-0 text-xs tracking-[0.22em] pt-0.5" style={{ fontFamily: "'Cinzel', serif", color: GOLD }}>{law.numeral}</span>
+            <span className="shrink-0 text-sm tracking-[0.22em] pt-0.5" style={{ fontFamily: "'Cinzel', serif", color: GOLD }}>{law.numeral}</span>
             <div>
               <p className="text-sm md:text-base mb-1" style={{ fontFamily: 'var(--font-serif)', color: TEXT_PRIMARY, fontWeight: 500 }}>{law.name}</p>
-              <p className="text-xs md:text-sm leading-relaxed font-light" style={{ color: TEXT_BODY }}>{law.desc}</p>
+              <p className="text-sm leading-relaxed font-light" style={{ color: TEXT_BODY }}>{law.desc}</p>
             </div>
           </div>
         ))}
@@ -416,7 +417,7 @@ function TechniquesPanel() {
 
       <div className="h-px mb-6 md:mb-8" style={{ background: 'linear-gradient(to right, rgba(165,141,102,0.5), transparent)' }} />
 
-      <p className="text-[11px] tracking-[0.2em] uppercase mb-4 md:mb-5" style={{ fontFamily: "'Cinzel', serif", color: GOLD }}>
+      <p className="text-[13px] tracking-[0.2em] uppercase mb-4 md:mb-5" style={{ fontFamily: "'Cinzel', serif", color: GOLD }}>
         The session, in two steps
       </p>
       <div className="space-y-5 md:space-y-6">
@@ -425,7 +426,7 @@ function TechniquesPanel() {
             <span className="shrink-0 text-3xl md:text-4xl leading-none" style={{ fontFamily: 'var(--font-serif)', color: 'rgba(165,141,102,0.35)', fontWeight: 300 }}>{step.num}</span>
             <div className="pt-1">
               <p className="text-base md:text-lg mb-1 md:mb-2" style={{ fontFamily: 'var(--font-serif)', color: TEXT_PRIMARY, fontWeight: 500 }}>{step.name}</p>
-              <p className="text-xs md:text-sm lg:text-base leading-relaxed font-light" style={{ color: TEXT_BODY }}>{step.desc}</p>
+              <p className="text-sm lg:text-base leading-relaxed font-light" style={{ color: TEXT_BODY }}>{step.desc}</p>
             </div>
           </div>
         ))}
@@ -449,8 +450,20 @@ function ChakrasPanel({
       {/* Silhouette + chakra dots — responsive width */}
       <div
         className="w-full max-w-[320px] sm:max-w-[380px] md:max-w-[420px] mx-auto md:mx-0"
-        style={{ aspectRatio: '420 / 500' }}
+        style={{ aspectRatio: '420 / 510' }}
       >
+        <p
+          className="text-[13px] font-semibold uppercase tracking-[0.24em] text-center"
+          style={{ color: GOLD }}
+        >
+          Seven Centers · One System
+        </p>
+        <h3
+          className="text-2xl md:text-3xl lg:text-4xl leading-tight text-center"
+          style={{ fontFamily: 'var(--font-serif)', color: TEXT_PRIMARY }}
+        >
+          Select a chakra to begin
+        </h3>
         <svg viewBox={VIEWBOX} preserveAspectRatio="xMidYMid meet" className="w-full h-full">
           <defs>
             <filter id="chakra-glow" x="-100%" y="-100%" width="300%" height="300%">
@@ -488,6 +501,7 @@ function ChakrasPanel({
                  C388.165,401.474,328.891,383.849,328.891,383.849z"
             />
           </g>
+          
 
           {chakras.map((c) => {
             const isActive = hoveredChakra === c.id;
@@ -534,7 +548,7 @@ function ChakrasPanel({
       </div>
 
       {/* Info panel */}
-      <div className="w-full min-h-[200px] md:min-h-[420px] flex items-start">
+      <div className="w-full min-h-[200px] md:min-h-[420px] flex items-start text-center">
         <AnimatePresence mode="wait">
           {active ? (
             <motion.div
@@ -591,18 +605,7 @@ function ChakrasPanel({
               transition={{ duration: 0.3 }}
               className="w-full"
             >
-              <p
-                className="text-[11px] font-semibold uppercase tracking-[0.24em] mb-3"
-                style={{ color: GOLD }}
-              >
-                Seven Centers · One System
-              </p>
-              <h3
-                className="text-2xl md:text-3xl lg:text-4xl mb-4 leading-tight"
-                style={{ fontFamily: 'var(--font-serif)', color: TEXT_PRIMARY }}
-              >
-                Select a chakra to begin
-              </h3>
+              
               <p
                 className="text-sm md:text-base leading-relaxed font-light max-w-md"
                 style={{ color: TEXT_MUTED }}

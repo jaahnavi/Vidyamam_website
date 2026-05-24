@@ -17,7 +17,7 @@ export function Navbar() {
           <Link href="/" className="flex items-center gap-2">
             <img
               src="/logo1.png"
-              alt="Vidya's Holistic Healing"
+              alt="Vidya's Holistic Healings"
               className="h-18 w-10 object-contain"
             />
             <div className="flex flex-col leading-none">
@@ -31,7 +31,7 @@ export function Navbar() {
                 style={{ fontFamily: "'Jost', sans-serif", fontSize: "14px", letterSpacing: "0.08em" }}
                 className="text-[rgba(192,213,214,0.6)] font-light"
               >
-                Holistic Healing
+                Holistic Healings
               </span>
             </div>
           </Link>
@@ -43,7 +43,7 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "pb-0.5 text-[11.5px] font-medium uppercase tracking-[0.18em] transition-colors duration-200",
+                  "pb-0.5 text-[13px] font-medium uppercase tracking-[0.18em] transition-colors duration-200",
                   "border-b border-transparent",
                   location === link.href
                     ? "border-[rgba(165,141,102,0.6)] text-[#C4A96E]"
@@ -60,7 +60,7 @@ export function Navbar() {
           <div className="hidden items-center gap-4 lg:flex">
             <a
               href={clinicDetails.phoneHref}
-              className="text-xs font-light tracking-wide text-[rgba(192,213,214,0.55)] hover:text-[#C4A96E] transition-colors"
+              className="text-sm font-light tracking-wide text-[rgba(192,213,214,0.55)] hover:text-[#C4A96E] transition-colors"
               style={{ fontFamily: "'Jost', sans-serif" }}
             >
               {clinicDetails.phone}
@@ -71,7 +71,7 @@ export function Navbar() {
                 if (el) el.scrollIntoView({ behavior: "smooth" });
                 else window.location.href = "/contact";
               }}
-              className="rounded-[5px] bg-[#A58D66] px-5 py-2.5 text-[11.5px] font-bold  uppercase tracking-[0.16em] text-[#041F2B] transition-all duration-200 hover:bg-[#C4A96E] hover:shadow-[0_0_20px_rgba(165,141,102,0.3)]"
+              className="rounded-[5px] bg-[#A58D66] px-5 py-2.5 text-[13px] font-bold uppercase tracking-[0.16em] text-[#041F2B] transition-all duration-200 hover:bg-[#C4A96E] hover:shadow-[0_0_20px_rgba(165,141,102,0.3)]"
               style={{ fontFamily: "'Cinzel', serif" }}
             >
               Book a Session
@@ -100,7 +100,7 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "block rounded-md px-4 py-3 text-[10px] uppercase tracking-[0.18em] transition-colors",
+                  "block rounded-md px-4 py-3 text-[12px] uppercase tracking-[0.18em] transition-colors",
                   location === link.href
                     ? "bg-[rgba(165,141,102,0.1)] text-[#C4A96E]"
                     : "text-[rgba(192,213,214,0.65)] hover:text-[#C4A96E]"
@@ -119,7 +119,7 @@ export function Navbar() {
                   if (el) el.scrollIntoView({ behavior: "smooth" });
                   else window.location.href = "/contact";
                 }}
-                className="w-full rounded-[5px] bg-[#A58D66] py-3 text-[9px] font-medium uppercase tracking-[0.18em] text-[#041F2B] hover:bg-[#C4A96E]"
+                className="w-full rounded-[5px] bg-[#A58D66] py-3 text-[11px] font-medium uppercase tracking-[0.18em] text-[#041F2B] hover:bg-[#C4A96E]"
                 style={{ fontFamily: "'Cinzel', serif" }}
               >
                 Book a Session

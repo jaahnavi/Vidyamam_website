@@ -1,6 +1,5 @@
 import { Link } from "wouter";
 import { SacredDivider } from "@/components/site/SacredDivider";
-import { SectionHeading } from "@/components/site/SectionHeading";
 import { Seo } from "@/components/site/Seo";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { TestimonialCard } from "@/components/site/TestimonialCard";
@@ -9,26 +8,7 @@ import { testimonials, whyChooseUs, trustSignals } from "@/components/site/site-
 import HowItWorks from "@/components/site/HowItWorks";
 import ScrollToTop  from '@/components/site/scrolltotop';
 
-const vidyaHero   = "/vidya-hero.jpeg";
-
-const services = [
-  {
-    tag: "Core Specialty",
-    title: "Chakra Alignment & Clearing",
-    desc: "Precision balancing of the 11-chakra system — with special focus on the Basic and Crown chakras.",
-    accent: true,
-  },
-  {
-    tag: "Energy Work",
-    title: "Pranic Energy Servicing",
-    desc: "Deep cleansing of congested energy from the bioplasmic body, boosting immunity and restoring vitality.",
-  },
-  {
-    tag: "Distant Healing",
-    title: "Advanced Remote Healing",
-    desc: "Powerful healing sessions conducted across any distance. Location is no barrier to your healing.",
-  },
-];
+const vidyaHero   = "/vidya-hero.png";
 
 // ── Cinzel label style ──────────────────────────────────────
 const cinzel = { fontFamily: "'Cinzel', serif" } as const;
@@ -45,7 +25,7 @@ export default function Home() {
       <Seo
         title="Home"
         path="/"
-        description="Vidya's Holistic Healing — Certified Pranic Healer in Frisco, Texas. Chakra alignment, energy servicing and distant healing for a global community."
+        description="Vidya's Holistic Healings — Certified Pranic Healer in Frisco, Texas. Chakra alignment, energy servicing and distant healings for a global community."
       />
 
       {/* ═══════════════════════════════════════════════════════
@@ -106,9 +86,9 @@ export default function Home() {
 
             {/* Logo mark */}
             <img
-              src="/logo1.png"
+              src="/logo4.png"
               alt="VHH"
-              className="w-20 h-20 object-contain"
+              className="w-16 h-16 md:w-32 md:h-32 lg:w-40 lg:h-40 object-contain "
               style={{ filter: "drop-shadow(0 0 24px rgba(165,141,102,0.35))" }}
             />
 
@@ -138,14 +118,14 @@ export default function Home() {
                   if (el) el.scrollIntoView({ behavior: "smooth" });
                   else window.location.href = "/contact";
                 }}
-                style={{ ...cinzel, fontSize: "10px", letterSpacing: "0.18em" }}
-                className="rounded-[5px] bg-[#A58D66] px-8 py-4 uppercase text-[#041F2B] shadow-[0_0_24px_rgba(165,141,102,0.28)] transition-all duration-250 hover:bg-[#C4A96E] hover:shadow-[0_0_36px_rgba(165,141,102,0.45)]"
+                style={{ ...cinzel, fontSize: "12px", letterSpacing: "0.18em", fontWeight:800 }}
+                className="rounded-[5px] bg-[#A58D66] px-6 py-4 uppercase text-[#041F2B] shadow-[0_0_24px_rgba(165,141,102,0.28)] transition-all duration-250 hover:bg-[#C4A96E] hover:shadow-[0_0_36px_rgba(165,141,102,0.45)]"
               >
                 Book a Session
               </button>
               <Link href="/services">
                 <button
-                  style={{ ...cinzel, fontSize: "10px", letterSpacing: "0.18em" }}
+                  style={{ ...cinzel, fontSize: "12px", letterSpacing: "0.18em", fontWeight:900 }}
                   className="rounded-[5px] border border-[rgba(165,141,102,0.45)] bg-transparent px-8 py-4 uppercase text-[#A58D66] transition-all duration-250 hover:border-[rgba(165,141,102,0.8)] hover:bg-[rgba(165,141,102,0.08)]"
                 >
                   Explore Services
@@ -153,12 +133,12 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Ornament */}
+            {/* Ornament 
             <div className="flex items-center gap-3 pt-2 opacity-50">
               <div className="h-px w-14 bg-[rgba(165,141,102,0.5)]" />
               <div className="h-1.5 w-1.5 rotate-45 bg-[#A58D66]" />
               <div className="h-px w-14 bg-[rgba(165,141,102,0.5)]" />
-            </div>
+            </div>*/}
 
             {/* Trust signals */}
             <div className="grid grid-cols-3 gap-4 pt-1">
@@ -188,20 +168,19 @@ export default function Home() {
               />
               {/* Floating badge */}
               <div
-                className="absolute inset-x-6 bottom-6 rounded-2xl border border-[rgba(165,141,102,0.3)] bg-[rgba(4,31,43,0.82)] p-5 backdrop-blur-md"
+                className="absolute inset-x-6 bottom-6 rounded-2xl border border-[rgba(165,141,102,0.3)] bg-[rgba(4,31,43,0.82)] p-3 backdrop-blur-md"
               >
                 <div className="flex items-center gap-4">
                   <div
-                    className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full"
-                    style={{ border: "1px solid rgba(165,141,102,0.35)", background: "rgba(165,141,102,0.1)" }}
+                    className="flex h-17 w-17 flex-shrink-0 items-center justify-center rounded-full"
                   >
-                    <img src="/logo1.png" alt="" className="h-7 w-7 object-contain" />
+                    <img src="/logo4.png" alt="" className="h-12 w-12 object-contain" />
                   </div>
                   <div>
-                    <p style={{ ...cinzel, fontSize: "10px", letterSpacing: "0.2em" }} className="uppercase text-[#A58D66] mb-1">
+                    <p style={{ ...cinzel, fontSize: "16px", letterSpacing: "0.15em", fontWeight: "bold"  }} className="uppercase text-[#A58D66] mb-1">
                       Vidya Joshi
                     </p>
-                    <p style={{ ...cormorant, fontSize: "16px", fontStyle: "italic", fontWeight: 300 }}
+                    <p style={{ ...cormorant, fontSize: "18px", fontStyle: "italic", fontWeight: 300 }}
                       className="text-white leading-snug">
                       Certified Pranic Healer &amp; Wellness Practitioner
                     </p>
@@ -224,55 +203,99 @@ export default function Home() {
        <HowItWorks/>
 
       {/* ═══════════════════════════════════════════════════════
-          SERVICES TEASER — dark navy
+          AILMENTS WE HEAL — dark navy
       ════════════════════════════════════════════════════════ */}
-      <section className="section-shell" style={{ background: "#083A4F" }}>
-        <div className="container">
-          {/* Header */}
-          <div className="mb-14 flex flex-col items-center text-center gap-4">
-            <span style={cinzel} className="eyebrow text-[#A58D66]">What We Offer</span>
-            <h2 style={{ ...cormorant, fontSize: "clamp(2.4rem, 4vw, 3.5rem)", fontWeight: 300, fontStyle: "italic" }}
-              className="text-white">
-              Healing Services
+      <section className="section-shell relative overflow-hidden" style={{ background: "#083A4F" }}>
+        <div className="pointer-events-none absolute rounded-full" style={{ top: "-200px", right: "-200px", width: "600px", height: "600px", border: "1px solid rgba(165,141,102,0.08)" }} />
+        <div className="pointer-events-none absolute rounded-full" style={{ bottom: "-300px", left: "-200px", width: "700px", height: "700px", border: "1px solid rgba(165,141,102,0.06)" }} />
+        <div className="container relative z-10">
+          <div className="mb-10 md:mb-16 flex flex-col items-center text-center gap-3 md:gap-[18px]">
+            <span style={{ ...cinzel, fontSize: "12px", letterSpacing: "0.26em", textTransform: "uppercase" as const, color: "#A58D66" }}>What We Address</span>
+            <h2 style={{ ...cormorant, fontSize: "clamp(2rem,6vw,3.2rem)", fontWeight: 300, fontStyle: "italic", lineHeight: 1.12, letterSpacing: "-0.01em" }} className="text-white">
+              Ailments We <em style={{ color: "#C4A96E", fontStyle: "italic" }}>Heal</em>
             </h2>
-            <p style={{ ...jost, fontWeight: 300, fontSize: "1rem", lineHeight: 1.8, letterSpacing: "0.03em" }}
-              className="max-w-lg text-[rgba(192,213,214,0.65)]">
-              Each service is tailored to your unique energetic blueprint — because no two souls carry the same need.
+            <div className="h-0.5 w-12 rounded bg-[#A58D66]" />
+            <p style={{ ...jost, fontWeight: 300, fontSize: "15px", lineHeight: 1.8, letterSpacing: "0.02em", maxWidth: "560px" }} className="text-[rgba(192,213,214,0.7)] text-center mx-auto">
+              Pranic Healing supports the body's natural recovery across a wide spectrum of concerns.
+              Tap any category to see the tailored healing packages.
             </p>
           </div>
-
-          {/* 3-col service cards */}
-          <div className="grid gap-5 lg:grid-cols-3 mb-12">
-            {services.map((svc, i) => (
-              <div key={i} className="dark-card flex flex-col gap-4 p-7">
-                <span style={{ ...cinzel, fontSize: "10px", letterSpacing: "0.2em" }}
-                  className="uppercase text-[#407E8C]">
-                  {svc.tag}
-                </span>
-                {svc.accent && <div className="h-0.5 w-7 rounded bg-[#A58D66]" />}
-                <h3 style={{ ...cormorant, fontSize: "1.3rem", fontWeight: 500, fontStyle: "italic" }}
-                  className="text-white leading-snug">
-                  {svc.title}
-                </h3>
-                <p style={{ ...jost, fontWeight: 300, fontSize: "0.85rem", lineHeight: 1.8, letterSpacing: "0.02em" }}
-                  className="text-[rgba(192,213,214,0.6)]">
-                  {svc.desc}
-                </p>
-              </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[14px] md:gap-[16px]">
+            {[
+              {
+                num: "01", tag: "Chronic & Metabolic", title: "Chronic & Metabolic Ailments",
+                items: ["Diabetes", "High & Low Blood Pressure", "PCOS & Hormonal Imbalances", "Thyroid Disruptions"],
+                href: "/services#pkg-chakra",
+              },
+              {
+                num: "02", tag: "Pain & Nervous System", title: "Pain & Nervous System",
+                items: ["Migraines & Headaches", "Insomnia & Sleep Disorders", "Chronic Fatigue Syndrome", "Arthritis & Back Pain"],
+                href: "/services#pkg-chakra",
+              },
+              {
+                num: "03", tag: "Digestive & Respiratory", title: "Digestive & Respiratory",
+                items: ["IBS, Acid Reflux, Ulcers", "Asthma & Allergies", "Sinusitis", "Gastrointestinal Issues"],
+                href: "/services#pkg-basic",
+              },
+              {
+                num: "04", tag: "Psychological & Emotional", title: "Psychological & Emotional",
+                items: ["Anxiety & Panic Attacks", "Depression & Deep Grief", "Chronic Stress & Burnout", "Emotional Patterns"],
+                href: "/services#pkg-emotional",
+              },
+            ].map((a, i) => (
+              <a
+                key={i}
+                href={a.href}
+                style={{
+                  background: "rgba(4,31,43,0.65)",
+                  border: "1px solid rgba(165,141,102,0.2)",
+                  borderRadius: "14px",
+                  padding: "24px 22px",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "14px",
+                  color: "inherit",
+                  textDecoration: "none",
+                  transition: "all 0.3s",
+                  position: "relative",
+                  overflow: "hidden",
+                }}
+                onMouseEnter={e => {
+                  const el = e.currentTarget;
+                  el.style.background = "rgba(13,77,104,0.75)";
+                  el.style.borderColor = "rgba(165,141,102,0.5)";
+                  el.style.transform = "translateY(-4px)";
+                  el.style.boxShadow = "0 16px 48px rgba(4,31,43,0.55)";
+                }}
+                onMouseLeave={e => {
+                  const el = e.currentTarget;
+                  el.style.background = "rgba(4,31,43,0.65)";
+                  el.style.borderColor = "rgba(165,141,102,0.2)";
+                  el.style.transform = "translateY(0)";
+                  el.style.boxShadow = "none";
+                }}
+              >
+                <div style={{ ...cormorant, fontSize: "42px", lineHeight: 1, color: "#C4A96E", opacity: 0.4, fontWeight: 300, fontStyle: "italic" }}>{a.num}</div>
+                <span style={{ ...cinzel, fontSize: "12px", letterSpacing: "0.22em", textTransform: "uppercase" as const, color: "#407E8C" }}>{a.tag}</span>
+                <h3 style={{ ...cormorant, fontWeight: 500, fontStyle: "italic", fontSize: "22px", lineHeight: 1.25, color: "white", letterSpacing: "-0.005em" }}>{a.title}</h3>
+                <ul style={{ display: "flex", flexDirection: "column", gap: "7px", listStyle: "none", padding: 0, margin: "4px 0 0" }}>
+                  {a.items.map((item, j) => (
+                    <li key={j} style={{ ...jost, fontWeight: 300, fontSize: "13.5px", lineHeight: 1.55, color: "rgba(192,213,214,0.75)", display: "flex", alignItems: "flex-start", gap: "8px" }}>
+                      <span style={{ display: "inline-block", width: "4px", height: "4px", borderRadius: "50%", background: "#A58D66", flexShrink: 0, marginTop: "8px" }} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <div style={{ ...cinzel, fontSize: "11px", fontWeight:800, letterSpacing: "0.2em", textTransform: "uppercase" as const, color: "#A58D66", marginTop: "auto", paddingTop: "14px", borderTop: "1px solid rgba(165,141,102,0.15)", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "8px" }}>
+                  <span>See Packages</span>
+                  <span style={{ fontSize: "14px" }}>→</span>
+                </div>
+              </a>
             ))}
           </div>
-
-          {/* CTA */}
-          <div className="flex justify-center">
-            <Link href="/services">
-              <button
-                style={{ ...cinzel, fontSize: "11px", letterSpacing: "0.18em" }}
-                className="rounded-[5px] border border-[rgba(165,141,102,0.45)] bg-transparent px-10 py-3.5 uppercase text-[#A58D66] transition-all hover:border-[rgba(165,141,102,0.8)] hover:bg-[rgba(165,141,102,0.08)]"
-              >
-                View All Services
-              </button>
-            </Link>
-          </div>
+          <p style={{ ...jost, fontWeight: 300, fontSize: "14.5px", lineHeight: 1.6, color: "rgba(192,213,214,0.45)", maxWidth: "680px", fontStyle: "italic", textAlign: "center", marginTop: "40px", marginLeft: "auto", marginRight: "auto" }}>
+            Pranic Healing is complementary to medical care, not a substitute for it. Always consult a licensed physician for diagnosis and treatment.
+          </p>
         </div>
       </section>
 
@@ -357,7 +380,7 @@ export default function Home() {
             <div className="flex flex-wrap gap-4 pt-2">
             <Link href="/about">
               <button
-                style={{ ...cinzel, fontSize: "11px", letterSpacing: "0.16em" }}
+                style={{ ...cinzel, fontSize: "12px", letterSpacing: "0.16em", fontWeight: 800 }}
                 className="mt-2 w-fit rounded-[5px] bg-[#A58D66] px-7 py-3 uppercase text-[#041F2B] transition-all hover:bg-[#C4A96E]"
               >
                 Meet Vidya
@@ -368,7 +391,7 @@ export default function Home() {
             <button
               className="mt-2 w-fit rounded-[5px] bg-[#A58D66] px-7 py-3 uppercase text-[#041F2B] transition-all hover:bg-[#C4A96E]"
               style={{
-                 ...cinzel, fontSize: "11px", letterSpacing: "0.16em" 
+                 ...cinzel, fontSize: "12px", letterSpacing: "0.16em" , fontWeight: 800
               }}>
               Explore Verified Testimonials
             </button>

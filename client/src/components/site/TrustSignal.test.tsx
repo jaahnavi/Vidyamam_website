@@ -5,7 +5,7 @@ describe("TrustSignal", () => {
   const mockTrustSignal = {
     label: "Years of Experience",
     value: "15+",
-    description: "Dedicated to holistic healing",
+    description: "Dedicated to holistic healings",
   };
 
   it("should be a valid React component", () => {
@@ -18,7 +18,7 @@ describe("TrustSignal", () => {
     const component = <TrustSignal {...mockTrustSignal} />;
     expect(component.props.label).toBe("Years of Experience");
     expect(component.props.value).toBe("15+");
-    expect(component.props.description).toBe("Dedicated to holistic healing");
+    expect(component.props.description).toBe("Dedicated to holistic healings");
   });
 
   it("should render with correct prop structure", () => {
@@ -26,13 +26,13 @@ describe("TrustSignal", () => {
     expect(component.props).toMatchObject({
       label: "Years of Experience",
       value: "15+",
-      description: "Dedicated to holistic healing",
+      description: "Dedicated to holistic healings",
     });
   });
 
   it("should handle different trust signal types", () => {
     const signals = [
-      { label: "Years of Experience", value: "15+", description: "Dedicated to holistic healing" },
+      { label: "Years of Experience", value: "15+", description: "Dedicated to holistic healings" },
       { label: "Clients Supported", value: "2000+", description: "Transformed lives" },
       { label: "Session Success Rate", value: "95%", description: "Positive outcomes" },
     ];

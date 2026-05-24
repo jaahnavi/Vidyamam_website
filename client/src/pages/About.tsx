@@ -33,7 +33,7 @@ const CRED_DATA = [
 
 // ── Shared text styles ─────────────────────────────────────
 const eyebrow = (color = '#A58D66'): React.CSSProperties => ({
-  fontFamily: "'Cinzel', serif", fontSize: '11px', letterSpacing: '0.26em',
+  fontFamily: "'Cinzel', serif", fontSize: '12px', letterSpacing: '0.26em',
   textTransform: 'uppercase', color, display: 'inline-block',
 });
 const display = (size: string, color: string): React.CSSProperties => ({
@@ -53,7 +53,7 @@ export default function About() {
       <Seo
         title="About"
         path="/about"
-        description="Learn about Vidya Joshi, her healing philosophy, and holistic healing approach."
+        description="Learn about Vidya Joshi, her healing philosophy, and holistic healings approach."
       />
 
       <div style={{ background: '#F4F1EE' }}>
@@ -62,7 +62,7 @@ export default function About() {
              1 · INTRO  — Photo left · text right
            ════════════════════════════════════════════════════════════ */}
         <section
-          className="px-4 sm:px-10 md:px-16 lg:px-20 pt-16 md:pt-28 pb-16 md:pb-24 relative overflow-hidden"
+          className="px-4 sm:px-10 md:px-16 lg:px-20 pt-24 md:pt-28 pb-16 md:pb-24 relative overflow-hidden"
           style={{ background: '#F4F1EE' }}
         >
           <img src={lotus} alt="" aria-hidden="true"
@@ -76,15 +76,10 @@ export default function About() {
 
           {/* Top eyebrow centered */}
           <div className="fade-in-section flex flex-col gap-7" style={{ textAlign: 'center', marginBottom: '72px' }}>
-            <span style={eyebrow('#A58D66')}>The Visionary Behind the Healing</span>
-            <h1 style={{ ...display('clamp(32px, 6vw, 64px)', '#083A4F'), marginTop: '20px', fontWeight: 300 }}>
+            <span style={eyebrow('#A58D66')}>The Visionary Behind the Healings</span>
+            <h1 style={{ ...display('clamp(32px, 6vw, 64px)', '#083A4F'), marginTop: '20px', fontWeight: 400 }}>
               About <em style={{ fontStyle: 'italic', color: '#A58D66' }}>Vidya Joshi</em>
             </h1>
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '12px', marginTop: '20px', opacity: 0.6 }}>
-              <div style={{ width: '40px', height: '1px', background: '#A58D66' }} />
-              <div style={{ width: '5px', height: '5px', background: '#A58D66', borderRadius: '50%', transform: 'rotate(45deg)' }} />
-              <div style={{ width: '40px', height: '1px', background: '#A58D66' }} />
-            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center max-w-5xl mx-auto">
@@ -129,7 +124,6 @@ export default function About() {
                 Healing with presence,<br />
                 <em style={{ fontStyle: 'italic', color: '#A58D66' }}>clarity & compassion.</em>
               </h2>
-              <SacredDivider variant="light" />
               <p style={body('#2D4A56')}>
                 Vidya Joshi is a Certified Pranic Healer and wellness practitioner with over fifteen years
                 in energy medicine — and a proven track record of transforming lives. Working with more than
@@ -137,18 +131,18 @@ export default function About() {
                 session.
               </p>
               <p style={body('#2D4A56')}>
-                Based in the Dallas–Frisco area, she leads <em>Vidya's Holistic Healing</em>, offering both
+                Based in the Dallas–Frisco area, she leads <em>Vidya's Holistic Healings</em>, offering both
                 in-person and distant sessions to a global community. Her approach is rooted in a simple
                 belief — that physical vitality is a direct reflection of energetic health, and that prana
                 is the fuel for life.
               </p>
               <blockquote style={{
                 fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic',
-                fontWeight: 400, fontSize: '20px', lineHeight: 1.5,
+                fontWeight: 500, fontSize: '20px', lineHeight: 1.5,
                 color: '#083A4F', borderLeft: '2px solid #A58D66',
                 paddingLeft: '22px', margin: '8px 0 0', maxWidth: '440px',
               }}>
-                Her mission is simple yet profound — <em style={{ color: '#A58D66' }}>to heal the need.</em>
+                Her mission is simple yet profound —  to heal the need.
               </blockquote>
 
               {/* Stat strip — 2 columns always (works for both mobile and desktop in this narrow column) */}
@@ -168,7 +162,7 @@ export default function About() {
                       fontSize: '24px', color: '#083A4F', lineHeight: 1,
                     }}>{s.value}</div>
                     <div style={{
-                      fontFamily: "'Cinzel', serif", fontSize: '7.5px',
+                      fontFamily: "'Cinzel', serif", fontSize: '12px', fontWeight: 600,
                       letterSpacing: '0.18em', textTransform: 'uppercase',
                       color: '#407E8C', marginTop: '8px',
                     }}>{s.label}</div>
@@ -254,7 +248,7 @@ export default function About() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginTop: '12px' }}>
               <div style={{ width: '48px', height: '1px', background: 'rgba(165,141,102,0.4)' }} />
               <span style={{
-                fontFamily: "'Cinzel', serif", fontSize: '11px', letterSpacing: '0.32em',
+                fontFamily: "'Cinzel', serif", fontSize: '13px', letterSpacing: '0.32em',
                 textTransform: 'uppercase', color: '#A58D66',
               }}>Om Shanti · Tathastu</span>
               <div style={{ width: '48px', height: '1px', background: 'rgba(165,141,102,0.4)' }} />
@@ -374,7 +368,7 @@ export default function About() {
             }} />
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0px' }}>
-                <span style={eyebrow('#C4A96E')}>Approach to Healing</span>
+                <span style={eyebrow('#C4A96E')}>Approach to Healings</span>
                 <p style={{
                   fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic',
                   fontWeight: 300, fontSize: '20px', lineHeight: 1.55,
@@ -386,23 +380,12 @@ export default function About() {
                 </p>
               </div>
               <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', margin: 12 }}>
-                <Link href="/contact">
-                  <button
-                    style={{
-                      fontFamily: "'Cinzel', serif", fontSize: '10px', letterSpacing: '0.2em',
-                      textTransform: 'uppercase', background: '#A58D66', color: '#041F2B',
-                      border: 'none', borderRadius: '4px', padding: '16px 36px',
-                      cursor: 'pointer', transition: 'background 250ms',
-                    }}
-                    onMouseEnter={e => (e.currentTarget.style.background = '#C4A96E')}
-                    onMouseLeave={e => (e.currentTarget.style.background = '#A58D66')}>
-                    Begin Your Session
-                  </button>
-                </Link>
+              
+              
                 <Link href="/services">
                   <button
                     style={{
-                      fontFamily: "'Cinzel', serif", fontSize: '10px', letterSpacing: '0.2em',
+                      fontFamily: "'Cinzel', serif", fontSize: '12px', letterSpacing: '0.2em', fontWeight: 600,
                       textTransform: 'uppercase', background: 'transparent', color: '#C4A96E',
                       border: '1px solid rgba(196,169,110,0.5)', borderRadius: '4px', padding: '16px 36px',
                       cursor: 'pointer', transition: 'all 250ms',
@@ -415,7 +398,7 @@ export default function About() {
                 <Link href="/testimonials">
                   <button
                     style={{
-                      fontFamily: "'Cinzel', serif", fontSize: '10px', letterSpacing: '0.2em',
+                      fontFamily: "'Cinzel', serif", fontSize: '11px', letterSpacing: '0.2em', fontWeight: 600,
                       textTransform: 'uppercase', background: 'transparent', color: '#C4A96E',
                       border: '1px solid rgba(196,169,110,0.5)', borderRadius: '4px', padding: '16px 36px',
                       cursor: 'pointer', transition: 'all 250ms',

@@ -21,7 +21,7 @@ function upsertMeta(selector: string, attributes: Record<string, string>) {
 
 export function Seo({ title, description, path = "/" }: SeoProps) {
   useEffect(() => {
-    const pageTitle = `${title} | Vidya's Holistic Healing Center`;
+    const pageTitle = `${title} | Vidya's Holistic Healings Center`;
     document.title = pageTitle;
 
     upsertMeta('meta[name="description"]', { name: "description", content: description });

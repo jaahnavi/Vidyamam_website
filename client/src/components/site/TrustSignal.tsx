@@ -23,7 +23,7 @@ export function TrustSignal({ label, value, description }: TrustSignalType) {
     >
       <div className="flex flex-col gap-1.5">
         <p
-          style={{ ...cinzel, fontSize: "7px", letterSpacing: "0.18em" }}
+          style={{ ...cinzel, fontSize: "10px", letterSpacing: "0.18em" }}
           className="uppercase text-[rgba(192,213,214,0.55)]"
         >
           {label}
@@ -36,7 +36,7 @@ export function TrustSignal({ label, value, description }: TrustSignalType) {
         </p>
         {description && (
           <p
-            style={{ ...jost, fontSize: "0.72rem", fontWeight: 300, lineHeight: 1.6, letterSpacing: "0.02em" }}
+            style={{ ...jost, fontSize: "0.82rem", fontWeight: 300, lineHeight: 1.6, letterSpacing: "0.02em" }}
             className="text-[rgba(192,213,214,0.45)]"
           >
             {description}

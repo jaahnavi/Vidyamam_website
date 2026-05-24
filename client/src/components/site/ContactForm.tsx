@@ -77,7 +77,7 @@ export function ContactForm() {
     >
       <div>
         <h3 className="text-2xl font-semibold">Book Your Consultation</h3>
-        <p className="mt-2 text-sm text-muted-foreground">Share a bit about yourself and your wellness goals. We will reach out within 24 hours.</p>
+        <p className="mt-2 text-sm text-muted-foreground">Share a bit about yourself and your wellness goals. We will reach out once we have gone through your request.</p>
       </div>
       <div className="grid gap-5 sm:grid-cols-2">
         <div className="space-y-2">

@@ -10,7 +10,7 @@ const ALL_REVIEWS_LINK =
 
 const TESTIMONIALS = [
   {
-    quote: 'I feel very happy & fortunate to share my feedback on Vidyatai\'s healing treatment. I was badly suffering with cervical spondylosis a few years back. After 2–3 months of allopathy medicine, nothing had changed — neck pain was unbearable. When I approached Vidyatai, after only 4 days of treatment I recovered fully. I referred her to a friend with the same problem, and surprisingly he also got full relief. Even today, if I face any neck pain, Vidyatai treats it from the US and I get relief in 2–3 hours. Just like a miracle.',
+    quote: 'I feel very happy & fortunate to share my feedback on Vidyatai\'s healings treatment. I was badly suffering with cervical spondylosis a few years back. After 2–3 months of allopathy medicine, nothing had changed — neck pain was unbearable. When I approached Vidyatai, after only 4 days of treatment I recovered fully. I referred her to a friend with the same problem, and surprisingly he also got full relief. Even today, if I face any neck pain, Vidyatai treats it from the US and I get relief in 2–3 hours. Just like a miracle.',
     author: 'Viv Pasarkar',
     location: 'Pune, India · 4 months ago',
     concern: 'Cervical Spondylosis',
@@ -38,6 +38,16 @@ const TESTIMONIALS = [
     link: 'https://www.google.com/maps/reviews/@18.4754285,73.8614218,17z/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURUOG9qNzNnRRAB!2m1!1s0x0:0xaa69d0ea1ab65ee0?hl=en-US',
   },
 ];
+
+function StarRow() {
+  return (
+    <div style={{ display: 'flex', gap: '3px', justifyContent: 'center' }}>
+      {[...Array(5)].map((_, i) => (
+        <span key={i} style={{ color: '#C4A96E', fontSize: '14px' }}>★</span>
+      ))}
+    </div>
+  );
+}
 
 export default function Testimonials() {
   const [active, setActive] = useState(0);
@@ -76,7 +86,7 @@ export default function Testimonials() {
       <Seo
         title="Testimonials"
         path="/testimonials"
-        description="Read testimonials shared by clients of Vidya's Holistic Healing."
+        description="Read testimonials shared by clients of Vidya's Holistic Healings."
       />
 
       <style>{`
@@ -84,7 +94,7 @@ export default function Testimonials() {
       `}</style>
 
       <section
-        className="py-16 md:py-24 relative overflow-hidden"
+        className="pt-24 pb-16 md:py-24 relative overflow-hidden"
         style={{ background: 'linear-gradient(180deg, #041F2B 0%, #083A4F 100%)' }}
       >
         {/* Mandala accent */}
@@ -98,24 +108,112 @@ export default function Testimonials() {
 
         {/* Header */}
         <div
-          className="fade-in-section flex flex-col gap-7 px-4 sm:px-16 md:px-20 mb-10 md:mb-16"
+          className="fade-in-section flex flex-col items-center gap-5 px-4 sm:px-16 md:px-20 mb-10 md:mb-16"
           style={{ textAlign: 'center' }}
         >
           <span style={{
-            fontFamily: "'Cinzel', serif", fontSize: '11px', letterSpacing: '0.26em',
-            textTransform: 'uppercase', color: '#A58D66', display: 'block', marginBottom: '16px',
+            fontFamily: "'Cinzel', serif", fontSize: '12px', letterSpacing: '0.26em',
+            textTransform: 'uppercase', color: '#A58D66', display: 'block',
           }}>Client Experiences</span>
+
           <h2 style={{
             fontFamily: "'Cormorant Garamond', serif", fontWeight: 400,
             fontSize: 'clamp(28px, 5vw, 44px)', color: 'white', margin: 0,
           }}>Transformations</h2>
+
+          <StarRow />
+
+          {/* Google reviews button — at top */}
+          <a
+            href={ALL_REVIEWS_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              fontFamily: "'Cinzel', serif", fontSize: '11px', letterSpacing: '0.18em',
+              textTransform: 'uppercase', color: '#A58D66', textDecoration: 'none',
+              border: '1px solid rgba(165,141,102,0.5)', borderRadius: '5px',
+              padding: '12px 28px', display: 'inline-flex', gap: '8px', alignItems: 'center',
+              transition: 'all 250ms', marginTop: '4px',
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.background = 'rgba(165,141,102,0.1)';
+              e.currentTarget.style.color = '#C4A96E';
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.background = 'transparent';
+              e.currentTarget.style.color = '#A58D66';
+            }}>
+            Read All Google Reviews <span>↗</span>
+          </a>
         </div>
 
-        {/* Carousel */}
-        <div
-          className="fade-in-section flex flex-col gap-7 relative"
-          style={{ maxWidth: '1280px', margin: '0 auto 40px' }}
-        >
+        {/* ── Mobile: stacked cards ── */}
+        <div className="md:hidden px-4 flex flex-col gap-5 mb-6">
+          {TESTIMONIALS.map((t, i) => (
+            <article
+              key={i}
+              style={{
+                background: 'rgba(255,255,255,0.05)',
+                border: '1px solid rgba(165,141,102,0.25)',
+                borderTop: '2px solid rgba(165,141,102,0.6)',
+                borderRadius: '10px',
+                padding: '24px 20px',
+                display: 'flex', flexDirection: 'column', gap: '16px',
+              }}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '12px' }}>
+                <div style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: '48px', lineHeight: 0.7, color: '#A58D66', opacity: 0.5,
+                }}>"</div>
+                <span style={{
+                  fontFamily: "'Cinzel', serif", fontSize: '9px', letterSpacing: '0.16em',
+                  textTransform: 'uppercase', color: '#C4A96E',
+                  border: '1px solid rgba(196,169,110,0.4)', borderRadius: '3px',
+                  padding: '4px 9px', whiteSpace: 'nowrap', flexShrink: 0,
+                }}>{t.concern}</span>
+              </div>
+
+              <p style={{
+                fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic',
+                fontWeight: 300, fontSize: '17px', lineHeight: 1.8,
+                color: 'rgba(255,255,255,0.9)', margin: 0,
+              }}>{t.quote}</p>
+
+              <div style={{
+                display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end',
+                paddingTop: '14px', borderTop: '1px solid rgba(165,141,102,0.15)',
+                flexWrap: 'wrap', gap: '10px',
+              }}>
+                <div>
+                  <div style={{
+                    fontFamily: "'Cinzel', serif", fontSize: '11px', letterSpacing: '0.16em',
+                    textTransform: 'uppercase', color: '#407E8C',
+                  }}>{t.author}</div>
+                  <div style={{
+                    fontFamily: "'Jost', sans-serif", fontSize: '12px',
+                    color: 'rgba(192,213,214,0.6)', marginTop: '3px',
+                  }}>{t.location}</div>
+                </div>
+                <a
+                  href={t.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    fontFamily: "'Cinzel', serif", fontSize: '10px', letterSpacing: '0.16em',
+                    textTransform: 'uppercase', color: 'rgba(165,141,102,0.8)',
+                    textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '5px',
+                  }}>
+                  <span>Verified · Google</span>
+                  <span style={{ fontSize: '11px' }}>↗</span>
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        {/* ── Desktop: carousel ── */}
+        <div className="hidden md:block fade-in-section relative" style={{ maxWidth: '1280px', margin: '0 auto 40px' }}>
           {/* Prev arrow */}
           <button
             onClick={prev}
@@ -185,7 +283,7 @@ export default function Testimonials() {
               display: 'flex', gap: '28px',
               overflowX: 'auto', scrollSnapType: 'x mandatory',
               scrollbarWidth: 'none', msOverflowStyle: 'none',
-              padding: 'clamp(12px, 4vw, 12px) clamp(32px, 8vw, 80px)',
+              padding: '12px clamp(32px, 8vw, 80px)',
             }}>
             {TESTIMONIALS.map((t, i) => (
               <article
@@ -259,8 +357,8 @@ export default function Testimonials() {
           </div>
         </div>
 
-        {/* Dots */}
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginBottom: '40px' }}>
+        {/* Dots — desktop only */}
+        <div className="hidden md:flex" style={{ justifyContent: 'center', gap: '10px', marginBottom: '24px' }}>
           {TESTIMONIALS.map((_, i) => (
             <button
               key={i}
@@ -275,31 +373,6 @@ export default function Testimonials() {
               }}
             />
           ))}
-        </div>
-
-        {/* All reviews link */}
-        <div className="px-4 sm:px-16 text-center">
-          <a
-            href={ALL_REVIEWS_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              fontFamily: "'Cinzel', serif", fontSize: '11.5px', letterSpacing: '0.2em',
-              textTransform: 'uppercase', color: '#A58D66', textDecoration: 'none',
-              border: '1px solid rgba(165,141,102,0.5)', borderRadius: '5px',
-              padding: '14px 36px', display: 'inline-flex', gap: '10px', alignItems: 'center',
-              transition: 'all 250ms',
-            }}
-            onMouseEnter={e => {
-              e.currentTarget.style.background = 'rgba(165,141,102,0.1)';
-              e.currentTarget.style.color = '#C4A96E';
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.background = 'transparent';
-              e.currentTarget.style.color = '#A58D66';
-            }}>
-            Read All Google Reviews <span>↗</span>
-          </a>
         </div>
       </section>
     </SiteLayout>

@@ -85,20 +85,21 @@ export const testimonials: TestimonialItem[] = [
     author: "Rashmi Pasarkar",
   },
   {
-    quote: "Vidya's energy is soothing, strong and healing in nature.",
+    quote: "Vidya's energy is soothing, strong and healings in nature.",
     author: "Saritha Nayak",
   },
   {
-    quote: "I wish her success in healing more people.",
+    quote: "I wish her success in healings more people.",
     author: "Veena Raina",
   },
 ];
 
 export const clinicDetails = {
-  name: "Vidya's Holistic Healing",
+  name: "Vidya's Holistic Healings",
   phone: "+1(469)468-5711",
-  phoneHref: "tel:+1(469)468-5711",
-  whatsappHref: "9401 Meadow Grounds PL, Frisco, Tx, 75035",
+  phoneHref: "tel:+14694685711",
+  whatsappHref: "https://wa.me/14694685711",
+  instagramHref: "https://www.instagram.com/vidyas_holistic_healingss?igsh=MWRtOTlkNmNwc3RpcA==",
   address: "H-4, Soba Savera Apartment, Bibwewadi, , Maharashtra 411037, India",
   hours: "Opens 11 AM - 5pm CST",
 };
@@ -107,19 +108,19 @@ export const whyChooseUs = [
   "Compassionate guidance focused on emotional ease and everyday balance.",
   "Gentle, non-technical explanations that help you feel informed and comfortable.",
   "A calm clinic setting designed for clarity, trust, and personal attention.",
-  "Supportive healing sessions that respect your pace and wellbeing goals.",
+  "Supportive healings sessions that respect your pace and wellbeing goals.",
 ];
 
 export const trustSignals: TrustSignal[] = [
   {
     label: "Years of Experience",
     value: "15+",
-    description: "Dedicated to holistic healing and Pranic Healing practice",
+    description: "Dedicated to holistic healings and Pranic Healings practice",
   },
   {
     label: "Clients Supported",
     value: "2000+",
-    description: "People who have experienced healing and transformation",
+    description: "People who have experienced healings and transformation",
   },
   {
     label: "Session Success Rate",
@@ -131,11 +132,11 @@ export const trustSignals: TrustSignal[] = [
 export const certifications: Certification[] = [
   {
     title: "Certified Pranic Healer",
-    issuer: "Institute of Pranic Healing",
+    issuer: "Institute of Pranic Healings",
   },
   {
     title: "Advanced Chakra Balancing Specialist",
-    issuer: "International Holistic Healing Association",
+    issuer: "International Holistic Healings Association",
   },
   {
     title: "Certified Wellness Counselor",

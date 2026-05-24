@@ -26,7 +26,7 @@ const chakras: Chakra[] = [
   { id: 'heart',     name: 'Heart Chakra',        sanskrit: 'Anahata',     location: 'Center of Chest',    color: '#66BB6A', y: 220, theme: 'Compassion',          description: 'Brings emotional wellness, compassion, and nurturing connections.',               benefits: 'Love, compassion, and emotional balance.' },
   { id: 'solar',     name: 'Solar Plexus Chakra', sanskrit: 'Manipura',    location: 'Upper Abdomen',      color: '#FDD835', y: 285, theme: 'Inner Strength',      description: 'Strengthens confidence, authenticity, and a grounded sense of self.',             benefits: 'Personal power, confidence, and self-esteem.' },
   { id: 'sacral',    name: 'Sacral Chakra',       sanskrit: 'Svadhisthana',location: 'Lower Abdomen',      color: '#FF9800', y: 340, theme: 'Vital Sensation',     description: 'Inspires creativity, flow, and a joyful connection to life.',                     benefits: 'Creativity, passion, and emotional flow.' },
-  { id: 'root',      name: 'Root Chakra',         sanskrit: 'Muladhara',   location: 'Base of Spine',      color: '#E57373', y: 390, theme: 'Grounding',           description: 'Supports centred connection and steadiness in holistic healing sessions.',        benefits: 'Stability, security, and grounding.' },
+  { id: 'root',      name: 'Root Chakra',         sanskrit: 'Muladhara',   location: 'Base of Spine',      color: '#E57373', y: 390, theme: 'Grounding',           description: 'Supports centred connection and steadiness in holistic healings sessions.',        benefits: 'Stability, security, and grounding.' },
 ];
 
 export default function ChakraVisualization() {
@@ -57,7 +57,7 @@ export default function ChakraVisualization() {
             Chakra Overview
           </h2>
           <p className="text-lg text-[#C0D5D6] max-w-2xl mx-auto font-light">
-            These seven chakra centers offer a complete, soul-technical introduction to the energetic centers often considered in holistic healing sessions
+            These seven chakra centers offer a complete, soul-technical introduction to the energetic centers often considered in holistic healings sessions
           </p>
         </motion.div>
 
@@ -194,18 +194,7 @@ export default function ChakraVisualization() {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -12 }}
                   transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                  /*className="relative w-full backdrop-blur-xl rounded-2xl p-8 md:p-10 border bg-[#061d28]/80"
-                  style={{
-                    borderColor: `${active.color}50`,
-                    boxShadow: `0 20px 60px rgba(0,0,0,0.45), 0 0 60px ${active.color}25, inset 0 1px 0 rgba(255,255,255,0.06)`,
-                    style={{
-                          background: `${active.color}20`,
-                          color: active.color,
-                          border: `1px solid ${active.color}40`,
-                        }}
-                  }}*/
                 >
-                  {/*<div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />*/}
                   <div className="relative">
                     <div className="flex items-start gap-4 mb-5">
                       <div>
@@ -220,7 +209,7 @@ export default function ChakraVisualization() {
                           {active.location}
                          </div>
 
-                        <p className="text-[11px] font-semibold uppercase tracking-[0.24em] mb-2" style={{ color: active.color }}>
+                        <p className="text-[13px] font-semibold uppercase tracking-[0.24em] mb-2" style={{ color: active.color }}>
                           {active.theme}
                         </p>
                         <h3 className="text-3xl md:text-4xl font-semibold leading-tight" style={{ color: active.color, fontFamily: 'var(--font-serif)' }}>
@@ -240,7 +229,7 @@ export default function ChakraVisualization() {
                     <p className="text-base text-slate-200 leading-relaxed mb-5 font-light">{active.description}</p>
 
                     <div>
-                      <p className="text-[10.5px] font-semibold uppercase tracking-[0.22em] mb-2" style={{ color: `${active.color}cc` }}>
+                      <p className="text-[12px] font-semibold uppercase tracking-[0.22em] mb-2" style={{ color: `${active.color}cc` }}>
                         Benefits
                       </p>
                       <p className="text-sm text-slate-300 leading-relaxed font-light">{active.benefits}</p>
@@ -256,7 +245,7 @@ export default function ChakraVisualization() {
                   transition={{ duration: 0.3 }}
                   className="w-full text-left px-2"
                 >
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#A58D66] mb-3">
+                  <p className="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#A58D66] mb-3">
                     Seven Centers · One System
                   </p>
                   <h3 className="text-3xl md:text-4xl text-[#E5E1DD] mb-4 leading-tight" style={{ fontFamily: 'var(--font-serif)' }}>

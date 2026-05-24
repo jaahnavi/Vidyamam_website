@@ -38,7 +38,7 @@ export function SuccessModal({ isOpen, onClose }: SuccessModalProps) {
 
           <h2 className="text-2xl font-semibold text-foreground">Request Received</h2>
           <p className="mt-3 text-muted-foreground">
-            Thank you for reaching out. We have received your consultation request and will get back to you within 24 hours.
+            Thank you for reaching out. We have received your consultation request and will get back to you once we have processed your request.
           </p>
 
           <div className="mt-6 w-full space-y-3 rounded-lg border border-primary/10 bg-primary/5 p-4">

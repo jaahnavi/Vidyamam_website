@@ -1,6 +1,6 @@
-# Vidya's Holistic Healing
+# Vidya's Holistic Healings
 
-This project is a calm, responsive wellness clinic website for **Vidya's Holistic Healing**. It includes routed pages for Home, About, Services, Testimonials, and Contact, along with a validated consultation form and a mock `/api/contact` submission endpoint that logs requests on the server.
+This project is a calm, responsive wellness clinic website for **Vidya's Holistic Healings**. It includes routed pages for Home, About, Services, Testimonials, and Contact, along with a validated consultation form and a mock `/api/contact` submission endpoint that logs requests on the server.
 
 ## Technology
 

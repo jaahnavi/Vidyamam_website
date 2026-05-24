@@ -22,7 +22,7 @@ export function SectionHeading({
   return (
     <div className={cn("mb-12 flex flex-col gap-4", align === "center" && "items-center text-center")}>
       <span
-        style={{ ...cinzel, fontSize: "9px", letterSpacing: "0.26em" }}
+        style={{ ...cinzel, fontSize: "11px", letterSpacing: "0.26em" }}
         className={cn("uppercase", light ? "text-[#A58D66]" : "text-[#407E8C]")}
       >
         {eyebrow}

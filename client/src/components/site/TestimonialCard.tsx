@@ -47,7 +47,7 @@ export function TestimonialCard({ quote, author }: TestimonialCardProps) {
 
       {/* Author */}
       <figcaption
-        style={{ ...cinzel, fontSize: "8.5px", letterSpacing: "0.16em" }}
+        style={{ ...cinzel, fontSize: "11px", letterSpacing: "0.16em" }}
         className="uppercase text-[#407E8C]"
       >
         — {author}
