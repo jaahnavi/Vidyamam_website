@@ -398,7 +398,7 @@ export default function About() {
                 <Link href="/testimonials">
                   <button
                     style={{
-                      fontFamily: "'Cinzel', serif", fontSize: '11px', letterSpacing: '0.2em', fontWeight: 600,
+                      fontFamily: "'Cinzel', serif", fontSize: '10px', letterSpacing: '0.2em', fontWeight: 600,
                       textTransform: 'uppercase', background: 'transparent', color: '#C4A96E',
                       border: '1px solid rgba(196,169,110,0.5)', borderRadius: '4px', padding: '16px 36px',
                       cursor: 'pointer', transition: 'all 250ms',

@@ -141,7 +141,7 @@ export default function Home() {
             </div>*/}
 
             {/* Trust signals */}
-            <div className="grid grid-cols-3 gap-4 pt-1">
+            <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-1">
               {trustSignals.map(signal => (
                 <TrustSignal key={signal.label} {...signal} />
               ))}
@@ -391,7 +391,7 @@ export default function Home() {
             <button
               className="mt-2 w-fit rounded-[5px] bg-[#A58D66] px-7 py-3 uppercase text-[#041F2B] transition-all hover:bg-[#C4A96E]"
               style={{
-                 ...cinzel, fontSize: "12px", letterSpacing: "0.16em" , fontWeight: 800
+                 ...cinzel, fontSize: "11px", letterSpacing: "0.16em" , fontWeight: 800
               }}>
               Explore Verified Testimonials
             </button>

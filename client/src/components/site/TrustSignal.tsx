@@ -7,7 +7,7 @@ const jost = { fontFamily: "'Jost', sans-serif" } as const;
 export function TrustSignal({ label, value, description }: TrustSignalType) {
   return (
     <div
-      className="group relative overflow-hidden rounded-xl p-5 transition-all duration-300"
+      className="group relative overflow-hidden rounded-xl p-3 sm:p-5 transition-all duration-300"
       style={{
         background: "rgba(4,31,43,0.55)",
         border: "1px solid rgba(165,141,102,0.18)",
@@ -23,21 +23,21 @@ export function TrustSignal({ label, value, description }: TrustSignalType) {
     >
       <div className="flex flex-col gap-1.5">
         <p
-          style={{ ...cinzel, fontSize: "10px", letterSpacing: "0.18em" }}
-          className="uppercase text-[rgba(192,213,214,0.55)]"
+          style={{ ...cinzel, fontSize: "9px", letterSpacing: "0.14em" }}
+          className="uppercase text-[rgba(192,213,214,0.55)] leading-tight"
         >
           {label}
         </p>
         <p
-          style={{ ...cormorant, fontSize: "2rem", fontWeight: 300, fontStyle: "normal", lineHeight: 1 }}
-          className="text-[#C4A96E]"
+          style={{ ...cormorant, fontWeight: 300, fontStyle: "normal", lineHeight: 1 }}
+          className="text-[#C4A96E] text-2xl sm:text-[2rem]"
         >
           {value}
         </p>
         {description && (
           <p
             style={{ ...jost, fontSize: "0.82rem", fontWeight: 300, lineHeight: 1.6, letterSpacing: "0.02em" }}
-            className="text-[rgba(192,213,214,0.45)]"
+            className="hidden sm:block text-[rgba(192,213,214,0.45)]"
           >
             {description}
           </p>

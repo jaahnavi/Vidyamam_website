@@ -99,7 +99,7 @@ export const clinicDetails = {
   phone: "+1(469)468-5711",
   phoneHref: "tel:+14694685711",
   whatsappHref: "https://wa.me/14694685711",
-  instagramHref: "https://www.instagram.com/vidyas_holistic_healingss?igsh=MWRtOTlkNmNwc3RpcA==",
+  instagramHref: "https://www.instagram.com/vidyas_holistic_healings",
   address: "H-4, Soba Savera Apartment, Bibwewadi, , Maharashtra 411037, India",
   hours: "Opens 11 AM - 5pm CST",
 };
