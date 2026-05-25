@@ -404,7 +404,7 @@ export default function About() {
                     }}
                     onMouseEnter={e => { e.currentTarget.style.background = 'rgba(196,169,110,0.1)'; e.currentTarget.style.borderColor = '#C4A96E'; }}
                     onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'rgba(196,169,110,0.5)'; }}>
-                    Verified Testimonials
+                    Explore Verified Testimonials
                   </button>
                 </Link>
               </div>
