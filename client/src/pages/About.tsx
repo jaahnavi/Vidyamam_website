@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'wouter';
-import { SacredDivider } from '@/components/site/SacredDivider';
 import { Seo } from '@/components/site/Seo';
 import { SiteLayout } from '@/components/site/SiteLayout';
 import ScrollToTop  from '@/components/site/scrolltotop';
@@ -33,7 +32,7 @@ const CRED_DATA = [
 
 // ── Shared text styles ─────────────────────────────────────
 const eyebrow = (color = '#A58D66'): React.CSSProperties => ({
-  fontFamily: "'Cinzel', serif", fontSize: '12px', letterSpacing: '0.26em',
+  fontFamily: "'Marcellus', serif", fontSize: '16px', letterSpacing: '0.26em',
   textTransform: 'uppercase', color, display: 'inline-block',
 });
 const display = (size: string, color: string): React.CSSProperties => ({
@@ -42,8 +41,8 @@ const display = (size: string, color: string): React.CSSProperties => ({
   letterSpacing: '-0.01em',
 });
 const body = (color: string): React.CSSProperties => ({
-  fontFamily: "'Jost', sans-serif", fontWeight: 300,
-  fontSize: '15px', lineHeight: 1.85, color, margin: 0,
+  fontFamily: "'Jost', sans-serif", fontWeight: 400,
+  fontSize: '19px', lineHeight: 1.85, color, margin: 0,
 });
 
 export default function About() {
@@ -75,9 +74,9 @@ export default function About() {
             }} />
 
           {/* Top eyebrow centered */}
-          <div className="fade-in-section flex flex-col gap-7" style={{ textAlign: 'center', marginBottom: '72px' }}>
+          <div className="fade-in-section flex flex-col gap-7" style={{ textAlign: 'center', marginBottom: '34px' }}>
             <span style={eyebrow('#A58D66')}>The Visionary Behind the Healings</span>
-            <h1 style={{ ...display('clamp(32px, 6vw, 64px)', '#083A4F'), marginTop: '20px', fontWeight: 400 }}>
+            <h1 style={{ ...display('clamp(36px, 6vw, 64px)', '#083A4F'), marginTop: '20px', fontWeight: 500 }}>
               About <em style={{ fontStyle: 'italic', color: '#A58D66' }}>Vidya Joshi</em>
             </h1>
           </div>
@@ -111,7 +110,7 @@ export default function About() {
                   gap: '2px',
                 }}>
                   <span style={{ ...display('30px', '#C4A96E'), fontWeight: 300 }}>15+</span>
-                  <span style={{ fontFamily: "'Cinzel', serif", fontSize: '7px',
+                  <span style={{ fontFamily: "'Marcellus', serif", fontSize: '15px',
                     letterSpacing: '0.22em', textTransform: 'uppercase',
                     color: 'rgba(192,213,214,0.75)' }}>Years</span>
                 </div>
@@ -138,7 +137,7 @@ export default function About() {
               </p>
               <blockquote style={{
                 fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic',
-                fontWeight: 500, fontSize: '20px', lineHeight: 1.5,
+                fontWeight: 500, fontSize: '25px', lineHeight: 1.5,
                 color: '#083A4F', borderLeft: '2px solid #A58D66',
                 paddingLeft: '22px', margin: '8px 0 0', maxWidth: '440px',
               }}>
@@ -162,7 +161,7 @@ export default function About() {
                       fontSize: '24px', color: '#083A4F', lineHeight: 1,
                     }}>{s.value}</div>
                     <div style={{
-                      fontFamily: "'Cinzel', serif", fontSize: '12px', fontWeight: 600,
+                      fontFamily: "'Marcellus', serif", fontSize: '14px', fontWeight: 700,
                       letterSpacing: '0.18em', textTransform: 'uppercase',
                       color: '#407E8C', marginTop: '8px',
                     }}>{s.label}</div>
@@ -217,8 +216,8 @@ export default function About() {
 
             <p style={{
               fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic',
-              fontWeight: 300, fontSize: 'clamp(16px, 3vw, 22px)', lineHeight: 1.75,
-              color: 'rgba(255,255,255,0.88)', margin: 0,
+              fontWeight: 300, fontSize: 'clamp(22px, 3vw, 22px)', lineHeight: 1.75,
+              color: 'rgba(255,255,255,0.88)', margin: 30,
             }}>
               I often see how easily we care for everything around us — yet neglect our own energy.
               Just as we wouldn't expect a car to function without regular servicing, our energy
@@ -226,7 +225,7 @@ export default function About() {
             </p>
 
             <p style={{
-              fontFamily: "'Jost', sans-serif", fontWeight: 300, fontSize: '15px',
+              fontFamily: "'Jost', sans-serif", fontWeight: 300, fontSize: '18px',
               lineHeight: 1.95, color: 'rgba(192,213,214,0.78)', margin: 0,
               maxWidth: '620px',
             }}>
@@ -239,16 +238,16 @@ export default function About() {
 
             <p style={{
               fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic',
-              fontWeight: 400, fontSize: 'clamp(16px, 3vw, 22px)', lineHeight: 1.5,
+              fontWeight: 400, fontSize: 'clamp(22px, 3vw, 22px)', lineHeight: 1.5,
               color: '#C4A96E', margin: '8px 0 0',
             }}>
               Your light is already there. I am here to help you let it shine.
             </p>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginTop: '12px' }}>
-              <div style={{ width: '48px', height: '1px', background: 'rgba(165,141,102,0.4)' }} />
+              <div style={{ width: '30px', height: '1px', background: 'rgba(165,141,102,0.4)' }} />
               <span style={{
-                fontFamily: "'Cinzel', serif", fontSize: '13px', letterSpacing: '0.32em',
+                fontFamily: "'Marcellus', serif", fontSize: '16px', letterSpacing: '0.2em',
                 textTransform: 'uppercase', color: '#A58D66',
               }}>Om Shanti · Tathastu</span>
               <div style={{ width: '48px', height: '1px', background: 'rgba(165,141,102,0.4)' }} />
@@ -294,13 +293,13 @@ export default function About() {
                     }}>{String(i + 1).padStart(2, '0')}</span>
                     <div>
                       <div style={{
-                        fontFamily: "'Cinzel', serif", fontSize: '15px',
+                        fontFamily: "'Marcellus', serif", fontSize: '16px',
                         letterSpacing: '0.16em', textTransform: 'uppercase',
                         color: '#083A4F', fontWeight: 500, marginBottom: '2px',
                       }}>{c.title}</div>
                       <div style={{
                         fontFamily: "'Jost', sans-serif", fontWeight: 300,
-                        fontSize: '13.5px', lineHeight: 1.75, color: '#2D4A56',
+                        fontSize: '17px', lineHeight: 1.75, color: '#2D4A56',
                       }}>{c.desc}</div>
                     </div>
                   </li>
@@ -309,7 +308,7 @@ export default function About() {
 
               <p style={{
                 fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic',
-                fontWeight: 400, fontSize: '17px', lineHeight: 1.6,
+                fontWeight: 400, fontSize: '20px', lineHeight: 1.6,
                 color: '#407E8C', margin: '12px 0 0', maxWidth: '480px',
               }}>
                 Fifteen years of practice. Two thousand stories. An approach rooted in
@@ -339,7 +338,7 @@ export default function About() {
                 position: 'absolute', top: '32px', left: '-32px',
                 background: '#083A4F', color: '#C4A96E',
                 padding: '10px 18px',
-                fontFamily: "'Cinzel', serif", fontSize: '9px',
+                fontFamily: "'Marcellus', serif", fontSize: '16px',
                 letterSpacing: '0.24em', textTransform: 'uppercase',
                 border: '1px solid rgba(165,141,102,0.4)',
                 boxShadow: '0 8px 24px rgba(8,58,79,0.3)',
@@ -385,7 +384,7 @@ export default function About() {
                 <Link href="/services">
                   <button
                     style={{
-                      fontFamily: "'Cinzel', serif", fontSize: '12px', letterSpacing: '0.2em', fontWeight: 600,
+                      fontFamily: "'Marcellus', serif", fontSize: '16px', letterSpacing: '0.2em', fontWeight: 600,
                       textTransform: 'uppercase', background: 'transparent', color: '#C4A96E',
                       border: '1px solid rgba(196,169,110,0.5)', borderRadius: '4px', padding: '16px 36px',
                       cursor: 'pointer', transition: 'all 250ms',
@@ -398,14 +397,14 @@ export default function About() {
                 <Link href="/testimonials">
                   <button
                     style={{
-                      fontFamily: "'Cinzel', serif", fontSize: '10px', letterSpacing: '0.2em', fontWeight: 600,
+                      fontFamily: "'Marcellus', serif", fontSize: '16px', letterSpacing: '0.2em', fontWeight: 600,
                       textTransform: 'uppercase', background: 'transparent', color: '#C4A96E',
                       border: '1px solid rgba(196,169,110,0.5)', borderRadius: '4px', padding: '16px 36px',
                       cursor: 'pointer', transition: 'all 250ms',
                     }}
                     onMouseEnter={e => { e.currentTarget.style.background = 'rgba(196,169,110,0.1)'; e.currentTarget.style.borderColor = '#C4A96E'; }}
                     onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'rgba(196,169,110,0.5)'; }}>
-                    Explore Verified Testimonials
+                    Verified Testimonials
                   </button>
                 </Link>
               </div>

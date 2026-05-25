@@ -3,7 +3,8 @@
     "allow": [
       "Bash(grep -r \"color\\\\|#[0-9a-fA-F]\\\\{3,6\\\\}\\\\|rgb\" \"c:\\\\Users\\\\garik\\\\Untitled Folder\\\\Vidyamam_website\\\\client\\\\src\\\\pages\")",
       "Bash(Get-ChildItem -Recurse -Force)",
-      "Bash(Select-Object FullName)"
+      "Bash(Select-Object FullName)",
+      "PowerShell(\\(Get-Content \"c:\\\\Users\\\\garik\\\\Projects\\\\Vidyamam_website\\\\client\\\\src\\\\pages\\\\services-redesign.html\" -Raw\\) -replace \"'Cinzel',serif\", \"'Marcellus',serif\" | Set-Content \"c:\\\\Users\\\\garik\\\\Projects\\\\Vidyamam_website\\\\client\\\\src\\\\pages\\\\services-redesign.html\" -Encoding utf8)"
     ]
   }
 }

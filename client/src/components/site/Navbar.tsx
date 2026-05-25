@@ -22,13 +22,13 @@ export function Navbar() {
             />
             <div className="flex flex-col leading-none">
               <span
-                style={{ fontFamily: "'Cinzel', serif", fontSize: "16px", letterSpacing: "0.16em" }}
+                style={{ fontFamily: "'Marcellus', serif", fontSize: "16px", letterSpacing: "0.16em" }}
                 className="uppercase text-[#C4A96E]"
               >
                 Vidya's
               </span>
               <span
-                style={{ fontFamily: "'Jost', sans-serif", fontSize: "14px", letterSpacing: "0.08em" }}
+                style={{ fontFamily: "'Jost', sans-serif", fontSize: "15px", letterSpacing: "0.08em" }}
                 className="text-[rgba(192,213,214,0.6)] font-light"
               >
                 Holistic Healings
@@ -42,14 +42,24 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
+                onClick={(e: React.MouseEvent) => {
+                  if (link.href.includes('#')) {
+                    const hashId = link.href.split('#')[1];
+                    const el = document.getElementById(hashId);
+                    if (el) {
+                      e.preventDefault();
+                      el.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }
+                }}
                 className={cn(
-                  "pb-0.5 text-[13px] font-medium uppercase tracking-[0.18em] transition-colors duration-200",
+                  "pb-0.5 text-[15px] font-medium uppercase tracking-[0.18em] transition-colors duration-200",
                   "border-b border-transparent",
                   location === link.href
                     ? "border-[rgba(165,141,102,0.6)] text-[#C4A96E]"
                     : "text-white/85 hover:text-[#C4A96E]"
                 )}
-                style={{ fontFamily: "'Cinzel', serif" }}
+                style={{ fontFamily: "'Marcellus', serif" }}
               >
                 {link.label}
               </Link>
@@ -60,7 +70,7 @@ export function Navbar() {
           <div className="hidden items-center gap-4 lg:flex">
             <a
               href={clinicDetails.phoneHref}
-              className="text-sm font-light tracking-wide text-[rgba(192,213,214,0.55)] hover:text-[#C4A96E] transition-colors"
+              className="text-base font-light tracking-wide text-[rgba(192,213,214,0.55)] hover:text-[#C4A96E] transition-colors"
               style={{ fontFamily: "'Jost', sans-serif" }}
             >
               {clinicDetails.phone}
@@ -71,8 +81,8 @@ export function Navbar() {
                 if (el) el.scrollIntoView({ behavior: "smooth" });
                 else window.location.href = "/contact";
               }}
-              className="rounded-[5px] bg-[#A58D66] px-5 py-2.5 text-[13px] font-bold uppercase tracking-[0.16em] text-[#041F2B] transition-all duration-200 hover:bg-[#C4A96E] hover:shadow-[0_0_20px_rgba(165,141,102,0.3)]"
-              style={{ fontFamily: "'Cinzel', serif" }}
+              className="rounded-[5px] bg-[#A58D66] px-5 py-2.5 font-bold uppercase tracking-[0.16em] text-[#041F2B] transition-all duration-200 hover:bg-[#C4A96E] hover:shadow-[0_0_20px_rgba(165,141,102,0.3)]"
+              style={{ fontFamily: "'Marcellus', serif" , fontSize:16}}
             >
               Book a Session
             </button>
@@ -100,13 +110,23 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "block rounded-md px-4 py-3 text-[12px] uppercase tracking-[0.18em] transition-colors",
+                  "block rounded-md px-4 py-3 text-[15px] uppercase tracking-[0.18em] transition-colors",
                   location === link.href
                     ? "bg-[rgba(165,141,102,0.1)] text-[#C4A96E]"
                     : "text-[rgba(192,213,214,0.65)] hover:text-[#C4A96E]"
                 )}
-                style={{ fontFamily: "'Cinzel', serif" }}
-                onClick={() => setMenuOpen(false)}
+                style={{ fontFamily: "'Marcellus', serif", fontWeight:400 }}
+                onClick={(e: React.MouseEvent) => {
+                  setMenuOpen(false);
+                  if (link.href.includes('#')) {
+                    const hashId = link.href.split('#')[1];
+                    const el = document.getElementById(hashId);
+                    if (el) {
+                      e.preventDefault();
+                      el.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }
+                }}
               >
                 {link.label}
               </Link>
@@ -119,8 +139,8 @@ export function Navbar() {
                   if (el) el.scrollIntoView({ behavior: "smooth" });
                   else window.location.href = "/contact";
                 }}
-                className="w-full rounded-[5px] bg-[#A58D66] py-3 text-[11px] font-medium uppercase tracking-[0.18em] text-[#041F2B] hover:bg-[#C4A96E]"
-                style={{ fontFamily: "'Cinzel', serif" }}
+                className="w-full rounded-[5px] bg-[#A58D66] py-3 text-[15px] font-medium uppercase tracking-[0.18em] text-[#041F2B] hover:bg-[#C4A96E]"
+                style={{ fontFamily: "'Marcellus', serif", fontWeight:600 }}
               >
                 Book a Session
               </button>

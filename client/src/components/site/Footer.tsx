@@ -2,8 +2,7 @@ import { Instagram, MessageCircle } from "lucide-react";
 import { Link } from "wouter";
 import { clinicDetails, navLinks } from "./site-data";
 
-const cinzel = { fontFamily: "'Cinzel', serif" } as const;
-const cormorant = { fontFamily: "'Cormorant Garamond', serif" } as const;
+const marcellus = { fontFamily: "'Marcellus', serif" } as const;
 const jost = { fontFamily: "'Jost', sans-serif" } as const;
 
 export function Footer() {
@@ -18,28 +17,28 @@ export function Footer() {
           <div className="flex items-center gap-3">
             <img src="/logo1.png" alt="VHH" className="h-12 w-12 object-contain" />
             <div className="flex flex-col leading-none">
-              <span style={{ ...cinzel, fontSize: "14px", letterSpacing: "0.16em" }}
+              <span style={{ ...marcellus, fontSize: "16px", letterSpacing: "0.16em" }}
                 className="uppercase text-[#C4A96E]">
                 Vidya's
               </span>
-              <span style={{ ...jost, fontSize: "13px", letterSpacing: "0.07em" }}
+              <span style={{ ...jost, fontSize: "15px", letterSpacing: "0.07em" }}
                 className="font-light text-[rgba(192,213,214,0.5)] mt-0.5">
                 Holistic Healings
               </span>
             </div>
           </div>
-          <p style={{ ...jost, fontWeight: 300, fontSize: "0.9rem", lineHeight: 1.85, letterSpacing: "0.03em" }}
+          <p style={{ ...jost, fontWeight: 400, fontSize: "1.06rem", lineHeight: 1.85, letterSpacing: "0.03em" }}
             className="max-w-xs text-[rgba(192,213,214,0.55)]">
             Certified Pranic Healer dedicated to recalibrating your life force to its highest possible
             frequency. Serving a global community since 2025.
           </p>
           <div className="flex flex-col gap-1.5">
-            <span style={{ ...cinzel, fontSize: "11px", letterSpacing: "0.18em" }}
+            <span style={{ ...marcellus, fontSize: "14px", letterSpacing: "0.18em", fontWeight:600 }}
               className="uppercase text-[rgba(165,141,102,0.45)]">
               Frisco, Texas · Global Practice
             </span>
             <a href={clinicDetails.phoneHref}
-              style={{ ...jost, fontSize: "0.9rem", letterSpacing: "0.04em" }}
+              style={{ ...jost, fontSize: "1.05rem", letterSpacing: "0.04em", fontWeight:400  }}
               className="font-light text-[rgba(192,213,214,0.55)] transition-colors hover:text-[#C4A96E]">
               {clinicDetails.phone}
             </a>
@@ -48,7 +47,7 @@ export function Footer() {
 
         {/* Navigate */}
         <div className="flex flex-col gap-4">
-          <span style={{ ...cinzel, fontSize: "11px", letterSpacing: "0.22em" }}
+          <span style={{ ...marcellus, fontSize: "14px", letterSpacing: "0.22em", fontWeight:500  }}
             className="uppercase text-[#A58D66]">
             Navigate
           </span>
@@ -57,8 +56,18 @@ export function Footer() {
             <Link
               key={link.href}
               href={link.href}
-              style={{ ...jost, fontSize: "0.9rem", letterSpacing: "0.03em" }}
+              style={{ ...jost, fontSize: "1.08rem", letterSpacing: "0.03em" }}
               className="font-light text-[rgba(192,213,214,0.55)] transition-colors hover:text-[#C0D5D6]"
+              onClick={(e: React.MouseEvent) => {
+                if (link.href.includes('#')) {
+                  const hashId = link.href.split('#')[1];
+                  const el = document.getElementById(hashId);
+                  if (el) {
+                    e.preventDefault();
+                    el.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }
+              }}
             >
               {link.label}
             </Link>
@@ -67,13 +76,13 @@ export function Footer() {
 
         {/* Connect */}
         <div className="flex flex-col gap-4">
-          <span style={{ ...cinzel, fontSize: "11px", letterSpacing: "0.22em" }}
+          <span style={{ ...marcellus, fontSize: "13px", letterSpacing: "0.22em" }}
             className="uppercase text-[#A58D66]">
             Connect
           </span>
           <div className="h-px w-6 bg-[rgba(165,141,102,0.3)]" />
           <div className="flex flex-col gap-2"
-            style={{ ...jost, fontWeight: 300, fontSize: "0.9rem", lineHeight: 1.75, letterSpacing: "0.03em" }}>
+            style={{ ...jost, fontWeight: 300, fontSize: "1rem", lineHeight: 1.75, letterSpacing: "0.03em" }}>
             <p className="text-[rgba(192,213,214,0.55)]">{clinicDetails.hours}</p>
             <div className="flex items-center gap-3">
               <a
@@ -102,11 +111,11 @@ export function Footer() {
       {/* Bottom bar */}
       <div style={{ borderTop: "1px solid rgba(165,141,102,0.12)" }}>
         <div className="container flex items-center justify-between py-5">
-          <span style={{ ...jost, fontSize: "0.8rem", letterSpacing: "0.03em" }}
+          <span style={{ ...jost, fontSize: "0.9rem", letterSpacing: "0.03em" }}
             className="font-light text-[rgba(192,213,214,0.3)]">
             © 2025 Vidya's Holistic Healings. All rights reserved.
           </span>
-          <span style={{ ...cinzel, fontSize: "10px", letterSpacing: "0.18em" }}
+          <span style={{ ...marcellus, fontSize: "12px", letterSpacing: "0.18em" }}
             className="uppercase text-[rgba(165,141,102,0.35)]">
             Heal the Need
           </span>

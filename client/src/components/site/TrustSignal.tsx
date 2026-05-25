@@ -1,6 +1,6 @@
 import type { TrustSignal as TrustSignalType } from "./site-data";
 
-const cinzel = { fontFamily: "'Cinzel', serif" } as const;
+const cinzel = { fontFamily: "'Marcellus', serif" } as const;
 const cormorant = { fontFamily: "'Cormorant Garamond', serif" } as const;
 const jost = { fontFamily: "'Jost', sans-serif" } as const;
 
@@ -23,7 +23,7 @@ export function TrustSignal({ label, value, description }: TrustSignalType) {
     >
       <div className="flex flex-col gap-1.5">
         <p
-          style={{ ...cinzel, fontSize: "9px", letterSpacing: "0.14em" }}
+          style={{ ...cinzel, fontSize: "12px", letterSpacing: "0.14em" }}
           className="uppercase text-[rgba(192,213,214,0.55)] leading-tight"
         >
           {label}
@@ -36,7 +36,7 @@ export function TrustSignal({ label, value, description }: TrustSignalType) {
         </p>
         {description && (
           <p
-            style={{ ...jost, fontSize: "0.82rem", fontWeight: 300, lineHeight: 1.6, letterSpacing: "0.02em" }}
+            style={{ ...jost, fontSize: "0.9rem", fontWeight: 300, lineHeight: 1.6, letterSpacing: "0.02em" }}
             className="hidden sm:block text-[rgba(192,213,214,0.45)]"
           >
             {description}

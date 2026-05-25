@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-const cinzel = { fontFamily: "'Cinzel', serif" } as const;
+const cinzel = { fontFamily: "'Marcellus', serif" } as const;
 const cormorant = { fontFamily: "'Cormorant Garamond', serif" } as const;
 const jost = { fontFamily: "'Jost', sans-serif" } as const;
 

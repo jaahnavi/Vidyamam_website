@@ -31,6 +31,7 @@ export const navLinks: NavLinkItem[] = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/testimonials", label: "Testimonials" },
+  { href: "/#faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -101,14 +102,12 @@ export const clinicDetails = {
   whatsappHref: "https://wa.me/14694685711",
   instagramHref: "https://www.instagram.com/vidyas_holistic_healings",
   address: "H-4, Soba Savera Apartment, Bibwewadi, , Maharashtra 411037, India",
-  hours: "Opens 11 AM - 5pm CST",
+  hours: "Opens 11 AM - 5 PM CST",
 };
 
 export const whyChooseUs = [
   "Compassionate guidance focused on emotional ease and everyday balance.",
-  "Gentle, non-technical explanations that help you feel informed and comfortable.",
   "A calm clinic setting designed for clarity, trust, and personal attention.",
-  "Supportive healings sessions that respect your pace and wellbeing goals.",
 ];
 
 export const trustSignals: TrustSignal[] = [

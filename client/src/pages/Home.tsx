@@ -2,21 +2,20 @@ import { Link } from "wouter";
 import { SacredDivider } from "@/components/site/SacredDivider";
 import { Seo } from "@/components/site/Seo";
 import { SiteLayout } from "@/components/site/SiteLayout";
-import { TestimonialCard } from "@/components/site/TestimonialCard";
 import { TrustSignal } from "@/components/site/TrustSignal";
-import { testimonials, whyChooseUs, trustSignals } from "@/components/site/site-data";
+import { whyChooseUs, trustSignals } from "@/components/site/site-data";
 import HowItWorks from "@/components/site/HowItWorks";
 import ScrollToTop  from '@/components/site/scrolltotop';
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 
 const vidyaHero   = "/vidya-hero.png";
 
 // ── Cinzel label style ──────────────────────────────────────
-const cinzel = { fontFamily: "'Cinzel', serif" } as const;
+const cinzel = { fontFamily: "'Marcellus', serif" } as const;
 const cormorant = { fontFamily: "'Cormorant Garamond', serif" } as const;
+const marcellus = { fontFamily: "'Marcellus', serif" } as const;
 const jost = { fontFamily: "'Jost', sans-serif" } as const;
 const mandala1 = '/1.svg' as const;
-const mandala2 = '/2.svg' as const;
-const mandala3 = '/3.svg' as const;
 
 export default function Home() {
   return (
@@ -80,7 +79,7 @@ export default function Home() {
           {/* ── Left: copy ─────────────────────────────────── */}
           <div className="fade-in-section flex flex-col gap-7">
             {/* Eyebrow */}
-            <span style={cinzel} className="gold-badge w-fit">
+            <span style={{fontFamily: "Marcellus", fontSize: "14px", fontWeight: 500}} className="gold-badge w-fit">
               Certified Pranic Healer · Frisco, Texas
             </span>
 
@@ -118,14 +117,14 @@ export default function Home() {
                   if (el) el.scrollIntoView({ behavior: "smooth" });
                   else window.location.href = "/contact";
                 }}
-                style={{ ...cinzel, fontSize: "12px", letterSpacing: "0.18em", fontWeight:800 }}
+                style={{ ...cinzel, fontSize: "14px", letterSpacing: "0.18em", fontWeight:600 }}
                 className="rounded-[5px] bg-[#A58D66] px-6 py-4 uppercase text-[#041F2B] shadow-[0_0_24px_rgba(165,141,102,0.28)] transition-all duration-250 hover:bg-[#C4A96E] hover:shadow-[0_0_36px_rgba(165,141,102,0.45)]"
               >
                 Book a Session
               </button>
               <Link href="/services">
                 <button
-                  style={{ ...cinzel, fontSize: "12px", letterSpacing: "0.18em", fontWeight:900 }}
+                  style={{ ...cinzel, fontSize: "14px", letterSpacing: "0.18em", fontWeight:600 }}
                   className="rounded-[5px] border border-[rgba(165,141,102,0.45)] bg-transparent px-8 py-4 uppercase text-[#A58D66] transition-all duration-250 hover:border-[rgba(165,141,102,0.8)] hover:bg-[rgba(165,141,102,0.08)]"
                 >
                   Explore Services
@@ -210,12 +209,12 @@ export default function Home() {
         <div className="pointer-events-none absolute rounded-full" style={{ bottom: "-300px", left: "-200px", width: "700px", height: "700px", border: "1px solid rgba(165,141,102,0.06)" }} />
         <div className="container relative z-10">
           <div className="mb-10 md:mb-16 flex flex-col items-center text-center gap-3 md:gap-[18px]">
-            <span style={{ ...cinzel, fontSize: "12px", letterSpacing: "0.26em", textTransform: "uppercase" as const, color: "#A58D66" }}>What We Address</span>
+            <span style={{ ...cinzel, fontSize: "15px", letterSpacing: "0.26em", textTransform: "uppercase" as const, color: "#A58D66" }}>What We Address</span>
             <h2 style={{ ...cormorant, fontSize: "clamp(2rem,6vw,3.2rem)", fontWeight: 300, fontStyle: "italic", lineHeight: 1.12, letterSpacing: "-0.01em" }} className="text-white">
               Ailments We <em style={{ color: "#C4A96E", fontStyle: "italic" }}>Heal</em>
             </h2>
             <div className="h-0.5 w-12 rounded bg-[#A58D66]" />
-            <p style={{ ...jost, fontWeight: 300, fontSize: "15px", lineHeight: 1.8, letterSpacing: "0.02em", maxWidth: "560px" }} className="text-[rgba(192,213,214,0.7)] text-center mx-auto">
+            <p style={{ ...jost, fontWeight: 300, fontSize: "16px", lineHeight: 1.8, letterSpacing: "0.02em", maxWidth: "560px" }} className="text-[rgba(192,213,214,0.7)] text-center mx-auto">
               Pranic Healing supports the body's natural recovery across a wide spectrum of concerns.
               Tap any category to see the tailored healing packages.
             </p>
@@ -276,24 +275,24 @@ export default function Home() {
                 }}
               >
                 <div style={{ ...cormorant, fontSize: "42px", lineHeight: 1, color: "#C4A96E", opacity: 0.4, fontWeight: 300, fontStyle: "italic" }}>{a.num}</div>
-                <span style={{ ...cinzel, fontSize: "12px", letterSpacing: "0.22em", textTransform: "uppercase" as const, color: "#407E8C" }}>{a.tag}</span>
+                <span style={{ ...cinzel, fontSize: "15px", letterSpacing: "0.2em", fontWeight:500, textTransform: "uppercase" as const, color: "#407E8C" }}>{a.tag}</span>
                 <h3 style={{ ...cormorant, fontWeight: 500, fontStyle: "italic", fontSize: "22px", lineHeight: 1.25, color: "white", letterSpacing: "-0.005em" }}>{a.title}</h3>
                 <ul style={{ display: "flex", flexDirection: "column", gap: "7px", listStyle: "none", padding: 0, margin: "4px 0 0" }}>
                   {a.items.map((item, j) => (
-                    <li key={j} style={{ ...jost, fontWeight: 300, fontSize: "13.5px", lineHeight: 1.55, color: "rgba(192,213,214,0.75)", display: "flex", alignItems: "flex-start", gap: "8px" }}>
+                    <li key={j} style={{ ...jost, fontWeight: 300, fontSize: "17px", lineHeight: 1.55, color: "rgba(192,213,214,0.75)", display: "flex", alignItems: "flex-start", gap: "8px" }}>
                       <span style={{ display: "inline-block", width: "4px", height: "4px", borderRadius: "50%", background: "#A58D66", flexShrink: 0, marginTop: "8px" }} />
                       {item}
                     </li>
                   ))}
                 </ul>
-                <div style={{ ...cinzel, fontSize: "11px", fontWeight:800, letterSpacing: "0.2em", textTransform: "uppercase" as const, color: "#A58D66", marginTop: "auto", paddingTop: "14px", borderTop: "1px solid rgba(165,141,102,0.15)", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "8px" }}>
+                <div style={{ ...cinzel, fontSize: "15px", fontWeight:800, letterSpacing: "0.2em", textTransform: "uppercase" as const, color: "#A58D66", marginTop: "auto", paddingTop: "14px", borderTop: "1px solid rgba(165,141,102,0.15)", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "8px" }}>
                   <span>See Packages</span>
                   <span style={{ fontSize: "14px" }}>→</span>
                 </div>
               </a>
             ))}
           </div>
-          <p style={{ ...jost, fontWeight: 300, fontSize: "14.5px", lineHeight: 1.6, color: "rgba(192,213,214,0.45)", maxWidth: "680px", fontStyle: "italic", textAlign: "center", marginTop: "40px", marginLeft: "auto", marginRight: "auto" }}>
+          <p style={{ ...jost, fontWeight: 300, fontSize: "16px", lineHeight: 1.6, color: "rgba(192,213,214,0.45)", maxWidth: "680px", fontStyle: "italic", textAlign: "center", marginTop: "40px", marginLeft: "auto", marginRight: "auto" }}>
             Pranic Healing is complementary to medical care, not a substitute for it. Always consult a licensed physician for diagnosis and treatment.
           </p>
         </div>
@@ -365,13 +364,13 @@ export default function Home() {
                 }}
               />
             </div>
-            <span style={cinzel} className="eyebrow text-[#407E8C]">Why Choose Us</span>
+            <span style={{fontStyle: "cinzel", fontSize:15 }} className="eyebrow text-[#407E8C]">Why Choose Us</span>
             <h2 style={{ ...cormorant, fontSize: "clamp(2.2rem, 3.5vw, 3rem)", fontWeight: 300, fontStyle: "italic" }}
               className="text-[#083A4F] leading-tight">
               A space that feels calm, credible, and supportive
             </h2>
             <div className=" flex flex-wrap gap-4 pt-1 gold-line" />
-            <p style={{ ...jost, fontWeight: 300, fontSize: "0.95rem", lineHeight: 1.85, letterSpacing: "0.03em" }}
+            <p style={{ ...jost, fontWeight: 300, fontSize: "1.08rem", lineHeight: 1.85, letterSpacing: "0.03em" }}
               className="text-[#2D4A56]">
               The practice is designed to feel welcoming and centered, with care that respects both
               emotional wellbeing and the need for practical clarity.
@@ -380,7 +379,7 @@ export default function Home() {
             <div className="flex flex-wrap gap-4 pt-2">
             <Link href="/about">
               <button
-                style={{ ...cinzel, fontSize: "12px", letterSpacing: "0.16em", fontWeight: 800 }}
+                style={{ ...marcellus, fontSize: "14px", letterSpacing: "0.16em", fontWeight: 600 }}
                 className="mt-2 w-fit rounded-[5px] bg-[#A58D66] px-7 py-3 uppercase text-[#041F2B] transition-all hover:bg-[#C4A96E]"
               >
                 Meet Vidya
@@ -391,7 +390,7 @@ export default function Home() {
             <button
               className="mt-2 w-fit rounded-[5px] bg-[#A58D66] px-7 py-3 uppercase text-[#041F2B] transition-all hover:bg-[#C4A96E]"
               style={{
-                 ...cinzel, fontSize: "11px", letterSpacing: "0.16em" , fontWeight: 800
+                 ...marcellus, fontSize: "13px", letterSpacing: "0.16em" , fontWeight: 800
               }}>
               Explore Verified Testimonials
             </button>
@@ -409,13 +408,86 @@ export default function Home() {
                 style={{ animationDelay: `${i * 0.07}s` }}
               >
                 <div className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[#A58D66]" />
-                <p style={{ ...jost, fontWeight: 300, fontSize: "0.92rem", lineHeight: 1.75, letterSpacing: "0.02em" }}
+                <p style={{ ...jost, fontWeight: 300, fontSize: "1rem", lineHeight: 1.75, letterSpacing: "0.02em" }}
                   className="text-[#2D4A56]">
                   {reason}
                 </p>
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════
+          FAQ — dark navy
+      ════════════════════════════════════════════════════════ */}
+      <section id="faq" className="section-shell relative overflow-hidden" style={{ background: "linear-gradient(160deg, #041F2B 0%, #083A4F 100%)" }}>
+        <div className="pointer-events-none absolute rounded-full" style={{ top: "-160px", right: "-160px", width: "500px", height: "500px", border: "1px solid rgba(165,141,102,0.07)" }} />
+        <div className="pointer-events-none absolute rounded-full" style={{ bottom: "-200px", left: "-160px", width: "560px", height: "560px", border: "1px solid rgba(165,141,102,0.05)" }} />
+        <div className="container relative z-10 max-w-3xl">
+          <div className="mb-10 md:mb-14 flex flex-col items-center text-center gap-3">
+            <span style={{ ...cinzel, fontSize: "13px", letterSpacing: "0.26em", textTransform: "uppercase" as const, color: "#A58D66" }}>
+              Common Questions
+            </span>
+            <h2 style={{ ...cormorant, fontSize: "clamp(2rem,5vw,3rem)", fontWeight: 300, fontStyle: "italic", lineHeight: 1.12, letterSpacing: "-0.01em" }} className="text-white">
+              Frequently Asked <em style={{ color: "#C4A96E" }}>Questions</em>
+            </h2>
+            <div className="h-0.5 w-12 rounded bg-[#A58D66]" />
+          </div>
+
+          <Accordion type="single" collapsible className="flex flex-col gap-3">
+            {[
+              {
+                q: "What is Pranic Healing?",
+                a: "A gentle, no-touch energy therapy. It cleanses and rebalances your energy centers (chakras) to help your body's natural ability to heal itself faster.",
+              },
+              {
+                q: "How does it work?",
+                a: "It is based on the principle that the physical body follows the energy body. By removing stagnant energy and replacing it with fresh prana (life force), we support your overall well-being.",
+              },
+              {
+                q: "Do you touch the client?",
+                a: "No. You remain fully clothed, and the session is performed by working on your energy field.",
+              },
+              {
+                q: "Can it be done remotely?",
+                a: "Yes. Energy is not limited by distance, so we can achieve the same results whether you are in the same room or at home.",
+              },
+              {
+                q: "Is it a substitute for medicine?",
+                a: "No. It is a complementary practice. It works alongside your medical treatments to support you; it does not replace the need for a doctor.",
+              },
+              {
+                q: "How many sessions do I need?",
+                a: "It depends on your goals. Some clients feel a shift in one session, while others benefit from a series of treatments for chronic issues. We will discuss a plan that works for you.",
+              },
+            ].map((item, i) => (
+              <AccordionItem
+                key={i}
+                value={`faq-${i}`}
+                style={{
+                  background: "rgba(4,31,43,0.6)",
+                  border: "1px solid rgba(165,141,102,0.2)",
+                  borderRadius: "12px",
+                  padding: "0 24px",
+                  overflow: "hidden",
+                }}
+                className="border-b-0"
+              >
+                <AccordionTrigger
+                  style={{ ...cormorant, fontSize: "clamp(1.3rem,2.5vw,1.5rem)", fontWeight: 400, fontStyle: "italic", color: "#C4A96E", letterSpacing: "0.08em", paddingTop: "20px", paddingBottom: "20px" }}
+                  className="hover:no-underline [&>svg]:text-[#A58D66]"
+                >
+                  {item.q}
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p style={{ ...jost, fontWeight: 400, fontSize: "18px", lineHeight: 1.85, color: "rgba(192,213,214,0.8)", paddingBottom: "20px" }}>
+                    {item.a}
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
 

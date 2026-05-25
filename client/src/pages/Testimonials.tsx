@@ -43,7 +43,7 @@ function StarRow() {
   return (
     <div style={{ display: 'flex', gap: '3px', justifyContent: 'center' }}>
       {[...Array(5)].map((_, i) => (
-        <span key={i} style={{ color: '#C4A96E', fontSize: '14px' }}>★</span>
+        <span key={i} style={{ color: '#C4A96E', fontSize: '18px' }}>★</span>
       ))}
     </div>
   );
@@ -112,13 +112,13 @@ export default function Testimonials() {
           style={{ textAlign: 'center' }}
         >
           <span style={{
-            fontFamily: "'Cinzel', serif", fontSize: '12px', letterSpacing: '0.26em',
+            fontFamily: "'Marcellus', serif", fontSize: '16px', letterSpacing: '0.26em',
             textTransform: 'uppercase', color: '#A58D66', display: 'block',
           }}>Client Experiences</span>
 
           <h2 style={{
             fontFamily: "'Cormorant Garamond', serif", fontWeight: 400,
-            fontSize: 'clamp(28px, 5vw, 44px)', color: 'white', margin: 0,
+            fontSize: 'clamp(36px, 5vw, 44px)', color: 'white', margin: 0,
           }}>Transformations</h2>
 
           <StarRow />
@@ -129,7 +129,7 @@ export default function Testimonials() {
             target="_blank"
             rel="noopener noreferrer"
             style={{
-              fontFamily: "'Cinzel', serif", fontSize: '11px', letterSpacing: '0.18em',
+              fontFamily: "'Marcellus', serif", fontSize: '16px', letterSpacing: '0.18em',
               textTransform: 'uppercase', color: '#A58D66', textDecoration: 'none',
               border: '1px solid rgba(165,141,102,0.5)', borderRadius: '5px',
               padding: '12px 28px', display: 'inline-flex', gap: '8px', alignItems: 'center',
@@ -167,7 +167,7 @@ export default function Testimonials() {
                   fontSize: '48px', lineHeight: 0.7, color: '#A58D66', opacity: 0.5,
                 }}>"</div>
                 <span style={{
-                  fontFamily: "'Cinzel', serif", fontSize: '9px', letterSpacing: '0.16em',
+                  fontFamily: "'Marcellus', serif", fontSize: '16px', letterSpacing: '0.16em',
                   textTransform: 'uppercase', color: '#C4A96E',
                   border: '1px solid rgba(196,169,110,0.4)', borderRadius: '3px',
                   padding: '4px 9px', whiteSpace: 'nowrap', flexShrink: 0,
@@ -176,7 +176,7 @@ export default function Testimonials() {
 
               <p style={{
                 fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic',
-                fontWeight: 300, fontSize: '17px', lineHeight: 1.8,
+                fontWeight: 300, fontSize: '22px', lineHeight: 1.8,
                 color: 'rgba(255,255,255,0.9)', margin: 0,
               }}>{t.quote}</p>
 
@@ -187,11 +187,11 @@ export default function Testimonials() {
               }}>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: '11px', letterSpacing: '0.16em',
+                    fontFamily: "'Marcellus', serif", fontSize: '16px', letterSpacing: '0.16em',
                     textTransform: 'uppercase', color: '#407E8C',
                   }}>{t.author}</div>
                   <div style={{
-                    fontFamily: "'Jost', sans-serif", fontSize: '12px',
+                    fontFamily: "'Jost', sans-serif", fontSize: '18px',
                     color: 'rgba(192,213,214,0.6)', marginTop: '3px',
                   }}>{t.location}</div>
                 </div>
@@ -200,12 +200,12 @@ export default function Testimonials() {
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
-                    fontFamily: "'Cinzel', serif", fontSize: '10px', letterSpacing: '0.16em',
+                    fontFamily: "'Marcellus', serif", fontSize: '16px', letterSpacing: '0.16em',
                     textTransform: 'uppercase', color: 'rgba(165,141,102,0.8)',
                     textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '5px',
                   }}>
                   <span>Verified · Google</span>
-                  <span style={{ fontSize: '11px' }}>↗</span>
+                  <span style={{ fontSize: '16px' }}>↗</span>
                 </a>
               </div>
             </article>
@@ -310,7 +310,7 @@ export default function Testimonials() {
                     fontSize: '56px', lineHeight: 0.7, color: '#A58D66', opacity: 0.5,
                   }}>"</div>
                   <span style={{
-                    fontFamily: "'Cinzel', serif", fontSize: '10px', letterSpacing: '0.18em',
+                    fontFamily: "'Marcellus', serif", fontSize: '16px', letterSpacing: '0.18em',
                     textTransform: 'uppercase', color: '#C4A96E',
                     border: '1px solid rgba(196,169,110,0.4)', borderRadius: '3px',
                     padding: '5px 10px', whiteSpace: 'nowrap',
@@ -329,11 +329,11 @@ export default function Testimonials() {
                 }}>
                   <div>
                     <div style={{
-                      fontFamily: "'Cinzel', serif", fontSize: '11.5px', letterSpacing: '0.18em',
+                      fontFamily: "'Marcellus', serif", fontSize: '16px', letterSpacing: '0.18em',
                       textTransform: 'uppercase', color: '#407E8C',
                     }}>{t.author}</div>
                     <div style={{
-                      fontFamily: "'Jost', sans-serif", fontSize: '12.5px',
+                      fontFamily: "'Jost', sans-serif", fontSize: '18px',
                       color: 'rgba(192,213,214,0.65)', marginTop: '4px',
                     }}>{t.location}</div>
                   </div>
@@ -342,14 +342,14 @@ export default function Testimonials() {
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{
-                      fontFamily: "'Cinzel', serif", fontSize: '10.5px', letterSpacing: '0.18em',
+                      fontFamily: "'Marcellus', serif", fontSize: '16px', letterSpacing: '0.18em',
                       textTransform: 'uppercase', color: 'rgba(165,141,102,0.85)',
                       textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px',
                     }}
                     onMouseEnter={e => { e.currentTarget.style.color = '#C4A96E'; }}
                     onMouseLeave={e => { e.currentTarget.style.color = 'rgba(165,141,102,0.85)'; }}>
                     <span>Verified · Google</span>
-                    <span style={{ fontSize: '11px' }}>↗</span>
+                    <span style={{ fontSize: '16px' }}>↗</span>
                   </a>
                 </div>
               </article>

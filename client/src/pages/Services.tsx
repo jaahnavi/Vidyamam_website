@@ -4,7 +4,7 @@ import { Seo } from '@/components/site/Seo';
 import { SiteLayout } from '@/components/site/SiteLayout';
 import ScrollToTop from '@/components/site/scrolltotop';
 
-const cinzel = { fontFamily: "'Cinzel', serif" } as const;
+const cinzel = { fontFamily: "'Marcellus', serif" } as const;
 const cormorant = { fontFamily: "'Cormorant Garamond', serif" } as const;
 const jost = { fontFamily: "'Jost', sans-serif" } as const;
 
@@ -20,7 +20,7 @@ function CheckIcon() {
 function PriceRow({ label, value, featured }: { label: string; value: string; featured?: boolean }) {
   return (
     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 10, padding: "8px 0", borderBottom: "1px dashed rgba(165,141,102,0.18)" }}>
-      <span style={{ ...jost, fontWeight: 400, fontSize: 13.5, color: featured ? "rgba(192,213,214,0.7)" : "#5C7A87", letterSpacing: "0.01em" }}>{label}</span>
+      <span style={{ ...jost, fontWeight: 400, fontSize: 18, color: featured ? "rgba(192,213,214,0.7)" : "#5C7A87", letterSpacing: "0.01em" }}>{label}</span>
       <span style={{ ...cormorant, fontWeight: 500, fontSize: 22, color: featured ? "#C4A96E" : "#083A4F", lineHeight: 1, letterSpacing: "-0.01em" }}>{value}</span>
     </div>
   );
@@ -88,7 +88,7 @@ export default function Services() {
   };
 
   const includeItem: React.CSSProperties = {
-    ...jost, fontWeight: 300, fontSize: 13.5, lineHeight: 1.5,
+    ...jost, fontWeight: 300, fontSize: 18, lineHeight: 1.5,
     color: "#2D4A56", display: "flex", alignItems: "flex-start", gap: 10,
   };
 
@@ -97,7 +97,7 @@ export default function Services() {
   };
 
   const ctaBase: React.CSSProperties = {
-    ...cinzel, fontSize: 12, fontWeight: 400, letterSpacing: "0.2em", textTransform: "uppercase",
+    ...cinzel, fontSize: 17, fontWeight: 400, letterSpacing: "0.2em", textTransform: "uppercase",
     background: "#083A4F", color: "#C4A96E",
     borderRadius: 6, padding: "14px 18px", marginTop: 6,
     textAlign: "center", textDecoration: "none", display: "block", transition: "all 0.25s",
@@ -114,7 +114,7 @@ export default function Services() {
   });
 
   const pkgSub = (featured?: boolean): React.CSSProperties => ({
-    ...jost, fontWeight: 300, fontSize: 14, lineHeight: 1.55,
+    ...jost, fontWeight: 300, fontSize: 18, lineHeight: 1.55,
     color: featured ? "rgba(192,213,214,0.7)" : "#5C7A87",
     marginTop: 4, marginBottom: 0,
   });
@@ -133,14 +133,14 @@ export default function Services() {
 
           {/* ── Header ── */}
           <div style={{ textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: 14, marginBottom: 64 }}>
-            <span style={{ ...cinzel, fontSize: 12, letterSpacing: "0.26em", textTransform: "uppercase", color: "#407E8C" }}>
+            <span style={{ ...cinzel, fontSize: 16, letterSpacing: "0.26em", textTransform: "uppercase", color: "#407E8C" }}>
               Healing Packages
             </span>
             <h1 style={{ ...cormorant, fontSize: "clamp(2rem,6vw,3.2rem)", fontWeight: 500, fontStyle: "italic", lineHeight: 1.12, letterSpacing: "-0.01em", color: "#083A4F" }}>
               Choose Your <em style={{ color: "#C4A96E" }}>Path</em>
             </h1>
             <div style={{ width: 48, height: 2, background: "#A58D66", borderRadius: 1 }} />
-            <p style={{ ...jost, fontWeight: 300, fontSize: 15, lineHeight: 1.8, letterSpacing: "0.02em", maxWidth: 560, color: "#2D4A56", textAlign: "center", margin: 0 }}>
+            <p style={{ ...jost, fontWeight: 300, fontSize: 18, lineHeight: 1.8, letterSpacing: "0.02em", maxWidth: 560, color: "#2D4A56", textAlign: "center", margin: 0 }}>
               Simple, transparent pricing. Each package combines aura cleansing, chakra balancing
               and energy restoration — tailored to where you are right now.
             </p>
@@ -202,7 +202,7 @@ export default function Services() {
 
             {/* Chakra Healing — featured */}
             <article id="pkg-chakra" className="sm:col-span-2 lg:col-span-1" style={featuredCard("chakra")} onMouseEnter={() => setHovered("chakra")} onMouseLeave={() => setHovered(null)}>
-              <div style={{ position: "absolute", top: -12, left: "50%", transform: "translateX(-50%)", background: "#A58D66", color: "#041F2B", ...cinzel, fontSize: 8.5, letterSpacing: "0.22em", textTransform: "uppercase", padding: "6px 16px", borderRadius: 999, whiteSpace: "nowrap" }}>
+              <div style={{ position: "absolute", top: -12, left: "50%", transform: "translateX(-50%)", background: "#A58D66", color: "#041F2B", ...cinzel, fontSize: 16, letterSpacing: "0.22em", textTransform: "uppercase", padding: "6px 16px", borderRadius: 999, whiteSpace: "nowrap" }}>
                 Most Popular
               </div>
               <div style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
@@ -356,7 +356,7 @@ export default function Services() {
           <div className="mt-12 grid grid-cols-1 md:grid-cols-[auto_1fr] gap-[18px] md:gap-8 rounded-[18px] p-7 md:p-8" style={{ background: "#083A4F", alignItems: "center" }}>
             <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
               <h3 style={{ ...cormorant, fontWeight: 300, fontStyle: "italic", fontSize: 22, color: "white", lineHeight: 1.2, margin: 0 }}>Not sure which package fits?</h3>
-              <p style={{ ...jost, fontWeight: 300, fontSize: 13, color: "rgba(192,213,214,0.65)", maxWidth: 260, margin: 0 }}>Browse by the concern you're working through.</p>
+              <p style={{ ...jost, fontWeight: 300, fontSize: 18, color: "rgba(192,213,214,0.65)", maxWidth: 260, margin: 0 }}>Browse by the concern you're working through.</p>
             </div>
             <div style={{ display: "flex", fontSize: 25, flexWrap: "wrap", gap: 8 }}>
               {[
@@ -370,7 +370,7 @@ export default function Services() {
                 <a
                   key={i}
                   href={tag.href}
-                  style={{ ...cinzel, fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", background: "rgba(165,141,102,0.12)", color: "#C4A96E", border: "1px solid rgba(165,141,102,0.3)", padding: "8px 14px", borderRadius: 999, textDecoration: "none", transition: "all 0.25s" }}
+                  style={{ ...cinzel, fontSize: 16, letterSpacing: "0.16em", textTransform: "uppercase", background: "rgba(165,141,102,0.12)", color: "#C4A96E", border: "1px solid rgba(165,141,102,0.3)", padding: "8px 14px", borderRadius: 999, textDecoration: "none", transition: "all 0.25s" }}
                   onMouseEnter={e => { e.currentTarget.style.background = "rgba(165,141,102,0.25)"; e.currentTarget.style.borderColor = "rgba(165,141,102,0.6)"; }}
                   onMouseLeave={e => { e.currentTarget.style.background = "rgba(165,141,102,0.12)"; e.currentTarget.style.borderColor = "rgba(165,141,102,0.3)"; }}
                 >
@@ -381,7 +381,7 @@ export default function Services() {
           </div>
 
           {/* ── Disclaimer ── */}
-          <div style={{ marginTop: 32, padding: "20px 22px", background: "rgba(255,255,255,0.5)", border: "1px solid rgba(165,141,102,0.2)", borderRadius: 12, ...jost, fontWeight: 300, fontSize: 14, lineHeight: 1.65, color: "#5C7A87", fontStyle: "italic", textAlign: "center" }}>
+          <div style={{ marginTop: 32, padding: "20px 22px", background: "rgba(255,255,255,0.5)", border: "1px solid rgba(165,141,102,0.2)", borderRadius: 12, ...jost, fontWeight: 300, fontSize: 18, lineHeight: 1.65, color: "#5C7A87", fontStyle: "italic", textAlign: "center" }}>
             Pranic Healing is a complementary energy practice intended to support overall wellness and relaxation.
             It is not a substitute for medical diagnosis, treatment, or professional healthcare services. Results may vary from person to person.
           </div>

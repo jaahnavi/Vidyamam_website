@@ -16,7 +16,7 @@ const SERVICES = [
 
 // ── Shared styles ─────────────────────────────────────────
 const discHeader: React.CSSProperties = {
-  fontFamily: "'Cinzel', serif", fontSize: '14px',
+  fontFamily: "'Marcellus', serif", fontSize: '18px',
   letterSpacing: '0.24em', textTransform: 'uppercase',
   color: '#C4A96E', margin: '6px 0 12px',
   paddingBottom: '8px',
@@ -24,7 +24,7 @@ const discHeader: React.CSSProperties = {
 };
 
 const inputStyle: React.CSSProperties = {
-  fontFamily: "'Jost', sans-serif", fontSize: '14px',
+  fontFamily: "'Jost', sans-serif", fontSize: '18px',
   background: 'rgba(4,31,43,0.6)',
   border: '1px solid rgba(165,141,102,0.25)',
   borderRadius: '6px', padding: '12px 14px',
@@ -34,7 +34,7 @@ const inputStyle: React.CSSProperties = {
 
 const labelStyle: React.CSSProperties = {
   fontFamily: "'Jost', sans-serif", fontWeight: 400,
-  fontSize: '13px', color: 'rgba(192,213,214,0.7)',
+  fontSize: '18px', color: 'rgba(192,213,214,0.7)',
   display: 'block', marginBottom: '5px', letterSpacing: '0.04em',
 };
 
@@ -45,10 +45,10 @@ function SectionHead({ n, title }: { n: string; title: string }) {
     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', margin: '20px 0 14px' }}>
       <span style={{
         fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic',
-        color: '#A58D66', fontSize: '13px', flexShrink: 0,
+        color: '#A58D66', fontSize: '18px', flexShrink: 0,
       }}>{n}.</span>
       <span style={{
-        fontFamily: "'Cinzel', serif", fontSize: '12px',
+        fontFamily: "'Marcellus', serif", fontSize: '18px',
         letterSpacing: '0.1em', textTransform: 'uppercase',
         color: '#C4A96E', flexShrink: 0,
       }}>{title}</span>
@@ -73,13 +73,13 @@ function YesNo({
         border: '1px solid rgba(165,141,102,0.2)', borderRadius: '6px',
       }}>
         <span style={{
-          fontFamily: "'Jost', sans-serif", fontSize: '15px',
+          fontFamily: "'Jost', sans-serif", fontSize: '18px',
           color: 'rgba(192,213,214,0.82)', flex: 1, lineHeight: 1.4,
         }}>{label}</span>
         <div style={{ display: 'flex', gap: '6px', flexShrink: 0 }}>
           {(['yes', 'no'] as const).map(opt => (
             <button key={opt} type="button" onClick={() => onChange(opt)} style={{
-              fontFamily: "'Cinzel', serif", fontSize: '12px', fontWeight:600, letterSpacing: '0.14em',
+              fontFamily: "'Marcellus', serif", fontSize: '16px', fontWeight:600, letterSpacing: '0.14em',
               textTransform: 'uppercase', padding: '5px 12px', borderRadius: '3px',
               cursor: 'pointer', border: '1px solid rgba(165,141,102,0.4)',
               background: value === opt ? '#A58D66' : 'transparent',
@@ -105,7 +105,7 @@ function Pills({
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
       {options.map(opt => (
         <button key={opt.value} type="button" onClick={() => onChange(opt.value)} style={{
-          fontFamily: "'Cinzel', serif", fontSize: '12px', fontWeight: 600,letterSpacing: '0.0em',
+          fontFamily: "'Marcellus', serif", fontSize: '16px', fontWeight: 600,letterSpacing: '0.0em',
           textTransform: 'uppercase', padding: '8px 16px', borderRadius: '4px',
           cursor: 'pointer', border: '1px solid rgba(165,141,102,0.4)',
           background: value === opt.value ? '#A58D66' : 'transparent',
@@ -122,12 +122,12 @@ function DiscItem({ n, t, children }: { n: string; t?: string; children: React.R
     <div style={{ display: 'grid', gridTemplateColumns: '24px 1fr', gap: '8px', margin: '0 0 10px' }}>
       <span style={{
         fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic',
-        color: '#A58D66', fontSize: '13px', lineHeight: 1.6,
+        color: '#A58D66', fontSize: '18px', lineHeight: 1.6,
       }}>{n}.</span>
       <span>
         {t && (
           <span style={{
-            fontFamily: "'Cinzel', serif", fontSize: '9px',
+            fontFamily: "'Marcellus', serif", fontSize: '16px',
             letterSpacing: '0.16em', textTransform: 'uppercase',
             color: '#C0D5D6', display: 'block', marginBottom: '3px',
           }}>{t}</span>
@@ -235,20 +235,20 @@ export default function Contact() {
           {/* Left — text */}
           <div className="fade-in-section" style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
             <span style={{
-              fontFamily: "'Cinzel', serif", fontSize: '12px', letterSpacing: '0.26em',
+              fontFamily: "'Marcellus', serif", fontSize: '18px', letterSpacing: '0.26em',
               textTransform: 'uppercase', color: '#407E8C',
             }}>Begin Your Journey</span>
 
             <h2 style={{
               fontFamily: "'Cormorant Garamond', serif", fontWeight: 400,
-              fontSize: 'clamp(28px, 5vw, 48px)', lineHeight: 1.1, color: '#083A4F', margin: 0,
+              fontSize: 'clamp(32px, 5vw, 48px)', lineHeight: 1.1, color: '#083A4F', margin: 0,
             }}>Book a Session</h2>
 
             <div style={{ width: '48px', height: '2px', background: '#A58D66', borderRadius: '1px' }} />
 
             <p style={{
               fontFamily: "'Jost', sans-serif", fontWeight: 300,
-              fontSize: '15px', lineHeight: 1.85, color: '#2D4A56',
+              fontSize: '19px', lineHeight: 1.85, color: '#2D4A56',
             }}>
               Every healing journey begins with a single step. Share a bit about yourself and your wellness
               goals — Vidya will review your intake and reach out personally.
@@ -256,7 +256,7 @@ export default function Contact() {
 
             <blockquote style={{
               fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic',
-              fontWeight: 500, fontSize: '19px', lineHeight: 1.7,
+              fontWeight: 500, fontSize: '22px', lineHeight: 1.7,
               color: '#407E8C', borderLeft: '2px solid #A58D66',
               paddingLeft: '20px', margin: 0,
             }}>
@@ -276,7 +276,7 @@ export default function Contact() {
                     borderRadius: '50%', flexShrink: 0,
                   }} />
                   <span style={{
-                    fontFamily: "'Jost', sans-serif", fontSize: '14.5px',
+                    fontFamily: "'Jost', sans-serif", fontSize: '18px',
                     color: '#2D4A56', letterSpacing: '0.04em',
                   }}>{item}</span>
                 </div>
@@ -312,18 +312,18 @@ export default function Contact() {
                 <img src="/logo1.png" alt="VHH" style={{ width: '80px', opacity: 0.9 }} />
                 <h3 style={{
                   fontFamily: "'Cormorant Garamond', serif", fontWeight: 400,
-                  fontSize: '28px', color: 'white',
+                  fontSize: '32px', color: 'white',
                 }}>Thank You</h3>
                 <p style={{
                   fontFamily: "'Jost', sans-serif", fontWeight: 300,
-                  fontSize: '14px', color: 'rgba(192,213,214,0.7)', lineHeight: 1.7,
+                  fontSize: '18px', color: 'rgba(192,213,214,0.7)', lineHeight: 1.7,
                 }}>
                   Your intake has been received. Vidya will reach out once your request has been reviewed.
                 </p>
                 <button
                   onClick={() => { setSubmitted(false); setForm(defaultForm); }}
                   style={{
-                    fontFamily: "'Cinzel', serif", fontSize: '9px', letterSpacing: '0.16em',
+                    fontFamily: "'Marcellus', serif", fontSize: '16px', letterSpacing: '0.16em',
                     textTransform: 'uppercase', background: 'transparent', color: '#A58D66',
                     border: '1px solid rgba(165,141,102,0.4)', borderRadius: '4px',
                     padding: '10px 24px', cursor: 'pointer', marginTop: '8px',
@@ -335,7 +335,7 @@ export default function Contact() {
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
 
                 <h3 style={{
-                  fontFamily: "'Cinzel', serif", fontSize: '12px', letterSpacing: '0.2em',
+                  fontFamily: "'Marcellus', serif", fontSize: '16px', letterSpacing: '0.2em',
                   textTransform: 'uppercase', color: '#C4A96E', margin: '0 0 4px',
                 }}>Client Intake Form</h3>
 
@@ -385,7 +385,7 @@ export default function Contact() {
                 </div>
 
                 {/* §2 Wellness Focus */}
-                <SectionHead n="2" title="Wellness Focus & Primary Concerns" />
+                <SectionHead n="2" title="Primary Concerns" />
 
                 <div>
                   <label style={labelStyle}>Main reason for your visit</label>
@@ -423,7 +423,7 @@ export default function Contact() {
                 {/* §3 Health Screening */}
                 <SectionHead n="3" title="Health Screening" />
                 <p style={{
-                  fontFamily: "'Jost', sans-serif", fontSize: '14px',
+                  fontFamily: "'Jost', sans-serif", fontSize: '18px',
                   color: 'rgba(192,213,214,0.55)', margin: '-6px 0 4px', lineHeight: 1.5,
                 }}>
                   Required for Pranic Healing safety compliance. Please answer each question.
@@ -511,11 +511,11 @@ export default function Contact() {
                       background: 'transparent', border: 'none', textAlign: 'left',
                     }}>
                     <span style={{
-                      fontFamily: "'Cinzel', serif", fontSize: '9.5px', letterSpacing: '0.22em',
+                      fontFamily: "'Marcellus', serif", fontSize: '18px', letterSpacing: '0.22em',
                       textTransform: 'uppercase', color: '#C4A96E',
                     }}>Disclaimer & Client Consent</span>
                     <span style={{
-                      fontFamily: "'Cinzel', serif", fontSize: '14px', color: '#A58D66',
+                      fontFamily: "'Marcellus', serif", fontSize: '14px', color: '#A58D66',
                       transform: showDisclaimer ? 'rotate(180deg)' : 'rotate(0)',
                       transition: 'transform 250ms ease-out', lineHeight: 1, display: 'inline-block',
                     }}>⌄</span>
@@ -526,10 +526,10 @@ export default function Contact() {
                       padding: '4px 18px 18px', borderTop: '1px solid rgba(165,141,102,0.18)',
                       maxHeight: '280px', overflowY: 'auto',
                       fontFamily: "'Jost', sans-serif", fontWeight: 300,
-                      fontSize: '11.5px', lineHeight: 1.75, color: 'rgba(192,213,214,0.78)',
+                      fontSize: '18px', lineHeight: 1.75, color: 'rgba(192,213,214,0.78)',
                     }}>
                       <p style={{
-                        fontFamily: "'Cinzel', serif", fontSize: '8.5px', letterSpacing: '0.22em',
+                        fontFamily: "'Marcellus', serif", fontSize: '16px', letterSpacing: '0.22em',
                         textTransform: 'uppercase', color: '#A58D66', margin: '14px 0 10px',
                       }}>Vidya Joshi · Pranic Healing Practitioner · Frisco, TX | Pune, India</p>
 
@@ -606,7 +606,7 @@ export default function Contact() {
                   display: 'flex', alignItems: 'flex-start', gap: '12px',
                   cursor: 'pointer', marginTop: '4px',
                   fontFamily: "'Jost', sans-serif", fontWeight: 300,
-                  fontSize: '12px', lineHeight: 1.6, color: 'rgba(192,213,214,0.75)',
+                  fontSize: '18px', lineHeight: 1.6, color: 'rgba(192,213,214,0.75)',
                 }}>
                   <input
                     type="checkbox" checked={form.consent} onChange={e => set('consent', e.target.checked)}
@@ -640,7 +640,7 @@ export default function Contact() {
 
                 {error && (
                   <p style={{
-                    fontFamily: "'Jost', sans-serif", fontSize: '12px',
+                    fontFamily: "'Jost', sans-serif", fontSize: '18px',
                     color: '#f87171', margin: '0', textAlign: 'center',
                   }}>{error}</p>
                 )}
@@ -648,7 +648,7 @@ export default function Contact() {
                 <button
                   type="submit" disabled={!form.consent || loading}
                   style={{
-                    fontFamily: "'Cinzel', serif", fontSize: '12px', fontWeight:600, letterSpacing: '0.18em',
+                    fontFamily: "'Marcellus', serif", fontSize: '18px', fontWeight:600, letterSpacing: '0.18em',
                     textTransform: 'uppercase', marginTop: '8px',
                     background: form.consent && !loading ? '#A58D66' : 'rgba(165,141,102,0.3)',
                     color: form.consent && !loading ? '#041F2B' : 'rgba(4,31,43,0.6)',

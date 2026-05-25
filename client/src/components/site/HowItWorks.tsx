@@ -29,8 +29,8 @@ const chakras: Chakra[] = [
 type TabId = 'chakras' | 'prana' | 'techniques';
 
 const tabs: { id: TabId; label: string; numeral: string }[] = [
-  { id: 'chakras',    label: 'About Chakras',            numeral: '1'   },
-  { id: 'prana',      label: 'About Prana',              numeral: '2'  },
+  { id: 'chakras',    label: 'Chakras',            numeral: '1'   },
+  { id: 'prana',      label: 'Prana',              numeral: '2'  },
   { id: 'techniques', label: 'Pranic Healing Techniques', numeral: '3' },
 ];
 
@@ -71,8 +71,8 @@ export default function HowItWorks() {
           className="text-center mb-8 md:mb-12"
         >
           <p
-            className="text-[13px] tracking-[0.26em] uppercase mb-3"
-            style={{ fontFamily: "'Cinzel', serif", color: '#407E8C' }}
+            className="text-[15px] tracking-[0.26em] uppercase mb-3"
+            style={{ fontFamily: "'Marcellus', serif", color: '#407E8C' }}
           >
             The Foundation
           </p>
@@ -128,17 +128,18 @@ export default function HowItWorks() {
                       style={{ background: GOLD, opacity: isActive ? 1 : 0 }}
                     />
                     <span
-                      className="block text-[20px] tracking-[0.22em] uppercase mb-1"
-                      style={{ fontFamily: "'Cinzel', serif", color: isActive ? GOLD : `${GOLD}99` }}
+                      className="block text-[15px] tracking-[0.22em] uppercase mb-1"
+                      style={{ fontFamily: "'Marcellus', serif", color: isActive ? GOLD : `${GOLD}99`, fontWeight: 800 }}
                     >
                       {t.numeral}
                     </span>
                     <span
-                      className="block text-med md:text-base leading-tight"
+                      className="block md:text-base leading-tight"
                       style={{
-                        fontFamily: "'Cormorant Garamond', serif",
+                        fontFamily: "'Jost', serif",
                         color: isActive ? TEXT_PRIMARY : TEXT_MUTED,
-                        fontWeight: 500,
+                        fontWeight: 400,
+                        fontSize: 15,
                       }}
                     >
                       {t.label}
@@ -237,13 +238,13 @@ function PranaPanel() {
           Understanding Prana
         </h3>
         <p
-          className="text-sm md:text-base lg:text-lg font-light leading-relaxed mb-3"
+          className="text-med md:text-base lg:text-lg font-light leading-relaxed mb-3"
           style={{ color: '#4A4138' }}
         >
           Prana is a Sanskrit word that literally translates to "life-force." It is the invisible bio-energy or vital energy that keeps the body alive and maintains a state of good health. In your body, Prana acts as the fuel that powers every heartbeat, every thought, and every cellular process.
         </p>
         <p
-          className="text-sm md:text-base lg:text-lg font-light leading-relaxed"
+          className="text-med md:text-base lg:text-lg font-light leading-relaxed"
           style={{ color: '#4A4138' }}
         >
           Without Prana, there is no life. When your Prana is high and flowing freely, you feel vibrant, focused, and resilient. When it is depleted or blocked, you may experience fatigue, stress, or physical illness.
@@ -260,7 +261,7 @@ function PranaPanel() {
             Where do we get Prana?
           </h3>
           <p
-            className="text-sm md:text-base lg:text-lg font-light leading-relaxed"
+            className="text-med md:text-base lg:text-lg font-light leading-relaxed"
             style={{ color: '#4A4138' }}
           >
             We are constantly immersed in a sea of life-force. By understanding these sources, we can learn to recharge our internal battery more effectively. As a practitioner, I help you tap into the three primary natural sources of Prana:
@@ -309,7 +310,7 @@ function PranaPanel() {
                 {active.title}
               </h4>
               <p
-                className="text-sm md:text-base lg:text-lg leading-relaxed font-light"
+                className="text-med md:text-base lg:text-lg leading-relaxed font-light"
                 style={{ color: '#4A4138' }}
               >
                 {active.description}
@@ -357,12 +358,12 @@ function PranaNode({
       >
         <div className="text-center">
           <p
-            className="text-[12px] md:text-sm uppercase tracking-[0.18em]"
-            style={{ color, fontFamily: "'Cinzel', serif" }}
+            className="text-[14px] md:text-base uppercase tracking-[0.18em]"
+            style={{ color, fontFamily: "'Marcellus', serif" }}
           >
             {title}
           </p>
-          <p className="text-[12px] mt-0.5" style={{ color: '#7A6E5F' }}>
+          <p className="text-[14px] mt-0.5" style={{ color: '#7A6E5F' }}>
             {subtitle}
           </p>
         </div>
@@ -384,32 +385,32 @@ function TechniquesPanel() {
 
   return (
     <article className="w-full max-w-2xl ">
-      <p className="text-[13px] text-center tracking-[0.24em] uppercase mb-3" style={{ fontFamily: "'Cinzel', serif", color: GOLD }}>
+      <p className="text-[15px] text-center tracking-[0.24em] uppercase mb-3" style={{ fontFamily: "'Marcellus', serif", color: GOLD, fontWeight:600 }}>
         Energy Medicine
       </p>
       <h3 className="text-2xl text-center md:text-3xl lg:text-4xl mb-5 md:mb-6 leading-tight tracking-wide" style={{ fontFamily: 'var(--font-serif)', color: TEXT_PRIMARY }}>
         Pranic Healing Techniques
       </h3>
 
-      <p className="text-sm text-center md:text-base lg:text-lg leading-relaxed mb-4 font-light" style={{ color: TEXT_BODY }}>
+      <p className="text-med text-center md:text-base lg:text-lg leading-relaxed mb-4 font-light" style={{ color: TEXT_BODY }}>
         Pranic Healing is a highly developed and tested system of energy treatment that uses <em>prana</em> to heal the whole physical body. It is a synthesis of ancient esoteric healing methods that have been rediscovered, researched and tested over decades.
       </p>
-      <p className="text-sm text-center md:text-base leading-relaxed mb-8 font-light" style={{ color: TEXT_BODY }}>
+      <p className="text-med text-center md:text-base leading-relaxed mb-8 font-light" style={{ color: TEXT_BODY }}>
         Unlike other healing methods, Pranic Healing does not require drugs, gadgets, nor is there any physical contact with the subject. Physical contact is not required because the practitioner is working on the bioplasmic or energy body, and not directly on the physical body.
       </p>
 
       <div className="h-px mb-6 md:mb-8" style={{ background: 'linear-gradient(to right, rgba(165,141,102,0.5), transparent)' }} />
 
-      <p className="text-[13px] tracking-[0.2em] uppercase mb-4" style={{ fontFamily: "'Cinzel', serif", color: GOLD }}>
+      <p className="text-[15px] tracking-[0.2em] uppercase mb-4" style={{ fontFamily: "'Marcellus', serif", color: GOLD }}>
         How does it work?
       </p>
       <div className="space-y-3 mb-6 md:mb-8">
         {laws.map((law) => (
           <div key={law.numeral} className="flex gap-3 md:gap-4 items-start p-3 md:p-4 rounded-lg" style={{ background: 'rgba(165,141,102,0.06)', border: '1px solid rgba(165,141,102,0.15)' }}>
-            <span className="shrink-0 text-sm tracking-[0.22em] pt-0.5" style={{ fontFamily: "'Cinzel', serif", color: GOLD }}>{law.numeral}</span>
+            <span className="shrink-0 text-sm tracking-[0.22em] pt-0.5" style={{ fontFamily: "'Marcellus', serif", color: GOLD }}>{law.numeral}</span>
             <div>
-              <p className="text-sm md:text-base mb-1" style={{ fontFamily: 'var(--font-serif)', color: TEXT_PRIMARY, fontWeight: 500 }}>{law.name}</p>
-              <p className="text-sm leading-relaxed font-light" style={{ color: TEXT_BODY }}>{law.desc}</p>
+              <p className="text-med md:text-base mb-1" style={{ fontFamily: 'var(--font-serif)', color: TEXT_PRIMARY, fontWeight: 500 }}>{law.name}</p>
+              <p className="text-med leading-relaxed font-light" style={{ color: TEXT_BODY }}>{law.desc}</p>
             </div>
           </div>
         ))}
@@ -417,7 +418,7 @@ function TechniquesPanel() {
 
       <div className="h-px mb-6 md:mb-8" style={{ background: 'linear-gradient(to right, rgba(165,141,102,0.5), transparent)' }} />
 
-      <p className="text-[13px] tracking-[0.2em] uppercase mb-4 md:mb-5" style={{ fontFamily: "'Cinzel', serif", color: GOLD }}>
+      <p className="text-[15px] tracking-[0.2em] uppercase mb-4 md:mb-5" style={{ fontFamily: "'Marcellus', serif", color: GOLD }}>
         The session, in two steps
       </p>
       <div className="space-y-5 md:space-y-6">
@@ -426,7 +427,7 @@ function TechniquesPanel() {
             <span className="shrink-0 text-3xl md:text-4xl leading-none" style={{ fontFamily: 'var(--font-serif)', color: 'rgba(165,141,102,0.35)', fontWeight: 300 }}>{step.num}</span>
             <div className="pt-1">
               <p className="text-base md:text-lg mb-1 md:mb-2" style={{ fontFamily: 'var(--font-serif)', color: TEXT_PRIMARY, fontWeight: 500 }}>{step.name}</p>
-              <p className="text-sm lg:text-base leading-relaxed font-light" style={{ color: TEXT_BODY }}>{step.desc}</p>
+              <p className="text-med lg:text-base leading-relaxed font-light" style={{ color: TEXT_BODY }}>{step.desc}</p>
             </div>
           </div>
         ))}
@@ -448,22 +449,20 @@ function ChakrasPanel({
   return (
     <div className="flex flex-col md:grid md:grid-cols-[minmax(0,420px)_1fr] gap-6 md:gap-10 lg:gap-14 items-start">
       {/* Silhouette + chakra dots — responsive width */}
-      <div
-        className="w-full max-w-[320px] sm:max-w-[380px] md:max-w-[420px] mx-auto md:mx-0"
-        style={{ aspectRatio: '420 / 510' }}
-      >
+      <div className="w-full max-w-[320px] sm:max-w-[380px] md:max-w-[420px] mx-auto md:mx-0">
         <p
-          className="text-[13px] font-semibold uppercase tracking-[0.24em] text-center"
+          className="text-[15px] font-semibold uppercase tracking-[0.24em] text-center mb-1"
           style={{ color: GOLD }}
         >
           Seven Centers · One System
         </p>
         <h3
-          className="text-2xl md:text-3xl lg:text-4xl leading-tight text-center"
+          className="text-2xl md:text-3xl lg:text-4xl leading-tight text-center mb-3"
           style={{ fontFamily: 'var(--font-serif)', color: TEXT_PRIMARY }}
         >
           Select a chakra to begin
         </h3>
+        <div style={{ aspectRatio: '420 / 510' }}>
         <svg viewBox={VIEWBOX} preserveAspectRatio="xMidYMid meet" className="w-full h-full">
           <defs>
             <filter id="chakra-glow" x="-100%" y="-100%" width="300%" height="300%">
@@ -545,6 +544,7 @@ function ChakrasPanel({
             );
           })}
         </svg>
+        </div>
       </div>
 
       {/* Info panel */}
@@ -561,7 +561,7 @@ function ChakrasPanel({
             >
               <div className="relative">
                 <div
-                  className="inline-flex flex-wrap gap-1 px-2 py-1 mb-4 rounded-full text-xs font-medium"
+                  className="inline-flex flex-wrap gap-1 px-2 py-1 mb-4 rounded-full text-s font-medium"
                   style={{
                     background: `${active.color}15`,
                     color: active.color,
@@ -580,17 +580,17 @@ function ChakrasPanel({
                   className="h-px w-full mb-5"
                   style={{ background: `linear-gradient(to right, ${active.color}55, transparent)` }}
                 />
-                <p className="text-sm md:text-base leading-relaxed mb-5 font-light" style={{ color: TEXT_BODY }}>
+                <p className="text-med md:text-base leading-relaxed mb-5 font-light" style={{ color: TEXT_BODY }}>
                   {active.description}
                 </p>
                 <div>
                   <p
-                    className="text-[10.5px] font-semibold uppercase tracking-[0.22em] mb-2"
+                    className="text-[15px] font-semibold uppercase tracking-[0.22em] mb-2"
                     style={{ color: active.color }}
                   >
                     Benefits
                   </p>
-                  <p className="text-sm leading-relaxed font-light" style={{ color: TEXT_BODY }}>
+                  <p className="text-med leading-relaxed font-light" style={{ color: TEXT_BODY }}>
                     {active.benefits}
                   </p>
                 </div>
@@ -607,8 +607,8 @@ function ChakrasPanel({
             >
               
               <p
-                className="text-sm md:text-base leading-relaxed font-light max-w-md"
-                style={{ color: TEXT_MUTED }}
+                className="text-lg md:text-base leading-relaxed font-light max-w-md"
+                style={{ color: TEXT_MUTED, fontWeight:400 }}
               >
                 Each energy center governs a distinct quality of body, mind, and spirit.
                 Tap or hover along the spine to explore how each one shapes the work we do together.

@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 
-const cinzel = { fontFamily: "'Cinzel', serif" } as const;
+const cinzel = { fontFamily: "'Marcellus', serif" } as const;
 
 interface StickyMobileCTAProps {
   onClick?: () => void;
@@ -41,7 +41,7 @@ export function StickyMobileCTA({ onClick }: StickyMobileCTAProps) {
               if (el) el.scrollIntoView({ behavior: "smooth" });
               else window.location.href = "/contact";
             }}
-            style={{ ...cinzel, fontSize: "12px", letterSpacing: "0.18em", fontWeight:800 }}
+            style={{ ...cinzel, fontSize: "14px", letterSpacing: "0.18em", fontWeight:800 }}
             className="rounded-[5px] bg-[#A58D66] px-6 py-4 w-full uppercase text-[#041F2B] shadow-[0_0_24px_rgba(165,141,102,0.28)] transition-all duration-250 hover:bg-[#C4A96E] hover:shadow-[0_0_36px_rgba(165,141,102,0.45)]"
           >
             Book Your Consultation
